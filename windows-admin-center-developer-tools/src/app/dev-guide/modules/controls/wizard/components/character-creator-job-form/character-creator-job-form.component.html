@@ -1,0 +1,20 @@
+<h4>Choose a Job</h4>
+<form [formGroup]="form">
+  <div class="form-controls">
+    <div class="form-group">
+      <div class="form-input">
+        <label for="job">{{ jobLabel }}</label>
+        <div class="combobox">
+          <select class="form-control" id="job" formControlName="job" [(ngModel)]="selectedJob">
+            <option *ngFor="let job of jobs" [ngValue]="job">{{ jobMap[job].name }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div *ngIf="jobMap[selectedJob].description">
+  <h6>Job Description</h6>
+  <p>{{ jobMap[selectedJob].description }}</p>
+</div>

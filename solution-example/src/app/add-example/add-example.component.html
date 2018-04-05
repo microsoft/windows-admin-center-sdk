@@ -1,0 +1,12 @@
+<div class="stretch-absolute flex-layout vertical">
+  <div class="auto-flex-size vertical-scroll-only">
+    {{strings.connectionName}}
+    <input type="text" [(ngModel)]="newConnectionName" />
+  </div>
+  <div class="fixed-flex-size">
+      <div class="sme-position-right-inline">
+          <button type="button" class="btn" (click)="onSubmit()">{{strings.buttons.add}}</button>
+          <button type="button" class="btn" (click)="onCancel()">{{strings.buttons.cancel}}</button>
+      </div>
+  </div>
+</div>

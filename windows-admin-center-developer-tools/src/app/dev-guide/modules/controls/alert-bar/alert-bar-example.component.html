@@ -1,0 +1,49 @@
+<div class="m-l-xxs tool-container">
+   <div>
+    <h3>Anonymous alert bar component</h3>
+    <p>Below is an example of a &lt;sme-alert-bar&gt;&lt;/sme-alert-bar&gt; with no id passed in.</p>
+    <sme-alert-bar></sme-alert-bar>
+    <div style="margin-top: 10px">
+      <p>Click the buttons below to generate informational alerts</p>
+      <button (click)="onSimpleInformationalClick()">Simple</button>
+      <button (click)="onIntermediateInformationalClick()">Intermediate</button>
+      <button (click)="onComplexInformationalClick()">Complex</button>
+    </div>
+    <div style="margin-top: 10px">
+      <p>Click the buttons below to generate warning alerts</p>
+      <button (click)="onSimpleWarningClick()">Simple</button>
+      <button (click)="onIntermediateWarningClick()">Intermediate</button>
+      <button (click)="onComplexWarningClick()">Complex</button>
+    </div>
+    <div style="margin-top: 10px">
+      <p>Click the buttons below to generate error alerts</p>
+      <button (click)="onSimpleErrorClick()">Simple</button>
+      <button (click)="onIntermediateErrorClick()">Intermediate</button>
+      <button (click)="onComplexErrorClick()">Complex</button>
+    </div>
+  </div>
+
+  <div>
+    <h3>Alert bar component with an ID</h3>
+    <p>Below is an example of a &lt;sme-alert-bar id=&quot;alert1&quot;&gt;&lt;/sme-alert-bar&gt; with an id passed in.</p>
+    <sme-alert-bar id="alert1"></sme-alert-bar>
+    <div style="margin-top: 10px">
+      <p>Click the buttons below to generate informational alerts</p>
+      <button (click)="onSimpleInformationalClick('alert1')">Simple</button>
+      <button (click)="onIntermediateInformationalClick('alert1')">Intermediate</button>
+      <button (click)="onComplexInformationalClick('alert1')">Complex</button>
+    </div>
+    <div style="margin-top: 10px">
+      <p>Click the buttons below to generate warning alerts</p>
+      <button (click)="onSimpleWarningClick('alert1')">Simple</button>
+      <button (click)="onIntermediateWarningClick('alert1')">Intermediate</button>
+      <button (click)="onComplexWarningClick('alert1')">Complex</button>
+    </div>
+    <div style="margin-top: 10px">
+      <p>Click the buttons below to generate error alerts</p>
+      <button (click)="onSimpleErrorClick('alert1')">Simple</button>
+      <button (click)="onIntermediateErrorClick('alert1')">Intermediate</button>
+      <button (click)="onComplexErrorClick('alert1')">Complex</button>
+    </div>
+  </div>
+</div>

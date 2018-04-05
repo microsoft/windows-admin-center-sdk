@@ -1,0 +1,66 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+    <h1>Icons</h1>
+    <section>
+        <p>
+            <span>SME has a range of predefined font icons the size and characters used for these icons may change with the current</span>
+            <a class="sme-link" routerLink="/dev/styles/themes">theme.</a>
+        </p>
+
+        <p>All icon classes must be used in conjunction with the following class:</p>
+        <code>.sme-icon</code>
+    </section>
+    <h2>Icon Sizes</h2>
+    <section>
+        <p>The sme icon size classes can be used to change the size of an icon. The default size depends on the typographical context of the icon. ie. The icon will be larger in an h1 tag than in a label tag.</p>
+
+        <p>Use the following class structure to manually apply an icon size</p>
+        <code>.sme-icon-size-[size]</code>
+
+        <div class="sme-arrange-wrapstack-h">
+            <div *ngFor="let size of iconSizes" class="sme-arrange-stack-v sme-margin-inset-xs">
+                <div class="sme-position-center-h-inline sme-font-label">{{size}}</div>
+                <div [ngClass]="['sme-position-center-h-block sme-icon sme-icon-server', 'sme-icon-size-'+ size]"></div>
+            </div>
+        </div>
+    </section>
+    <h2>Icon Characters</h2>
+    <section>
+        <p>While the characters may change with the theme. You can use there name to indicate the purpose of the icon.</p>
+        <p>To accomplish this, use the following class structure:</p>
+        <code>.sme-icon-[name]</code>
+        <p>Here is the current list of icons and there names:</p>
+        <div class="sme-arrange-wrapstack-h">
+            <div *ngFor="let key of iconKeys" class="sme-arrange-stack-v sme-margin-right-xxl sme-margin-bottom-xxl sme-border-inset-sm sme-padding-inset-sm" style="min-width:200px">
+                <div class="sme-position-center-h-inline sme-font-label sme-margin-bottom-sm">{{key}}</div>
+                <div [ngClass]="['sme-position-center-h-block sme-icon sme-icon-size-xl', 'sme-icon-'+ key]"></div>
+                <!-- Uncomment next line to test old icon-win styles -->
+                <!-- <div [ngClass]="['sme-position-center-h-block sme-icon sme-icon-size-xl', 'icon-win-'+ key]"></div> -->
+            </div>
+        </div>
+    </section>
+
+    <h2>Example</h2>
+    <section>
+        <p>Putting it all together, we can create a large server icon using the following classes</p>
+        <code>sme-icon sme-icon-size-lg sme-icon-server</code>
+    </section>
+
+
+    <h2>Custom Icons</h2>
+    <section>
+        <p>The SME icon set doesnt include every possible icon. As such it may become nessecary to use some of your own icons. However, try and use a built in icon as much as possible.</p>
+        <p>To create your own custom icons that adhear to the icons layout requirements of sme you should use the following technique: </p>
+        <ol>
+            <li>Use the .sme-icon and .sme-icon-size classes as usual</li>
+            <li>derive your own class to change the font only</li>
+            <li>derive a seperate class to change just the 'content' property of the icon</li>
+        </ol>
+
+        <p>After this your class might look like</p>
+        <code>sme-icon sme-icon-size-lg my-icon my-icon-custom</code>
+
+        <p>In additon your css might look like</p>
+        <code>.my-icon {{'{'}} font-family: 'MyGlyphs' }</code>
+        <code>.my-icon-custom {{'{'}} content: '\E123' }</code>
+    </section>
+</div>

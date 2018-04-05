@@ -1,0 +1,120 @@
+{
+  "$schema": "../node_modules/@msft-sme/shell/dist/core/manifest/module-schema.json#",
+  "name": "msft.sme.developer-tools",
+  "displayName": "resources:strings:displayName",
+  "description": "resources:strings:description",
+  "target": "/modules/msft.sme.developer-tools",
+  "icon": "sme-icon:icon-win-powerShell",
+  "keywords": [
+    "resources:strings:keywordExample"
+  ],
+  "entryPoints": [
+    {
+      "entryPointType": "solution",
+      "name": "main",
+      "urlName": "hello",
+      "displayName": "resources:strings:solutionName",
+      "description": "resources:strings:solutionDescription",
+      "icon": "sme-icon:icon-win-powerShell",
+      "rootNavigationBehavior": "connections",
+      "connections": {
+        "header": "resources:strings:connectionsListHeader",
+        "connectionTypes": [
+          "msft.sme.connection-type.server",
+          "msft.sme.connection-type.windows-client"
+        ]
+      },
+      "tools": {
+        "enabled": true,
+        "defaultTool": "home"
+      }
+    },
+    {
+      "entryPointType": "tool",
+      "name": "home",
+      "urlName": "home",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "icon": "sme-icon:icon-win-server",
+      "path": "/home",
+      "requirements": [
+        {
+          "solutionIds": [
+            "msft.sme.developer-tools!main"
+          ],
+          "connectionTypes": [
+            "msft.sme.connection-type.server",
+            "msft.sme.connection-type.windows-client"
+          ]
+        }
+      ]
+    },
+    {
+      "entryPointType": "tool",
+      "name": "dev",
+      "urlName": "dev",
+      "displayName": "resources:strings:devDisplayName",
+      "description": "resources:strings:devDescription",
+      "icon": "sme-icon:icon-win-server",
+      "path": "/dev",
+      "requirements": [
+        {
+          "solutionIds": [
+            "msft.sme.developer-tools!main"
+          ],
+          "connectionTypes": [
+            "msft.sme.connection-type.server",
+            "msft.sme.connection-type.windows-client"
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "locale": "default",
+      "strings": {
+        "displayName": "Introduction",
+        "description": "Solution detailing all things needed to begin building extensions for Project Honolulu.",
+        "connectionsListHeader": "Connections",
+        "overviewName": "Getting Started",
+        "overviewDescription": "A brief intro into the new dev tools",
+        "keywordExample": "developer tools",
+        "devDescription": "Tool containing control examples.",
+        "devDisplayName": "Development Guide",
+        "solutionName": "Developer Tools",
+        "solutionDescription": "Solution detailing all things needed to begin building extensions for Project Honolulu."
+      }
+    },
+    {
+      "locale": "en-US",
+      "strings": {
+        "displayName": "Introduction",
+        "description": "Solution detailing all things needed to begin building extensions for Project Honolulu.",
+        "connectionsListHeader": "Connections",
+        "overviewName": "Getting Started",
+        "overviewDescription": "A brief intro into the new dev tools",
+        "keywordExample": "developer tools",
+        "devDescription": "Tool containing control examples.",
+        "devDisplayName": "Development Guide",
+        "solutionName": "Developer Tools",
+        "solutionDescription": "Solution detailing all things needed to begin building extensions for Project Honolulu."
+      }
+    },
+    {
+      "locale": "ja-JP",
+      "strings": {
+        "displayName": "こんにちは",
+        "description": "sample extension to use with extension manager",
+        "connectionsListHeader": "Connections",
+        "overviewName": "Getting Started",
+        "overviewDescription": "A brief intro into the new dev tools",
+        "keywordExample": "developer tools",
+        "devDescription": "Tool containing control examples.",
+        "devDisplayName": "Development Guide",
+        "solutionName": "Developer Tools",
+        "solutionDescription": "Solution detailing all things needed to begin building extensions for Project Honolulu."
+      }
+    }
+  ]
+}

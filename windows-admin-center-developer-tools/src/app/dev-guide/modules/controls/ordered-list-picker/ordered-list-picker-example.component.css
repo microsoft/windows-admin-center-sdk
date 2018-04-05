@@ -1,0 +1,81 @@
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+h3 {
+    margin-top: 12px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+table {
+  margin-top: 24px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+textarea {
+  height: 300px;
+  width: 250px;
+}
+
+th, td {
+  padding: 6px !important;
+}
+
+p:first-of-type {
+  padding-top: 0;
+}
+
+.buttons-section {
+  margin-top: 12px;
+}
+
+.buttons-section button {
+  margin-right: 6px;
+}
+
+.buttons-section button:last-of-type {
+  margin-right: 0;
+}
+
+.code-example {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.code-example p {
+  margin-bottom: 12px;
+}
+
+.code-example p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.code-example code {
+  font-size: 16px;
+  padding: 6px;
+}
+
+.value-spy {
+  margin-top: 12px;
+}
+
+.value-spy p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.value-spy p {
+    padding: 0;
+}
+
+.value-spy textarea {
+    margin-top: 12px;
+}

@@ -1,0 +1,13 @@
+<div [smeSettingsForm]="sampleForm" [formGroup]="sampleForm">
+  <div class="form-group">
+    <div class="form-input">
+      <label for="name3">
+        {{nameLabel}}
+      </label>
+      <input id="name3" type="text" class="form-control" formControlName="name3" required autofocus/>
+      <div *ngIf="formErrors.name3" class="alert alert-danger">
+        {{ formErrors.name3 }}
+      </div>
+    </div>
+  </div>
+</div>

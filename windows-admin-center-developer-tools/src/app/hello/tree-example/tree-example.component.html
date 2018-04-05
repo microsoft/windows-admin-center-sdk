@@ -1,0 +1,10 @@
+<sme-tree-table [items]="treeData" [(selection)]="selectedData" (onNodeSelect)="onNodeSelect($event)" class="sme-layout-absolute sme-position-inset-none" [showHeader]="false"
+[showGrid]="false" [showLeftMargin]="false">
+    <sme-tree-table-column field="label" header="Name" sortable="true" width="40%">
+        <ng-template let-data>
+            <span *ngIf="data.type==='folder'" class="sme-icon sme-icon-folder"></span>
+            <span *ngIf="data.type!=='folder'" class="placeholder"></span>
+            <strong>{{data.label}}</strong>
+        </ng-template>
+    </sme-tree-table-column>                
+</sme-tree-table>

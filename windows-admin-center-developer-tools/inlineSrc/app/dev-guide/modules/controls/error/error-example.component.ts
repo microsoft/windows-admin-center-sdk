@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+import { ActivatedRouteSnapshot } from '@angular/router';
+import { AppContextService } from '@msft-sme/shell/angular';
+
+@Component({
+    selector: 'sme-ng2-controls-error-example',
+    template: `
+      <div class="tool-container sme-arrange-stack-v">
+          <h1>Obsolete.</h1>
+          <h4>Use sme-alert-bar instead</h4>
+          <p>Previously this control was used to block the UX on errors. This has been changed to generate an alert instead. However if you have not implemented an sme-alert-bar this will throw an error.</p>
+          <sme-error message="This is an error messsage that now shows as an alert"></sme-error>
+          <!--<div class="sme-position-flex-none">
+              <h2>Content NOT blocked by error message</h2>
+              <button>I am always clickable</button>
+          </div>
+          <div class="sme-layout-relative sme-position-flex-auto">
+              <sme-error message="This is an error messsage"></sme-error>
+              <h2>Content blocked by error message</h2>
+              <button>I am not clickable when because there is an error</button>
+          </div>-->
+      </div>
+    `
+})
+export class ErrorExampleComponent {
+    
+    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
+        return 'sme-error';
+    }
+}

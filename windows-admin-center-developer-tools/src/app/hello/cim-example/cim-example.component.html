@@ -1,0 +1,99 @@
+<sme-loading-wheel *ngIf="loading"></sme-loading-wheel>
+<sme-split-view #sv>
+  <sme-split-view-content>
+      <sme-master-view>
+          <div class="stretch-absolute flex-layout vertical">
+              <sme-tool-header>Processes via WMI call</sme-tool-header>
+              <div class="overflow-margins table-indent">
+                This component provides a short overview / example on how to execute a CIM / WMI call and wait for the resulting dataset.
+                On return, the results are loaded into a data grid that has a fixed height, and is sortable on the "name" column.
+                In future updates, this component will contain examples on how to use the selection mode to view a datagrid item's
+                details inside the SME Details control.
+              </div>
+              <div class="sme-layout-relative sme-position-flex-auto">
+                <div class="sme-layout-relative sme-position-flex-auto">
+                  <sme-data-table #smeDataTable [items]="processes" style="height: 300px;" class="sme-layout-absolute sme-position-inset-none" [defaultSortColumn]="customSortColumn" [defaultSortMode]="1">
+                    <sme-data-table-column field="name" header="name" sortable="true" width="10%"></sme-data-table-column>
+                    <!-- <sme-data-table-column  #customSortColumn  field="commandLine" header="exe" sortable="true">
+                      <ng-template let-data>
+                        <span class="status-icon sme-icon sme-icon-cluster"></span>
+                        <strong>{{data|json}}</strong>
+                        <input style="width:60px" />
+                    </ng-template>
+                    </sme-data-table-column> -->
+                    <sme-data-table-column field="cpuPercent" header="CPU %" sortable="true">
+                      <ng-template let-data>
+                        <!-- <span class="status-icon sme-icon sme-icon-cluster"></span> -->
+                        <strong>{{data.cpuPercent}}</strong>
+                        <!-- <button onclick="alert('Hello~~~')">I'm a button. I need focus.</button> -->
+                      </ng-template>
+                    </sme-data-table-column>
+                    <sme-data-table-column field="executablePath" header="Path" sortable="true"></sme-data-table-column>
+                  </sme-data-table>
+                </div>
+              </div>
+            </div>
+        </sme-master-view>
+  </sme-split-view-content>
+  <sme-split-view-pane>
+      <button *ngIf="!sv.isExpanded" (click)="sv.togglePane()">{{ strings.HelloWorld.cim.viewCode }}</button>
+      <button *ngIf="sv.isExpanded" (click)="sv.togglePane()">{{ strings.HelloWorld.cim.hideCode }}</button>
+      <div *ngIf="sv.isExpanded">
+        The presentation layer utilizes Honolulu's custom data grid control.  The code looks like this:
+        <pre>
+          <code>
+              &lt;sme-data-table #simpleDataTable [items]="dataSource" [(selection)]="selectedData1" class="sme-layout-absolute sme-position-inset-none" [defaultSortColumn]="customSortColumn" [defaultSortMode]="1"&gt;
+            &lt;sme-data-table-column field="process" header="id" sortable="true" width="10%"&gt;&lt;/sme-data-table-column&gt;
+            &lt;sme-data-table-column  #customSortColumn  field="name" header="name" sortable="true"&gt;
+              &lt;ng-template let-data&gt;
+                &lt;span class="status-icon sme-icon sme-icon-cluster"&gt;&lt;/span&gt;
+                &lt;strong&gt;{{ '{' }}{{ '{' }}data.name{{ '}' }}{{ '}' }}&lt;/strong&gt;
+                &lt;input style="width:60px" /&gt;
+            &lt;/ng-template&gt;
+            &lt;/sme-data-table-column&gt;
+            &lt;sme-data-table-column field="cpuPercent" header="CPU %" sortable="true"&gt;
+              &lt;ng-template let-data&gt;
+                &lt;span class="status-icon sme-icon sme-icon-cluster"&gt;&lt;/span&gt;
+                &lt;strong&gt;{{ '{' }}{{ '{' }}data.cpuPercent{{ '}' }}{{ '}' }}&lt;/strong&gt;
+                &lt;button onclick="alert('Hello~~~')"&gt;I'm a button. I need focus.&lt;/button&gt;
+              &lt;/ng-template&gt;
+            &lt;/sme-data-table-column&gt;
+          &lt;/sme-data-table&gt;
+          </code>
+        </pre>
+        <br />
+        Using the Data Table requires that we import the DataTableModule in the parent module (in this case hello.module.ts).
+        <pre>
+          <code>
+...
+imports: [
+  ActionsModule,
+  AlertBarModule,
+  CommonModule,
+  <span style="background-color: yellow;">DataTableModule,</span>
+  DetailsModule,
+  FormsModule,
+  LoadingWheelModule,
+  SmeStylesModule,
+  SvgModule,
+  routing,
+  ToolHeaderModule,
+  TreeTableModule,
+  SplitViewModule,
+  MasterViewModule
+]
+          </code>
+        </pre>
+        <br />
+        <br />
+        The data table is then filled with the results from a WMI call (CIM).  Full code can be found in the file: /src/app/hello/cim-example/cim-example.component.ts.
+      </div>
+      <!-- <button (click)="sv.togglePane()">Click me to toggle the pane</button>
+      <p>I'm the pane. The pane is the area that grows/shrinks.</p>
+      <p>The pane takes as much room as it needs.</p>
+      <p><b>isExpanded</b>: {{sv.isExpanded}}</p>
+      <p *ngIf="sv.isExpanded">You can only see this because the pane is expanded. Because this string is longer, you'll see the pane grow when I appear.
+      </p> -->
+  </sme-split-view-pane>
+</sme-split-view>
+

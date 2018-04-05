@@ -1,0 +1,49 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+
+    <h2>Soda Factory</h2>
+
+    <div class="sme-documentation-example">
+        <form>
+            <sme-form-field type="readonly" name="model" [(ngModel)]="model.model.value" [label]="model.model.label"></sme-form-field>
+            <sme-form-field type="password" name="password" [(ngModel)]="model.password.value" [label]="model.password.label" [description]="model.password.description" [required]="true" (customValidate)="onCustomValidate('password', $event)"></sme-form-field>
+            <sme-form-field type="radiogroup" name="recipeType" [(ngModel)]="model.recipeType.value" [label]="model.recipeType.label" [description]="model.recipeType.description" [disabled]="model.password.value !== 'password'">
+                <sme-option [value]="model.recipeType.options.upload.value" [label]="model.recipeType.options.upload.label">
+                    <ng-template>
+                        <sme-form-field type="file" name="file" [(ngModel)]="model.upload.value" [label]="model.upload.label" [description]="model.upload.description" [required]="true" [multiple]="true" [fileTypes]="['.recipe']"></sme-form-field>
+                    </ng-template>
+                </sme-option>
+                <sme-option [value]="model.recipeType.options.create.value" [label]="model.recipeType.options.create.label">
+                    <ng-template>
+                        <sme-form-field type="text" name="sodaName" [(ngModel)]="model.name.value" [label]="model.name.label" [required]="true"></sme-form-field>
+                        <sme-form-field type="text" name="details" [(ngModel)]="model.details.value" [label]="model.details.label" [multiline]="true"></sme-form-field>
+                        <sme-form-field type="checklist" name="flavorMix" [(ngModel)]="model.flavorMix.value" [label]="model.flavorMix.label" [required]="true">
+                            <sme-option [value]="model.flavorMix.options.cola.value" [label]="model.flavorMix.options.cola.label"></sme-option>
+                            <sme-option [value]="model.flavorMix.options.pepper.value" [label]="model.flavorMix.options.pepper.label"></sme-option>
+                            <sme-option [value]="model.flavorMix.options.orange.value" [label]="model.flavorMix.options.orange.label"></sme-option>
+                            <sme-option [value]="model.flavorMix.options.grape.value" [label]="model.flavorMix.options.grape.label"></sme-option>
+                            <sme-option [value]="model.flavorMix.options.lemonlime.value" [label]="model.flavorMix.options.lemonlime.label"></sme-option>
+                            <sme-option [value]="model.flavorMix.options.cherry.value" [label]="model.flavorMix.options.cherry.label"></sme-option>
+                            <sme-option [value]="model.flavorMix.options.rootbeer.value" [label]="model.flavorMix.options.rootbeer.label">
+                                <ng-template>
+                                    <sme-form-field type="radiogroup" name="rootbeerType" [(ngModel)]="model.rootbeerType.value" [label]="model.rootbeerType.label" [description]="model.rootbeerType.description">
+                                        <sme-option *ngFor="let option of model.rootbeerType.options" [value]="option.value" [label]="option.label"></sme-option>
+                                    </sme-form-field>
+                                </ng-template>
+                            </sme-option>
+                        </sme-form-field>
+                        <sme-form-field type="slider" name="carbinationLevel" [(ngModel)]="model.carbinationLevel.value" [label]="model.carbinationLevel.label" [description]="model.carbinationLevel.description" [min]="model.carbinationLevel.min" [max]="model.carbinationLevel.max"
+                            [step]="model.carbinationLevel.step" (customValidate)="onCustomValidate('carbinationLevel', $event)"></sme-form-field>
+                        <sme-form-field type="tags" name="tags" [(ngModel)]="model.tags.value" [suggestions]="model.tags.suggestions" [label]="model.tags.label" [description]="model.tags.description"></sme-form-field>
+                        <sme-form-field type="select" name="size" [(ngModel)]="model.size.value" [label]="model.size.label" [description]="model.size.description">
+                            <sme-option *ngFor="let option of model.size.options" [value]="option.value" [label]="option.label"></sme-option>
+                        </sme-form-field>
+                        <sme-form-field type="number" name="extraSugar" [(ngModel)]="model.extraSugar.value" [label]="model.extraSugar.label" [description]="model.extraSugar.description" [min]="model.extraSugar.min" [max]="model.extraSugar.max" [step]="model.extraSugar.step"
+                            (customValidate)="onCustomValidate('extraSugar', $event)"></sme-form-field>
+                        <sme-form-field type="checkbox" name="isDiet" [(ngModel)]="model.isDiet.value" [label]="model.isDiet.label"></sme-form-field>
+                        <sme-form-field type="toggle-switch" name="emergancyProduction" [(ngModel)]="model.emergancyProduction.value" [label]="model.emergancyProduction.label" [description]="model.emergancyProduction.description" (customValidate)="onCustomValidate('emergancyProduction', $event)"></sme-form-field>
+                    </ng-template>
+                </sme-option>
+            </sme-form-field>
+        </form>
+    </div>
+</div>

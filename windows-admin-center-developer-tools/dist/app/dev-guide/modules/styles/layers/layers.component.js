@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+var LayersComponent = /** @class */ (function () {
+    function LayersComponent() {
+    }
+    LayersComponent.navigationTitle = function (appContextService, snapshot) {
+        return 'Layers';
+    };
+    LayersComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'sme-ng2-layers',
+                    template: "\n      <div class=\"sme-layout-absolute sme-position-inset-none sme-documentation\">\n        <h1>Layers</h1>\n        <section>\n          <p>Layers determine the z-index of an element.Most scenarios should suffice with just using the these classes.</p>\n          <table>\n            <thead>\n              <tr>\n                <th>Class</th>\n                <th>z-index</th>\n                <th>Purpose</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>.sme-layer-dialog</td>\n                <td>900</td>\n                <td>Use for Dialog component stack.</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-flyout</td>\n                <td>700</td>\n                <td>Use for all other flyout elements.</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-nav</td>\n                <td>500</td>\n                <td>Use for navigational elements. (menus)</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-over</td>\n                <td>300</td>\n                <td>Use for elements that need to be raised more out of the normal flow.</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-above</td>\n                <td>100</td>\n                <td>Use for elements that need to be raised out of the normal flow.</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-neutral</td>\n                <td>1</td>\n                <td>Common z-index value for elements that need to be above baseline.</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-default</td>\n                <td>0</td>\n                <td>Default browser element z-index (baseline).</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-below</td>\n                <td>-1</td>\n                <td>Use for elements that need to live below the normal flow of the document.</td>\n              </tr>\n              <tr>\n                <td>.sme-layer-buried</td>\n                <td>-2</td>\n                <td>Reserved for lowest elements in the stack</td>\n              </tr>\n            </tbody>\n          </table>\n\n\n        </section>\n      </div>\n    "
+                },] },
+    ];
+    /** @nocollapse */
+    LayersComponent.ctorParameters = function () { return []; };
+    return LayersComponent;
+}());
+export { LayersComponent };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9kZXYtZ3VpZGUvbW9kdWxlcy9zdHlsZXMvbGF5ZXJzL2xheWVycy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQUEsRUFBVSxNQUFPLGVBQUEsQ0FBZ0I7QUFLMUM7SUFBQTtJQStFQSxDQUFDO0lBN0VpQiwrQkFBZSxHQUE3QixVQUE4QixpQkFBb0MsRUFBRSxRQUFnQztRQUNoRyxNQUFNLENBQUMsUUFBUSxDQUFDO0lBQ3BCLENBQUM7SUFDRSwwQkFBVSxHQUEwQjtRQUMzQyxFQUFFLElBQUksRUFBRSxTQUFTLEVBQUUsSUFBSSxFQUFFLENBQUM7b0JBQ3RCLFFBQVEsRUFBRSxnQkFBZ0I7b0JBQzFCLFFBQVEsRUFBRSxrdkVBaUVUO2lCQUNKLEVBQUcsRUFBRTtLQUNMLENBQUM7SUFDRixrQkFBa0I7SUFDWCw4QkFBYyxHQUFtRSxjQUFNLE9BQUEsRUFDN0YsRUFENkYsQ0FDN0YsQ0FBQztJQUNGLHNCQUFDO0NBL0VELEFBK0VDLElBQUE7U0EvRVksZUFBZSIsImZpbGUiOiJsYXllcnMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IkM6L1VzZXJzL21hdHdpbHMvU291cmNlL2Jhc2UvbXNmdC1zbWUtZGV2ZWxvcGVyLXRvb2xzL2lubGluZVNyYy8ifQ==

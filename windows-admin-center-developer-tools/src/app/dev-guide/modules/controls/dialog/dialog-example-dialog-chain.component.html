@@ -1,0 +1,18 @@
+<sme-confirmation-dialog id="confirmation-dialog-chain"></sme-confirmation-dialog>
+<sme-dialog-example-full-screen-dialog id="full-screen-dialog-chain"></sme-dialog-example-full-screen-dialog>
+<sme-dialog #dialog dialogMode="pane">
+  <sme-dialog-header>
+    <h4 id="sme-dialog-title">{{ title }}</h4>
+  </sme-dialog-header>
+  <sme-dialog-content>
+    <p id="sme-dialog-desc">{{ label }}</p>
+    <button type="button" class="btn" (click)="onClickFullScreenDialog()">{{ openButtonText }}</button>
+  </sme-dialog-content>
+  <sme-dialog-footer>
+    <div class="pull-right">
+      <button type="button" class="btn btn-primary" (click)="onClose()">{{ closeButtonText }}</button>
+      <button type="button" class="btn" (click)="onCancel()">{{ cancelButtonText }}</button>
+    </div>
+  </sme-dialog-footer>
+</sme-dialog>
+

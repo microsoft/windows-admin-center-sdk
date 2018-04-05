@@ -1,0 +1,22 @@
+.tree-pane {
+    width: 320px;
+  }
+  
+  /* Should strongly consider moving these styles out to NG2 */
+  .sme-icon:before {
+    margin-right: 4px;
+    line-height: 14px;
+    vertical-align: middle;
+  }
+  
+  .sme-icon {
+    text-align: center;
+  }
+  
+  a.breadCrumb {
+    color: black;
+  }
+
+  .full-height {
+    height: 100%;
+}

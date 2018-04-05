@@ -1,0 +1,95 @@
+<form [smeSettingsForm]="form" aria-labelledby="sme-shell-setting-selectedTitle">
+  <sme-settings-content>
+    <fieldset *ngIf="!loading" [disabled]="saving" [formGroup]="form">
+      <span>This is the generic settings message!</span>
+      <h6>Identity Information</h6>
+        <div class="form-group">
+        <div class="form-input">
+          <label class="control-label" for="name">Name Label</label>
+          <div class="required-clue">Required Clue *</div>
+          <div>
+            <input id="name" [title]="formErrors.name" class="form-control" type="text" formControlName="name" required autofocus/>
+          </div>
+          <div *ngIf="formErrors.name" class="alert alert-danger">
+            {{ formErrors.name }}
+          </div>
+        </div>
+      </div>
+      <h6>Financial Information</h6>
+      <div class="form-group">
+        <div class="form-input">
+          <label class="control-label" for="salary">Salary Label</label>
+          <div class="required-clue">Required Clue *</div>
+          <div>
+            <input id="salary" [title]="formErrors.salary" class="form-control" type="text" formControlName="salary" required />
+          </div>
+          <div *ngIf="formErrors.salary" class="alert alert-danger">
+            {{ formErrors.salary }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div formArrayName="addresses">
+          <div *ngFor="let address of form.controls.addresses.controls; let i = index;" [formGroupName]="i">
+            <h6>Address {{ i + 1 }}</h6>
+            <div class="form-group">
+              <div class="form-input">
+                <label class="control-label" for="city">City Label</label>
+                <div class="required-clue">Required Clue *</div>
+                <div>
+                  <input id="city" [title]="formErrors.addresses[i].city" class="form-control" type="text" formControlName="city" required
+                  />
+                </div>
+                <div *ngIf="formErrors.addresses[i].city" class="alert alert-danger">
+                  {{ formErrors.addresses[i].city }}
+                </div>
+              </div>
+
+              <div class="form-input">
+                <label class="control-label" for="state">State Label</label>
+                <div class="required-clue">Required Clue *</div>
+                <div>
+                  <input id="state" [title]="formErrors.addresses[i].state" class="form-control" type="text" formControlName="state" required
+                  />
+                </div>
+                <div *ngIf="formErrors.addresses[i].state" class="alert alert-danger">
+                  {{ formErrors.addresses[i].state }}
+                </div>
+              </div>
+
+              <div class="form-input">
+                <label class="control-label" for="street">Street Label</label>
+                <div class="required-clue">Required Clue *</div>
+                <div>
+                  <input id="street" [title]="formErrors.addresses[i].street" class="form-control" type="text" formControlName="street" required
+                  />
+                </div>
+                <div *ngIf="formErrors.addresses[i].street" class="alert alert-danger">
+                  {{ formErrors.addresses[i].street }}
+                </div>
+              </div>
+
+              <div class="form-input">
+                <label class="control-label" for="zipCode">Zip Label</label>
+                <div class="required-clue">Required Clue *</div>
+                <div>
+                  <input id="zipCode" [title]="formErrors.addresses[i].zipCode" class="form-control" type="number" formControlName="zipCode"
+                    min="0" required />
+                </div>
+                <div *ngIf="formErrors.addresses[i].zipCode" class="alert alert-danger">
+                  {{ formErrors.addresses[i].zipCode }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <sme-loading-wheel *ngIf="loading"></sme-loading-wheel>
+  </sme-settings-content>
+  <sme-settings-footer class="footer">
+    <button type="submit" class="btn btn-primary" (click)="onSave()" [disabled]="!form || !form.dirty || !form.valid || saving">Save</button>
+    <button type="button" class="btn btn-secondary" (click)="onDiscard()" [disabled]="!form || !form.dirty || saving">Discard</button>
+    <button type="button" class="btn btn-secondary" (click)="onCloseClick()">Close</button>
+  </sme-settings-footer>
+</form>

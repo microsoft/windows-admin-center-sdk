@@ -1,0 +1,19 @@
+<div class="sme-layout-absolute sme-position-inset-none">
+    <h3>Defined actions from component</h3>
+    <sme-action-bar [actions]="actions" (executed)="onExecuted($event)"></sme-action-bar>
+
+    <h3>Defined actions from html</h3>
+    <sme-action-bar (executed)="onExecuted($event)">
+        <sme-action-button #action [text]="'start enabled'" [enabled]="enableToggle" (execute)="enableToggle = !enableToggle"></sme-action-button>
+        <sme-action-button #action [text]="'starts disabled'" [enabled]="!enableToggle" (execute)="enableToggle = !enableToggle"></sme-action-button>
+        <sme-action-button #action *ngFor="let inline of inlineItems; let i = index" [text]="inline" (execute)="removeInline(i)"></sme-action-button>
+    </sme-action-bar>
+
+    <h3>Defined actions from both</h3>
+    <sme-action-bar [actions]="actions" (executed)="onExecuted($event)">
+        <sme-action-button #action *ngFor="let inline of inlineItems; let i = index" [text]="inline" (execute)="removeInline(i)"></sme-action-button>
+    </sme-action-bar>
+
+    <h3>Model Driven example</h3>
+    <sme-action-bar #custom [actions]="customActions" [target]="actionTarget" (error)="onError($event)" (executed)="onExecuted($event)"> </sme-action-bar>
+</div>

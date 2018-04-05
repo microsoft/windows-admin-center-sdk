@@ -1,0 +1,102 @@
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'sme-ng2-form-styles-checkbox',
+    template: `
+      <div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+          <p>
+              A checkbox is a form component used to select or deselect item(s) in a list. The list can be a single item with checkbox or multiple items, each with their own checkbox. Checkboxes have three visual states (checked, unchecked, and indeterminate).
+          </p>
+          <p>
+              Use a checkbox to select or deselect item(s) in a list. Use a single checkbox by itself in a toggle scenario (ex. "remember me" in a login scenario). Use within a group for multi-select scenarios, where a user chooses one or more items from a group of
+              choices that are NOT mutually exclusive.
+          </p>
+          <h2>Checkbox Styles</h2>
+          <section>
+              <p>To use sme checkbox styling you must encapsulate the checkbox in a container with the .sme-checkbox class. Note that indeterminate checkboxes require custom management of the checkbox state using the indeterminate property.</p>
+
+              <h3>Unselected</h3>
+              <div class="sme-checkbox  sme-documentation-example">
+                  <label>
+                      <input aria-label="Control label" type="checkbox" aria-checked="false">
+                      <span aria-hidden="true">Control label</span>
+                  </label>
+              </div>
+              <code>&lt;div class="sme-checkbox  sme-documentation-example"&gt;
+          &lt;label&gt;
+              &lt;input aria-label="Control label" type="checkbox" aria-checked="false"&gt;
+              &lt;span aria-hidden="true"&gt;Control label&lt;/span&gt;
+          &lt;/label&gt;
+      &lt;/div&gt;</code>
+
+              <h3>Selected</h3>
+              <div class="sme-checkbox  sme-documentation-example">
+                  <label>
+                      <input aria-label="Control label" type="checkbox" checked="checked" aria-checked="true">
+                      <span aria-hidden="true">Control label</span>
+                  </label>
+              </div>
+              <code>&lt;div class="sme-checkbox  sme-documentation-example"&gt;
+          &lt;label&gt;
+              &lt;input aria-label="Control label" type="checkbox" checked="checked" aria-checked="true"&gt;
+              &lt;span aria-hidden="true"&gt;Control label&lt;/span&gt;
+          &lt;/label&gt;
+      &lt;/div&gt;</code>
+
+              <h3>Intermediate</h3>
+              <div class="sme-checkbox  sme-documentation-example">
+                  <label>
+                  <input aria-label="Control label" type="checkbox" [indeterminate]="true" aria-checked="false">
+                  <span aria-hidden="true">Control label</span>
+              </label>
+              </div>
+              <code>&lt;div class="sme-checkbox  sme-documentation-example"&gt;
+          &lt;label&gt;
+              &lt;input aria-label="Control label" type="checkbox" [indeterminate]="true" aria-checked="false"&gt;
+              &lt;span aria-hidden="true"&gt;Control label&lt;/span&gt;
+          &lt;/label&gt;
+      &lt;/div&gt;</code>
+              <h3>Disabled</h3>
+              <div class="sme-checkbox  sme-documentation-example">
+                  <label>
+                  <input aria-label="Control label" type="checkbox" disabled="disabled" aria-checked="false">
+                  <span aria-hidden="true">Control label</span>
+              </label>
+              </div>
+              <code>&lt;div class="sme-checkbox  sme-documentation-example"&gt;
+          &lt;label&gt;
+              &lt;input aria-label="Control label" type="checkbox" disabled="disabled" aria-checked="false"&gt;
+              &lt;span aria-hidden="true"&gt;Control label&lt;/span&gt;
+          &lt;/label&gt;
+      &lt;/div&gt;</code>
+              <h3>Disabled and Selected</h3>
+              <div class="sme-checkbox  sme-documentation-example">
+                  <label>
+                  <input aria-label="Control label" type="checkbox" checked="checked" disabled="disabled" aria-checked="true">
+                  <span aria-hidden="true">Control label</span>
+              </label>
+              </div>
+              <code>&lt;div class="sme-checkbox  sme-documentation-example"&gt;
+          &lt;label&gt;
+              &lt;input aria-label="Control label" type="checkbox" checked="checked" disabled="disabled" aria-checked="true"&gt;
+              &lt;span aria-hidden="true"&gt;Control label&lt;/span&gt;
+          &lt;/label&gt;
+      &lt;/div&gt;</code>
+              <h3>Disabled and Intermediate</h3>
+              <div class="sme-checkbox  sme-documentation-example">
+                  <label>
+                  <input aria-label="Control label" type="checkbox" [indeterminate]="true" disabled="disabled" aria-checked="false">
+                  <span aria-hidden="true">Control label</span>
+              </label>
+              </div>
+              <code>&lt;div class="sme-checkbox  sme-documentation-example"&gt;
+          &lt;label&gt;
+              &lt;input aria-label="Control label" type="checkbox" [indeterminate]="true" disabled="disabled" aria-checked="false"&gt;
+              &lt;span aria-hidden="true"&gt;Control label&lt;/span&gt;
+          &lt;/label&gt;
+      &lt;/div&gt;</code>
+          </section>
+      </div>
+    `
+})
+export class CheckboxStylesComponent { }

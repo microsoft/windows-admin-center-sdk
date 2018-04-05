@@ -1,0 +1,10 @@
+<div class="p-xxs tool-container">
+    <div>
+        <label>yesno-converter input</label>
+        <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
+    </div>
+    <div>
+        <span>IsChecked Output:</span>
+        <span style="font-weight: bold">{{ checked | smeBooleanToYesNoConverter }}</span>
+    </div>
+</div>

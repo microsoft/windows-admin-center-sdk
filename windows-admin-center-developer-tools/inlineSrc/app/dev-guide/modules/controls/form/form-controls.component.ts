@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'sme-ng2-form-controls',
+    template: `
+      <div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
+          <h1 class="sme-position-flex-none">Form Elements</h1>
+          <div class="sme-pivot sme-position-flex-none sme-padding-bottom-sm">
+              <div role="tablist">
+                  <a role="tab" routerLink="/dev/controls/forms/example" routerLinkActive="sme-active">Example</a>
+                  <a role="tab" routerLink="/dev/controls/forms/fields" routerLinkActive="sme-active">Form Field</a>
+                  <a role="tab" routerLink="/dev/controls/forms/validation" routerLinkActive="sme-active">Validation</a>
+              </div>
+          </div>
+          <div class="sme-layout-relative sme-position-flex-auto sme-focus-zone">
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+    `
+})
+export class FormControlsComponent { }

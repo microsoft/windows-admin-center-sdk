@@ -1,0 +1,5 @@
+<sme-doughnut-chart chartTitle="Storage" [doughnutChartData]="doughnutChartData" centerChartText="50GB" centerChartSubtext="50GB free"></sme-doughnut-chart>
+<!-- TODO: make example tooltip -->
+<sme-capacity-doughnut-chart #capacityChart1 chartTitle="Capacity Chart Wtih Default Thresholds" [capacityChartData]="capacityChartData" centerChartSubtext="space available" [total]="100" [showTooltip]="true"></sme-capacity-doughnut-chart>
+<sme-capacity-doughnut-chart #capacityChart2 chartTitle="Capacity Chart with No Red Threshold and Yellow Threshold of 0.6" [capacityChartData]="capacityChartData" centerChartSubtext="space available" [total]="100" [showTooltip]="true" redThreshold="disabled" [yellowThreshold]="0.6"></sme-capacity-doughnut-chart>
+<sme-capacity-doughnut-chart #capacityChart3 chartTitle="Capacity Chart With No Thresholds" [capacityChartData]="capacityChartData" centerChartSubtext="space available" [total]="100" [showTooltip]="true" redThreshold="disabled" yellowThreshold="disabled"></sme-capacity-doughnut-chart>
