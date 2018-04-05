@@ -1,0 +1,418 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "displayable": {
+      "description": "JSON Schema describing an object that can be displayed to a user",
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "description": "display name of module",
+          "type": "string"
+        },
+        "description": {
+          "description": "description of module",
+          "type": "string"
+        },
+        "icon": {
+          "description": "icon url or smeIcon reference. Absolute or relative urls ",
+          "type": "string"
+        },
+        "keywords": {
+          "title": "keywords",
+          "description": "keywords for module search",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "displayName",
+        "description"
+      ]
+    },
+    "stringMap": {
+      "description": "A mapping of values to strings. This can be used for enums or string constants and their localized display values",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "description": "The display values for strings. Preferably resources strings"
+      }
+    },
+    "entryPointCommon": {
+      "$ref": "#/definitions/displayable",
+      "description": "Defines common entryPoint properties within an SME Module",
+      "type": "object",
+      "properties": {
+        "urlName": {
+          "description": "The friendly url name to use to reference this entrypoint. This must be unique among all entrypoints",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of this entrypoint. Should be unique to this modules other entrypoints",
+          "type": "string"
+        },
+        "path": {
+          "description": "The path relative to the modules target to get to the entrypoint",
+          "type": "string"
+        }
+      }
+    },
+    "entryPointGeneric": {
+      "description": "Defines entryPoint types within an SME Module",
+      "type": "object",
+      "required": [
+        "entryPointType"
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/entryPointCommon",
+          "properties": {
+            "entryPointType": {
+              "description": "The 'connectionProvider' entry point type. This type provides a way to add a connection to SME and must follow the 'SME Connection Provider' Interface",
+              "type": "string",
+              "const": "connectionProvider"
+            },
+            "connectionType": {
+              "description": "This is the identification for your connection type. It must be globally unique.",
+              "type": "string"
+            },
+            "connectionTypeUrlName": {
+              "description": "The friendly url name to use to reference the connection type that this entry point provides. This must be unique among all connection types.",
+              "type": "string"
+            },
+            "connectionTypeName": {
+              "description": "This is the friendly name of your connection type. This is what will show up in various menus for adding a connection",
+              "type": "string"
+            },
+            "connectionTypeDefaultSolution": {
+              "description": "The default solution with which to open the connection with",
+              "type": "string"
+            },
+            "connectionTypeDefaultTool": {
+              "description": "The default tool with which to open the connection with",
+              "type": "string"
+            },
+            "connectionStatusProvider": {
+              "description": "Defines how to get the status for this connection type",
+              "type": "object",
+              "properties": {
+                "powerShell": {
+                  "description": "Specifies to run a script against a node to get status",
+                  "type": "object",
+                  "properties": {
+                    "nodePropertyPath": {
+                      "description": "Specifies the path in the connection to use to determine what node to run against, defaults to the 'name' property",
+                      "type": "string"
+                    },
+                    "script": {
+                      "description": "The script to run on the node. The script must accept a locale as an input. It must return an object in the form: {status: {label?: string, type:statusEnum, details?: string}} any siblings of status in the object will be sotred as properties that can be alter accessed through the UX",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "script"
+                  ]
+                },
+                "relativeGatewayUrl": {
+                  "description": "Specifies to get the connection status from a gateway url. Relative from /api. If $connectionName is found in the url, it will be replaced with the name of the connection",
+                  "type": "string"
+                },
+                "displayValueMap": {
+                  "description": "A mapping of values to their display strings. This can be used for enums or string constants and their localized display values",
+                  "$ref": "#/definitions/stringMap"
+                }
+              }
+            }
+          },
+          "required": [
+            "connectionType",
+            "connectionTypeName"
+          ]
+        },
+        {
+          "$ref": "#/definitions/entryPointCommon",
+          "properties": {
+            "entryPointType": {
+              "description": "The solution connection type. This entry point type represents a launching point for experiences that do not fit in the normal connection flow of the SME.",
+              "type": "string",
+              "const": "solution"
+            },
+            "rootNavigationBehavior": {
+              "description": "Defines how navigating to the root of this solution will behave. Setting this to 'path' will load this module to the 'path' property. Setting this to 'connections' will navigate instead to the connections list, customized for this solution",
+              "type": "string",
+              "enum": [
+                "path",
+                "connections"
+              ]
+            },
+            "connections": {
+              "description": "Only applicable when 'rootNavigationBehavior' us set to 'connections'. Describes how to customize the view of the conections list.",
+              "type": "object",
+              "properties": {
+                "header": {
+                  "description": "The title of the connections list for this solution. Optional. A default header will be provided if this field is left out",
+                  "type": "string"
+                },
+                "connectionTypes": {
+                  "description": "List of connections types to show in the view of the connections list",
+                  "type": "array",
+                  "items": {
+                    "description": "A valid connection type string identifier from any modules entrypoints of type 'connectionProvider'",
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "connectionTypes"
+              ]
+            },
+            "tools": {
+              "description": "If provided, Configures the tools menu for this solution.",
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "description": "Enables/Disable ths tools menu",
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "required": [
+            "rootNavigationBehavior"
+          ]
+        },
+        {
+          "$ref": "#/definitions/entryPointCommon",
+          "properties": {
+            "entryPointType": {
+              "description": "The tool connection type. This entry point is most common and represents one type of thing to manage for a given connection. Examples include: events, certificates, devices, virtual machines, roles, etc...",
+              "type": "string",
+              "const": "tool"
+            },
+            "requirements": {
+              "description": "Describes the conditions under which this tool should be available. The tool will be available should any element in the array be satisfied.",
+              "type": "array",
+              "items": {
+                "description": "Describes a single requirement. At least one property is required",
+                "properties": {
+                  "solutionIds": {
+                    "description": "Determines what solutions this tool will show under when all other conditions are met. Solutions should use the '<moduleName>!<entryPointName>' identifier syntax for solution ids",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "connectionTypes": {
+                    "description": "Determines what connection types this tool will show for when all other conditions are met",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "attributes": {
+                    "description": "When provided, requires that the connection be tagged with specific attribute ids",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "solutionId",
+                  "connectionType"
+                ]
+              }
+            }
+          },
+          "required": [
+            "requirements"
+          ]
+        },
+        {
+          "$ref": "#/definitions/entryPointCommon",
+          "description": "The 'component' entry point type. This type is not yet fully defined, but will represent a way for a module to show a control from another module",
+          "properties": {
+            "entryPointType": {
+              "type": "string",
+              "const": "component"
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/entryPointCommon",
+          "description": "The 'service' entry point type. This type is not yet fully defined, but will represent a service like functionality that modules and entry points can share between each other",
+          "properties": {
+            "entryPointType": {
+              "type": "string",
+              "const": "service"
+            }
+          }
+        }
+      ]
+    },
+    "resources": {
+      "title": "resources",
+      "description": "string resources",
+      "type": "array",
+      "items": {
+        "description": "JSON Schema for resource of external tool of Server management tools",
+        "type": "object",
+        "properties": {
+          "locale": {
+            "description": "locale key",
+            "type": "string",
+            "enum": [
+              "default",
+              "cs",
+              "de",
+              "es",
+              "fr",
+              "hu",
+              "it",
+              "ja",
+              "ko",
+              "nl",
+              "pl",
+              "pt-BR",
+              "pt-PT",
+              "ru",
+              "sv",
+              "tr",
+              "zh-Hans",
+              "zh-Hant"
+            ]
+          },
+          "strings": {
+            "title": "strings",
+            "description": "key value pair",
+            "type": "object"
+          }
+        },
+        "required": [
+          "locale",
+          "strings"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "attributeGenerator": {
+      "description": "Attribute generation metadata. This will be used by the system to discover attributes about connections",
+      "type": "array",
+      "items": {
+        "properties": {
+          "attributeId": {
+            "description": "The id of an attribute. This must be unique.",
+            "type": "string"
+          },
+          "attributeName": {
+            "description": "The display name of an attribute",
+            "type": "string"
+          },
+          "attributeValueMap": {
+            "description": "A mapping of values to their display strings. This can be used for enums or string constants and their localized display values",
+            "$ref": "#/definitions/stringMap"
+          },
+          "conditions": {
+            "description": "Attribute generation metadata. This will be used by the system to discover attributes about connections",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "connectionType": {
+                  "description": "The type of connection to apply this attribute to. This field will determine what other fields are available in the future",
+                  "type": "string"
+                },
+                "roles": {
+                  "description": "specific to server and cluster connection types, each value in this array should be the 'name' property of a windows role or feature. All of them must be present for this condition to be satisfied",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "services": {
+                  "description": "specific to server and cluster connection types, each value in this array should be the 'name' property of a windows service. All of them must be present for this condition to be satisfied",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "powerShell": {
+                  "description": "specific to server and cluster connection types",
+                  "type": "object",
+                  "properties": {
+                    "scriptSnippet": {
+                      "description": "A powershell snippet that returns a boolean, number, or string. a number or string should map to the values in the attributeValueMap of this attribute generator",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "script"
+                  ]
+                }
+              },
+              "required": [
+                "connectionType"
+              ]
+            }
+          }
+        },
+        "required": [
+          "attributeId",
+          "attributeName",
+          "conditions"
+        ]
+      }
+    }
+  },
+  "description": "JSON Schema for module of SME",
+  "type": "object",
+  "$ref": "#/definitions/displayable",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "description": "The name/id of the module",
+      "type": "string"
+    },
+    "version": {
+      "description": "The version of the module this manifest represents",
+      "type": "string"
+    },
+    "target": {
+      "description": "target url from which entryPoint paths and relative are relative to. If not provided, this will be set to the modules folder location by the SME subsystem",
+      "type": "string"
+    },
+    "entryPoints": {
+      "title": "entryPoints",
+      "description": "entry points of module",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/entryPointGeneric"
+      }
+    },
+    "modules": {
+      "title": "modules",
+      "description": "List of available modules in the SME system. This is provided by SME, any value will be overwritten by the system",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#"
+      }
+    },
+    "resources": {
+      "$ref": "#/definitions/resources"
+    },
+    "attributeGenerator": {
+      "$ref": "#/definitions/attributeGenerator"
+    }
+  },
+  "required": [
+    "$schema",
+    "name",
+    "version"
+  ]
+}

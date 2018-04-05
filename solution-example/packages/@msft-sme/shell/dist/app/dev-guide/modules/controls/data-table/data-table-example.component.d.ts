@@ -1,0 +1,38 @@
+import { DataTableCustomSortEvent, DataTableLazyLoadEvent } from '../../../../../angular/controls/data-table/data-table.contract';
+export declare class DataTableExampleComponent {
+    private dataTableForDataStreaming;
+    private dataStreamingTimer;
+    private dataStreamingSortDirection;
+    private groupDataTable;
+    tabIndex: number;
+    sampleData1: any[];
+    selectedData1: any;
+    sampleData2: any[];
+    selectedData2: any[];
+    sampleData3: any[];
+    selectedData3: any[];
+    sampleData4: any[];
+    selectedData4: any[];
+    sampleData5: any[];
+    groupColumnField: string;
+    groupSortMode: string;
+    selectedData5: any[];
+    dataSource: any[];
+    virtualCount: number;
+    virtualDataSource: any[];
+    constructor();
+    onLazyLoad(event: DataTableLazyLoadEvent): void;
+    useSample1(): void;
+    useSample2(): void;
+    customSortCompare(a: any, b: any, field: string): number;
+    onGroupSortModeChanged(): void;
+    addData(): void;
+    doCustomSort($event: DataTableCustomSortEvent): void;
+    startDataStreaming(): void;
+    stopDataStreaming(): void;
+    clickTab(tabIndex: number): void;
+    private doDataStreaming(count);
+    getGroupSummary(data: string): string;
+    onGroupColumnChanged(): void;
+    private doDataStreamingReverse(count);
+}

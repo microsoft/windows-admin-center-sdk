@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+var SliderStylesComponent = /** @class */ (function () {
+    function SliderStylesComponent() {
+    }
+    SliderStylesComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'sme-ng2-form-styles-slider',
+                    template: "\n      <div class=\"sme-layout-absolute sme-position-inset-none sme-documentation\">\n          <p>\n              <i>Sliders</i>\n              <span>let the user set a value in a given range by tapping\u2014or scrubbing back and forth\u2014on a track. \n                  It provides a visual indication of adjustable content, as well as the current setting in the total range of content. (Ex. adjusting brightness).</span>\n          </p>\n          <p>\n              <span>Use a</span>\n              <i>slider</i>\n              <span>when you want users to be able to set defined, contiguous values (such as volume) or a range of discrete values (such as screen resolution settings). A</span>\n              <i>slider</i>\n              <span>is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, \n                  users think about setting their audio volume to low or medium\u2014not about setting the value to 2 or 5. </span>\n          </p>\n          <p>\n              <span>Use a</span>\n              <i>slider</i>\n              <span> if the user would benefit from instant feedback on the effect of setting changes. \n                      For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values. \n                      Only a step range of 1 is supported.\n              </span>\n          </p>\n          <h2>Horizontal Slider</h2>\n          <p>Slider is displayed horizontally and can be moved to the right or left.</p>\n          <input type=\"range\" value=\"50\" max=\"100\" step=\"1\">\n          <code>&lt;input type=\"range\" value=\"50\" max=\"100\" step=\"1\"&gt;</code>\n          <h2>Vertical Slider</h2>\n          <p>Slider is displayed vertically and can be moved to the top or bottom.</p>\n          <h3>Coming Soon...</h3>\n          <!-- <input type=\"range\" class=\"sme-slider sme-slider-vertical\" value=\"50\" max=\"100\" step=\"1\"> -->\n      </div>\n    "
+                },] },
+    ];
+    /** @nocollapse */
+    SliderStylesComponent.ctorParameters = function () { return []; };
+    return SliderStylesComponent;
+}());
+export { SliderStylesComponent };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9kZXYtZ3VpZGUvbW9kdWxlcy9zdHlsZXMvZm9ybS9zbGlkZXIvc2xpZGVyLXN0eWxlcy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQUEsRUFBVSxNQUFPLGVBQUEsQ0FBZ0I7QUFHMUM7SUFBQTtJQXlDQSxDQUFDO0lBekMyQyxnQ0FBVSxHQUEwQjtRQUNoRixFQUFFLElBQUksRUFBRSxTQUFTLEVBQUUsSUFBSSxFQUFFLENBQUM7b0JBQ3RCLFFBQVEsRUFBRSw0QkFBNEI7b0JBQ3RDLFFBQVEsRUFBRSxpZ0VBZ0NUO2lCQUNKLEVBQUcsRUFBRTtLQUNMLENBQUM7SUFDRixrQkFBa0I7SUFDWCxvQ0FBYyxHQUFtRSxjQUFNLE9BQUEsRUFDN0YsRUFENkYsQ0FDN0YsQ0FBQztJQUNGLDRCQUFDO0NBekNELEFBeUNDLElBQUE7U0F6Q1kscUJBQXFCIiwiZmlsZSI6InNsaWRlci1zdHlsZXMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IkM6L0JBLzQ0NC9zL2lubGluZVNyYy8ifQ==

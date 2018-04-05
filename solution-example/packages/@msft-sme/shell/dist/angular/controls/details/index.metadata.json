@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":3,"metadata":{},"exports":[{"from":"./details.component","export":["DetailsComponent"]},{"from":"./details.module","export":["DetailsModule"]}]},{"__symbolic":"module","version":1,"metadata":{},"exports":[{"from":"./details.component","export":["DetailsComponent"]},{"from":"./details.module","export":["DetailsModule"]}]}]

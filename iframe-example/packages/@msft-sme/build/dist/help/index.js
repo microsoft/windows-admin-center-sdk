@@ -1,0 +1,43 @@
+/* tslint:disable */
+'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+var gutil = require("gulp-util");
+var util = require("../util/util");
+var PLUGIN_NAME = 'gulp-sme-help';
+var helpformat = "Gulpfile {0}...\n\nUSAGE\ngulp [TASK] [OPTIONS]\n\nTASKS:\n{1}\n";
+var taskformat = "\n    {0}   \n        {1}{2}\n";
+var argsformat = "\n{0}";
+var argformat = "\n        {0} : {1}";
+function newline() {
+    console.log('');
+}
+function help(options) {
+    if (!options) {
+        throw util.toGulpError(PLUGIN_NAME, 'required parameter "options" null or undefined.');
+    }
+    var tasks = '';
+    var keys = Object.keys(options);
+    keys.forEach(function (taskName) {
+        var task = options[taskName];
+        var argsText = '';
+        if (!task) {
+            task = gutil.colors.magenta('This task is not documented');
+        }
+        if (!util.isString(task)) {
+            if (task.arguments) {
+                var args_1 = '';
+                var argKeys = Object.keys(task.arguments);
+                argKeys.forEach(function (arg) {
+                    args_1 += util.format(argformat, gutil.colors.green(util.format('--{0}', arg)), task.arguments[arg]);
+                });
+                argsText += util.format(argsformat, args_1);
+            }
+            task = task.comment;
+        }
+        tasks += util.format(taskformat, gutil.colors.cyan(taskName), task, argsText);
+    });
+    util.log(util.format(helpformat, gutil.colors.cyan('HELP!'), tasks));
+}
+module.exports = help;
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9oZWxwL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLG9CQUFvQjtBQUNwQixZQUFZLENBQUM7O0FBR2IsaUNBQW9DO0FBQ3BDLG1DQUFzQztBQUV0QyxJQUFNLFdBQVcsR0FBRyxlQUFlLENBQUM7QUFDcEMsSUFBSSxVQUFVLEdBQUcsa0VBT2hCLENBQUM7QUFDRixJQUFJLFVBQVUsR0FBRyxnQ0FHaEIsQ0FBQztBQUNGLElBQUksVUFBVSxHQUFHLE9BQ2IsQ0FBQztBQUNMLElBQUksU0FBUyxHQUFHLHFCQUNFLENBQUM7QUFFbkI7SUFDSSxPQUFPLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxDQUFDO0FBQ3BCLENBQUM7QUFFRCxjQUFjLE9BQVk7SUFDdEIsRUFBRSxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDO1FBQ1gsTUFBTSxJQUFJLENBQUMsV0FBVyxDQUFDLFdBQVcsRUFBRSxpREFBaUQsQ0FBQyxDQUFDO0lBQzNGLENBQUM7SUFFRCxJQUFJLEtBQUssR0FBRyxFQUFFLENBQUE7SUFFZCxJQUFJLElBQUksR0FBRyxNQUFNLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDO0lBQ2hDLElBQUksQ0FBQyxPQUFPLENBQUMsVUFBQSxRQUFRO1FBQ2pCLElBQUksSUFBSSxHQUFHLE9BQU8sQ0FBQyxRQUFRLENBQUMsQ0FBQztRQUM3QixJQUFJLFFBQVEsR0FBVyxFQUFFLENBQUM7UUFFMUIsRUFBRSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDO1lBQ1IsSUFBSSxHQUFHLEtBQUssQ0FBQyxNQUFNLENBQUMsT0FBTyxDQUFDLDZCQUE2QixDQUFDLENBQUM7UUFDL0QsQ0FBQztRQUVELEVBQUUsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDLENBQUM7WUFDdkIsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUM7Z0JBQ2pCLElBQUksTUFBSSxHQUFHLEVBQUUsQ0FBQztnQkFDZCxJQUFJLE9BQU8sR0FBRyxNQUFNLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztnQkFDMUMsT0FBTyxDQUFDLE9BQU8sQ0FBQyxVQUFBLEdBQUc7b0JBQ2YsTUFBSSxJQUFJLElBQUksQ0FBQyxNQUFNLENBQUMsU0FBUyxFQUFFLEtBQUssQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsT0FBTyxFQUFDLEdBQUcsQ0FBQyxDQUFDLEVBQUUsSUFBSSxDQUFDLFNBQVMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDO2dCQUN0RyxDQUFDLENBQUMsQ0FBQztnQkFFSCxRQUFRLElBQUksSUFBSSxDQUFDLE1BQU0sQ0FBQyxVQUFVLEVBQUUsTUFBSSxDQUFDLENBQUM7WUFFOUMsQ0FBQztZQUNELElBQUksR0FBRyxJQUFJLENBQUMsT0FBTyxDQUFDO1FBQ3hCLENBQUM7UUFFRCxLQUFLLElBQUksSUFBSSxDQUFDLE1BQU0sQ0FBQyxVQUFVLEVBQUUsS0FBSyxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLEVBQUUsSUFBSSxFQUFFLFFBQVEsQ0FBQyxDQUFDO0lBQ2xGLENBQUMsQ0FBQyxDQUFDO0lBRUgsSUFBSSxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLFVBQVUsRUFBRSxLQUFLLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsRUFBRSxLQUFLLENBQUMsQ0FBQyxDQUFDO0FBQ3pFLENBQUM7QUFFRCxNQUFNLENBQUMsT0FBTyxHQUFHLElBQUksQ0FBQyIsImZpbGUiOiJoZWxwL2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOltudWxsXSwic291cmNlUm9vdCI6IkM6XFxCQVxcNDE3XFxzIn0=

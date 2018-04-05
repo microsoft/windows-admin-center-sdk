@@ -1,0 +1,4249 @@
+// This is a local version of the manifest for the shell for debugging purposes.
+// To use: 
+//    1. replace all: '"origin": "http://localhost:4100",' with your local gateway instance.
+//    2. remove comments from this file.
+//    3. replace the manifest.json file with this file.
+//    4. run your local gateway instance.
+//    5. run this project and append "?gatewayUrl=http://localhost:4100" to your url, but use your local gateway url instead of "http://localhost:4100".
+//    6. DO NOT CHECKIN CHANGES TO MANIFEST.JSON
+
+{
+  "name": "msft.sme.shell",
+  "signature": "version 0.0.0",
+  "modules": [
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.certificate-manager",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.certificate-manager",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-certificateManager",
+      "keywords": [
+        "certificate",
+        "ssl",
+        "manager",
+        "security",
+        "encryption",
+        "certification"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "certificates",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-certificateManager",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage certificates",
+            "displayName": "Certificates"
+          }
+        }
+      ],
+      "version": "0.19.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.device-manager",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.device-manager",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-manage",
+      "default": true,
+      "downlevel": false,
+      "keywords": [
+        "process",
+        "diagnostics"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "devices",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-manage",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Manage devices",
+            "displayName": "Devices"
+          }
+        }
+      ],
+      "version": "0.23.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.event-viewer",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.event-viewer",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-customList",
+      "keywords": [
+        "resources:string:keywords_events"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "events",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-customList",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage event logs",
+            "displayName": "Events",
+            "keywords_events": "Events"
+          }
+        }
+      ],
+      "version": "0.31.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.extension-manager",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.extension-manager",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-powerShell",
+      "default": true,
+      "downlevel": false,
+      "category": "SME",
+      "keywords": [
+        "process",
+        "diagnostics"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "solution",
+          "name": "main",
+          "urlName": "extensions",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-oEM",
+          "path": "",
+          "rootNavigationBehavior": "path"
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage extensions",
+            "displayName": "Extension Manager"
+          }
+        }
+      ],
+      "version": "0.12.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.failover-cluster",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.failover-cluster",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-cluster",
+      "keywords": [
+        "resources:strings:keywords_roles",
+        "resources:strings:keywords_nodes",
+        "resources:strings:keywords_networks",
+        "resources:strings:keywords_storage"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "solution",
+          "name": "failover-cluster",
+          "urlName": "clustermanager",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-cluster",
+          "rootNavigationBehavior": "connections",
+          "connections": {
+            "header": "resources:strings:connectionsListHeader",
+            "connectionTypes": [
+              "msft.sme.connection-type.cluster"
+            ]
+          },
+          "tools": {
+            "enabled": true,
+            "defaultTool": "overview"
+          }
+        },
+        {
+          "entryPointType": "connectionProvider",
+          "name": "addFailoverCluster",
+          "path": "/add/failoverCluster",
+          "displayName": "resources:strings:addFailoverCluster_displayName",
+          "icon": "sme-icon:sme-icon-cluster",
+          "description": "resources:strings:description",
+          "connectionType": "msft.sme.connection-type.cluster",
+          "connectionTypeName": "resources:strings:addFailoverCluster_connectionTypeName",
+          "connectionTypeUrlName": "cluster",
+          "connectionTypeDefaultSolution": "msft.sme.failover-cluster!failover-cluster",
+          "connectionTypeDefaultTool": "msft.sme.failover-cluster!overview",
+          "connectionStatusProvider": {
+            "powerShell": {
+              "script": "##Get-ClusterStatus##\n\n$cluster = Get-CimInstance MSCluster_Cluster -Namespace root\\mscluster;\n$status = @{label = $null; type = 0; details = $null; }\n$result = @{status = $status}\nreturn $status;"
+            }
+          }
+        },
+        {
+          "entryPointType": "tool",
+          "name": "overview",
+          "urlName": "fcmoverview",
+          "displayName": "resources:strings:displayNames_overview",
+          "description": "resources:strings:descriptions_overview",
+          "icon": "sme-icon:sme-icon-cluster",
+          "path": "overview",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.failover-cluster!failover-cluster"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "roles",
+          "urlName": "roles",
+          "displayName": "resources:strings:displayNames_roles",
+          "description": "resources:strings:descriptions_roles",
+          "icon": "sme-icon:sme-icon-settings",
+          "path": "roles",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.failover-cluster!failover-cluster"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "disks",
+          "urlName": "disks",
+          "displayName": "resources:strings:displayNames_disks",
+          "description": "resources:strings:descriptions_disks",
+          "icon": "sme-icon:sme-icon-storagePhysical",
+          "path": "disks",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.failover-cluster!failover-cluster"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "networks",
+          "urlName": "networks",
+          "displayName": "resources:strings:displayNames_networks",
+          "description": "resources:strings:descriptions_networks",
+          "icon": "sme-icon:sme-icon-networkPipes",
+          "path": "networks",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.failover-cluster!failover-cluster"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "nodes",
+          "urlName": "nodes",
+          "displayName": "resources:strings:displayNames_nodes",
+          "description": "resources:strings:descriptions_nodes",
+          "icon": "sme-icon:sme-icon-server",
+          "path": "nodes",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.failover-cluster!failover-cluster"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.cluster"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage",
+            "addFailoverCluster_connectionTypeName": "Failover Cluster",
+            "addFailoverCluster_displayName": "Failover Clusters"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "connectionsListHeader": "Failover Cluster Connections",
+            "description": "View and manager clusters",
+            "descriptions_disks": "View and manage cluster disks",
+            "descriptions_overview": "View the cluster overview",
+            "descriptions_networks": "View and manage cluster network connections",
+            "descriptions_nodes": "View and manage cluster nodes",
+            "descriptions_roles": "View and manage cluster roles",
+            "displayName": "Failover Cluster Manager",
+            "displayNames_disks": "Disks",
+            "displayNames_overview": "Overview",
+            "displayNames_networks": "Networks",
+            "displayNames_nodes": "Nodes",
+            "displayNames_roles": "Roles",
+            "keywords_networks": "networks",
+            "keywords_nodes": "nodes",
+            "keywords_roles": "roles",
+            "keywords_storage": "storage"
+          }
+        }
+      ],
+      "version": "0.26.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.file-explorer",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.file-explorer",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-fileExplorer",
+      "keywords": [
+        "resources:strings:keywords_files"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "files",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-fileExplorer",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage files and folders",
+            "displayName": "Files",
+            "keywords_files": "Files"
+          }
+        }
+      ],
+      "version": "0.28.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.firewall",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.firewall",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-firewall",
+      "keywords": [
+        "resources:strings:keywords_profile",
+        "resources:strings:keywords_rules",
+        "resources:strings:keywords_security",
+        "resources:strings:keywords_ports",
+        "resources:strings:keywords_incoming"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "firewall",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-firewall",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage firewall rules and profiles ",
+            "displayName": "Firewall",
+            "keywords_profile": "Profile",
+            "keywords_rules": "Rules",
+            "keywords_security": "Security",
+            "keywords_ports": "Ports",
+            "keywords_incoming": "Incoming"
+          }
+        }
+      ],
+      "version": "0.29.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.hyperv",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.hyperv",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-virtualMachineGroup",
+      "keywords": [
+        "virtual machines",
+        "virtual switches"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "virtualMachines",
+          "urlName": "virtualmachines",
+          "displayName": "resources:strings:virtualMachinesDisplayName",
+          "description": "resources:strings:virtualMachinesDescription",
+          "icon": "sme-icon:sme-icon-virtualMachineGroup",
+          "path": "/virtualmachines",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients",
+                "msft.sme.failover-cluster!failover-cluster",
+                "msft.sme.software-defined-data-center!SDDC"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client",
+                "msft.sme.connection-type.cluster",
+                "msft.sme.connection-type.hyper-converged-cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "virtualSwitches",
+          "urlName": "virtualswitches",
+          "displayName": "resources:strings:virtualSwitchesDisplayName",
+          "description": "resources:strings:virtualSwitchesDescription",
+          "icon": "sme-icon:sme-icon-virtualSwitch",
+          "path": "/virtualswitches",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients",
+                "msft.sme.failover-cluster!failover-cluster",
+                "msft.sme.software-defined-data-center!SDDC"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client",
+                "msft.sme.connection-type.cluster",
+                "msft.sme.connection-type.hyper-converged-cluster"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "displayName": "Hyper-V Tools",
+            "description": "The tools for managing Hyper-V",
+            "virtualMachinesDescription": "The virtual machines of the connection.",
+            "virtualMachinesDisplayName": "Virtual Machines",
+            "virtualSwitchesDisplayName": "Virtual Switches",
+            "virtualSwitchesDescription": "The virtual switches of the connection."
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "The virtual machines of the connection.",
+            "displayName": "Virtual Machines"
+          }
+        }
+      ],
+      "version": "0.34.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.local-users-groups",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.local-users-groups",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-localAdmin",
+      "keywords": [
+        "resources:strings:keywords_security",
+        "resources:strings:keywords_administrators"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "usersgroups",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-localAdmin",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Local Users & Groups description",
+            "displayName": "Local Users & Groups",
+            "keywords_security": "Security",
+            "keywords_administrators": "Administrators"
+          }
+        }
+      ],
+      "version": "0.12.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.process-viewer",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.process-viewer",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-serverProcesses",
+      "default": true,
+      "downlevel": false,
+      "category": "SME",
+      "keywords": [
+        "resources:strings:keywords_process",
+        "resources:strings:keywords_diagnostics"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "processes",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-serverProcesses",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Processes - View, create, delete and dump processes.",
+            "displayName": "Processes",
+            "keywords_process": "Process",
+            "keywords_diagnostics": "Diagnostics"
+          }
+        }
+      ],
+      "version": "0.14.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.registry-editor",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.registry-editor",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-registrayEditor",
+      "keywords": [
+        "resources:strings:keywords_regedit"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "registry",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-registrayEditor",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Registry description",
+            "displayName": "Registry",
+            "keywords_regedit": "regedit"
+          }
+        }
+      ],
+      "version": "0.14.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.roles-features",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.roles-features",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-serverFeatures",
+      "keywords": [
+        "resources:strings:keywords_roles",
+        "resources:strings:keywords_roleServices",
+        "resources:strings:keywords_features"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "rolesfeatures",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-serverFeatures",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage Roles & Features",
+            "displayName": "Roles & Features",
+            "keywords_roles": "Roles",
+            "keywords_roleServices": "Role Services",
+            "keywords_features": "Features"
+          }
+        }
+      ],
+      "version": "0.32.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.server-manager",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.server-manager",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-server",
+      "keywords": [
+        "resources:strings:keywords_server",
+        "resources:strings:keywords_cluster"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "connectionProvider",
+          "name": "addServer",
+          "path": "/add/server",
+          "displayName": "resources:strings:addServer_displayName",
+          "icon": "sme-icon:sme-icon-server",
+          "description": "resources:strings:description",
+          "connectionType": "msft.sme.connection-type.server",
+          "connectionTypeName": "resources:strings:addServer_connectionTypeName",
+          "connectionTypeUrlName": "server",
+          "connectionTypeDefaultSolution": "msft.sme.server-manager!servers",
+          "connectionTypeDefaultTool": "msft.sme.server-manager!overview",
+          "connectionStatusProvider": {
+            "powerShell": {
+              "script": "##Get-ServerStatus##\nfunction Get-Status() {\n$OperatingSystem = Get-CimInstance Win32_OperatingSystem\n$caption = $OperatingSystem.Caption\n$productType = $OperatingSystem.ProductType\n$version = $OperatingSystem.Version\n$status = @{label = $null; type = 0; details = $null; }\n$result = @{status = $status; caption = $caption; productType = $productType; version = $version}\nif ($version -and ($productType -eq 2 -or $productType -eq 3)) {\n$v = [version]$version\n$v2016 = [version]'10.0'\n$v2012 = [version]'6.2'\nif ($v -ge $v2016) {\nreturn $result;\n} \nif ($v -ge $v2012) {\n$key = 'HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine'\n$WmfStatus = $false;\n$exists = Get-ItemProperty -Path $key -Name PowerShellVersion -ErrorAction SilentlyContinue\nif ($exists -and ($exists.Length -ne 0))\n{\n$WmfVersionInstalled = $exists.PowerShellVersion\nif ($WmfVersionInstalled.StartsWith('5.'))\n{\n$WmfStatus = $true;\n}\n}\nif (!$WmfStatus){            \n$status.label = 'wmfMissing-label'\n$status.type = 3\n$status.details = 'wmfMissing-details'\n}\nreturn $result;\n}\n}\n$status.label = 'unsupported-label'\n$status.type = 3\n$status.details = 'unsupported-details'\nreturn $result;\n}\nGet-Status"
+            },
+            "displayValueMap": {
+              "wmfMissing-label": "resources:strings:addServer_status_wmfMissing_label",
+              "wmfMissing-details": "resources:strings:addServer_status_wmfMissing_details",
+              "unsupported-label": "resources:strings:addServer_status_unsupported_label",
+              "unsupported-details": "resources:strings:addServer_status_unsupported_details"
+            }
+          }
+        },
+        {
+          "entryPointType": "solution",
+          "name": "servers",
+          "urlName": "servermanager",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-server",
+          "rootNavigationBehavior": "connections",
+          "connections": {
+            "header": "resources:strings:connectionListHeader",
+            "connectionTypes": [
+              "msft.sme.connection-type.server"
+            ]
+          },
+          "tools": {
+            "enabled": true,
+            "defaultTool": "overview"
+          }
+        },
+        {
+          "entryPointType": "connectionProvider",
+          "name": "addWindowsClient",
+          "path": "/add/windowsClient",
+          "displayName": "resources:strings:addWindowsClient_displayName",
+          "icon": "sme-icon:sme-icon-pC1",
+          "description": "resources:strings:description",
+          "connectionType": "msft.sme.connection-type.windows-client",
+          "connectionTypeName": "resources:strings:addWindowsClient_connectionTypeName",
+          "connectionTypeUrlName": "windowsClient",
+          "connectionTypeDefaultSolution": "msft.sme.server-manager!windowsClients",
+          "connectionTypeDefaultTool": "msft.sme.server-manager!overview",
+          "connectionStatusProvider": {
+            "powerShell": {
+              "script": "##Get-ServerStatus##\nfunction Get-Status() {\n$OperatingSystem = Get-CimInstance Win32_OperatingSystem\n$caption = $OperatingSystem.Caption\n$productType = $OperatingSystem.ProductType\n$version = $OperatingSystem.Version\n$status = @{label = $null; type = 0; details = $null; }\n$result = @{status = $status; caption = $caption; productType = $productType; version = $version}\nif ($version -and $productType -eq 1) {\n$v = [version]$version\n$v10= [version]'10.0'\nif ($v -ge $v10) {\nreturn $result;\n} \n}\n$status.label = 'unsupported-label'\n$status.type = 3\n$status.details = 'unsupported-details'\nreturn $result;\n}\nGet-Status"
+            },
+            "displayValueMap": {
+              "unsupported-label": "resources:strings:addWindowsClient_status_unsupported_label",
+              "unsupported-details": "resources:strings:addWindowsClient_status_unsupported_details"
+            }
+          }
+        },
+        {
+          "entryPointType": "solution",
+          "name": "windowsClients",
+          "urlName": "windowsClientAdministration",
+          "displayName": "resources:strings:windowsClient_displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-pC1",
+          "rootNavigationBehavior": "connections",
+          "connections": {
+            "header": "resources:strings:connectionListHeader",
+            "connectionTypes": [
+              "msft.sme.connection-type.windows-client"
+            ]
+          },
+          "tools": {
+            "enabled": true,
+            "defaultTool": "overview"
+          }
+        },
+        {
+          "entryPointType": "tool",
+          "name": "overview",
+          "urlName": "overview",
+          "displayName": "resources:strings:overview_displayName",
+          "description": "resources:strings:overview_description",
+          "icon": "sme-icon:sme-icon-server",
+          "path": "/overview",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "connectionListHeader": "Server Connections",
+            "description": "Microsoft's Windows and Cluster Management Tools",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "addServer_status_wmfMissing_label": "Windows Management Framework (WMF) 5 not installed",
+            "addServer_status_wmfMissing_details": "Please install WMF 5.0 or greater.",
+            "addServer_status_unsupported_label": "Unsupported Server Version",
+            "addServer_status_unsupported_details": "Server connections are only supported for Windows Server 2012 and above",
+            "addFailoverCluster_connectionTypeName": "Failover Cluster",
+            "addFailoverCluster_displayName": "Failover Clusters",
+            "addHyperConvergedCluster_connectionTypeName": "Hyper Converged Cluster",
+            "addHyperConvergedCluster_displayName": "Hyper Converged Clusters",
+            "addWindowsClient_connectionTypeName": "Windows Client",
+            "addWindowsClient_displayName": "Windows Clients",
+            "addWindowsClient_status_unsupported_label": "Unsupported Windows Version",
+            "addWindowsClient_status_unsupported_details": "Windows client connections are only supported for Windows 10",
+            "windowsClient_displayName": "Windows Client Administration",
+            "overview_description": "Server or Cluster Overview",
+            "overview_displayName": "Overview",
+            "keywords_server": "server",
+            "keywords_cluster": "cluster"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Server centric view of server management",
+            "displayName": "Server Manager",
+            "addServer_connectionTypeName": "Server",
+            "addServer_displayName": "Servers",
+            "keywords_server": "server"
+          }
+        }
+      ],
+      "version": "0.13.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.service-viewer",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.service-viewer",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-processing",
+      "keywords": [
+        "resources:strings:keywords_services"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "services",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-processing",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Display and manage Windows services",
+            "displayName": "Services",
+            "keywords_services": "Services"
+          }
+        }
+      ],
+      "version": "0.13.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.software-defined-data-center",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.software-defined-data-center",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-softwareDefinedDataCenter",
+      "keywords": [
+        "resources:strings:keywords_example"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "solution",
+          "name": "SDDC",
+          "urlName": "hciclustermanager",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-softwareDefinedDataCenter",
+          "rootNavigationBehavior": "connections",
+          "connections": {
+            "connectionTypes": [
+              "msft.sme.connection-type.hyper-converged-cluster"
+            ]
+          },
+          "tools": {
+            "enabled": true,
+            "defaultTool": "dashboard"
+          }
+        },
+        {
+          "entryPointType": "connectionProvider",
+          "name": "addHyperConvergedCluster",
+          "path": "/add/hyperConvergedCluster",
+          "displayName": "resources:strings:addHyperConvergedCluster_displayName",
+          "icon": "sme-icon:sme-icon-softwareDefinedDataCenter",
+          "description": "resources:strings:description",
+          "connectionType": "msft.sme.connection-type.hyper-converged-cluster",
+          "connectionTypeName": "resources:strings:addHyperConvergedCluster_connectionTypeName",
+          "connectionTypeUrlName": "hcicluster",
+          "connectionTypeDefaultSolution": "msft.sme.software-defined-data-center!SDDC",
+          "connectionTypeDefaultTool": "msft.sme.software-defined-data-center!dashboard",
+          "connectionStatusProvider": {
+            "powerShell": {
+              "script": "##Get-ClusterStatus##\n\n$cluster = Get-CimInstance MSCluster_Cluster -Namespace root\\mscluster;\n$status = @{label = $null; type = 0; details = $null; }\n$result = @{status = $status}\nreturn $status;"
+            }
+          }
+        },
+        {
+          "entryPointType": "tool",
+          "name": "dashboard",
+          "urlName": "hcioverview",
+          "displayName": "resources:strings:dashboardDisplayName",
+          "description": "resources:strings:overview_description",
+          "icon": "sme-icon:sme-icon-home",
+          "path": "/dashboard",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.software-defined-data-center!SDDC"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.hyper-converged-cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "volumes",
+          "urlName": "hcivolumes",
+          "displayName": "resources:strings:volumesDisplayName",
+          "description": "resources:strings:overview_description",
+          "icon": "sme-icon:sme-icon-database",
+          "path": "/volumes",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.software-defined-data-center!SDDC"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.hyper-converged-cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "servers",
+          "urlName": "hciservers",
+          "displayName": "resources:strings:serversDisplayName",
+          "description": "resources:strings:overview_description",
+          "icon": "sme-icon:sme-icon-server",
+          "path": "/servers",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.software-defined-data-center!SDDC"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.hyper-converged-cluster"
+              ]
+            }
+          ]
+        },
+        {
+          "entryPointType": "tool",
+          "name": "drives",
+          "urlName": "hcidrives",
+          "displayName": "resources:strings:drivesDisplayName",
+          "description": "resources:strings:overview_description",
+          "icon": "sme-icon:sme-icon-storagePhysical",
+          "path": "/drives",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.software-defined-data-center!SDDC"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.hyper-converged-cluster"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter",
+            "addHyperConvergedCluster_connectionTypeName": "Hyper-Converged Cluster",
+            "addHyperConvergedCluster_displayName": "Hyper-Converged Cluster"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Software Defined DataCenter",
+            "displayName": "Hyper-Converged Cluster Manager",
+            "dashboardDisplayName": "Dashboard",
+            "volumesDisplayName": "Volumes",
+            "serversDisplayName": "Servers",
+            "drivesDisplayName": "Drives",
+            "keywords_example": "Software-Defined-DataCenter"
+          }
+        }
+      ],
+      "version": "0.31.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.storage",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.storage",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-hardDriveGroup",
+      "keywords": [
+        "resources:strings:keywords_volumes"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "storage",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-hardDriveGroup",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers",
+                "msft.sme.server-manager!windowsClients"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server",
+                "msft.sme.connection-type.windows-client"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "View and manage storage subsystem",
+            "displayName": "Storage",
+            "keywords_volumes": "Volumes"
+          }
+        }
+      ],
+      "version": "0.15.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.storage-replica",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.storage-replica",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-storageReplica",
+      "keywords": [
+        "resources:strings:keywords_example"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "storagereplica",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-storageReplica",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "StorageReplica description",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Allows you to replicate data using the Storage Replica feature",
+            "displayName": "Storage Replica",
+            "keywords_example": "Storage-Replica"
+          }
+        }
+      ],
+      "version": "0.10.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.network-settings",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.network-settings",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-networkSettings",
+      "keywords": [
+        "resources:strings:keywords_networkAdapters"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "network",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-networkSettings",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Network - View and configure Network",
+            "displayName": "Network",
+            "keywords_networkAdapters": "Network Adapters"
+          }
+        }
+      ],
+      "version": "0.12.0"
+    },
+    {
+      "$schema": "./core/dist/manifest/module-schema.json#",
+      "name": "msft.sme.windows-update",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "target": "/modules/msft.sme.windows-update",
+			"origin": "http://localhost:4100",
+      "icon": "sme-icon:sme-icon-windowsUpdate",
+      "keywords": [
+        "resources:strings:keywords_updates"
+      ],
+      "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "windowsupdate",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-windowsUpdate",
+          "path": "",
+          "requirements": [
+            {
+              "solutionIds": [
+                "msft.sme.server-manager!servers"
+              ],
+              "connectionTypes": [
+                "msft.sme.connection-type.server"
+              ]
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "locale": "default",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "cs",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "de",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "es",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "fr",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "hu",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "it",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "ja",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "ko",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "nl",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "pl",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "pt-BR",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "pt-PT",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "ru",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "sv",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "tr",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "zh-Hans",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        },
+        {
+          "locale": "zh-Hant",
+          "strings": {
+            "description": "Download and install windows updates",
+            "displayName": "Windows Update",
+            "resources:strings:keywords_updates": "Updates"
+          }
+        }
+      ],
+      "version": "0.13.0"
+    }
+  ],
+  "version": "0.24.0"
+}

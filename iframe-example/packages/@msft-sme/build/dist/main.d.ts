@@ -1,0 +1,13 @@
+export import classify = require('./classify');
+export import classifyGenerators = require('./classify/generators');
+export import classifyProcessors = require('./classify/processors');
+export import help = require('./help');
+export import jsonMerge = require('./json-merge/json-merge');
+export import ng2 = require('./ng2/ng2');
+export import npm = require('./npm/npm');
+export import sme = require('./sme');
+export import util = require('./util/util');
+export import vsts = require('./vsts');
+export declare const svgCode: any;
+export declare const psCode: any;
+export declare const resjson: any;

@@ -1,0 +1,7 @@
+{
+  "$schema": "../module-schema.json#",
+  "version": "0.0.1",
+  "name": "example.bare-minimum",
+  "displayName": "Bare Minimum",
+  "description": "This is the bare minimum requirements for a module"
+}
