@@ -385,7 +385,7 @@ Note that you need to choose a port that is currently free.  Make sure you do no
 ## Side Load Sample Extension
 
 Your project can be side loaded into a local instance of Honolulu for testing by attaching the locally served project into Honolulu.  
--	Launch Project Honolulu in a web browser 
+-	Launch Windows Admin Center in a web browser 
 -	Open the debugger (F12)
 -	Open the Console and type the following command:
 	``` ts

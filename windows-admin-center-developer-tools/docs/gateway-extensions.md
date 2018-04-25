@@ -1,4 +1,4 @@
-# Project Honolulu Extensions: Gateway Extensions
+# Windows Admin Center Extensions: Gateway Extensions
 Gateway extensions are modules that are written and loaded into the Honolulu Gateway service at runtime.  With the previous extensions, we were writing UI based components, but the Gateway Extensions are more of an API extension than anything else.  These modules will be loaded into a seperate AppDomain from the existing gateway process, but use the same level of elevation for rights.
 
 Currently the Honolulu appliation comes pre-packaged with two extensions, one for executing PowerShell commands, and the other for executing CIM / WMI commands.

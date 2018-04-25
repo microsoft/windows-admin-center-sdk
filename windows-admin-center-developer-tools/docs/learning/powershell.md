@@ -1,5 +1,5 @@
-# Learning about Project Honolulu Extensions: Powershell
-Let’s go more in-depth into the Project Honolulu Extensions SDK.  In this document, we’ll cover adding PowerShell commands to your extension.
+# Learning about Windows Admin Center Extensions: Powershell
+Let’s go more in-depth into the Windows Admin Center Extensions SDK.  In this document, we’ll cover adding PowerShell commands to your extension.
 
 ## PowerShell in TypeScript
 The gulp build process has a generate step that will take any ".ps1" that is placed in the "/src/resources/scripts" folder, and build them into the "powershell-scripts" class under "/src/generated" folder.  Please note that you should not manually update the "powershell-scripts.ts" nor the "strings.ts" files becaue they will be overwritten on the next generate.

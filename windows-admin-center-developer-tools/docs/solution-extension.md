@@ -1,6 +1,6 @@
-# Project Honolulu - Solution Extension #
+# Windows Admin Center - Solution Extension #
 
-A solution extension is the top level UI building blocks that compose the foundation for Honolulu.  When you open up the application for the first time, the Connections page is an example of a Solution.  If you click the carrot in the Project Honolulu header, the drop down is full of other solutions including Server Manager, Computer Management, Failover Cluster Manager, Hyper-Converged Cluster Manager.  The Extension Manager is another good example of a solution.  
+A solution extension is the top level UI building blocks that compose the foundation for Honolulu.  When you open up the application for the first time, the Connections page is an example of a Solution.  If you click the carrot in the Windows Admin Center header, the drop down is full of other solutions including Server Manager, Computer Management, Failover Cluster Manager, Hyper-Converged Cluster Manager.  The Extension Manager is another good example of a solution.  
 Another way to think of them is: tools are included in Solutions, while Solutions are made up of individual tools.  This document will walk you through how to configure your extension to be a solution.
 
 ## Solution Manifest Changes ##

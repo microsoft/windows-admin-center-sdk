@@ -1,4 +1,4 @@
-# What's New in Project Honolulu SDK 
+# What's New in Windows Admin Center SDK 
 Here is a list of features added to the SDK in the most recent release.
 
 # SDK 1803:

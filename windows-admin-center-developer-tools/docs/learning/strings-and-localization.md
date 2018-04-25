@@ -1,6 +1,6 @@
-#Learning about Project Honolulu Extensions: Strings and Localization
+#Learning about Windows Admin Center Extensions: Strings and Localization
 
-Let’s go more in-depth into the Project Honolulu Extensions SDK.  In this document, we’ll cover strings and localization.
+Let’s go more in-depth into the Windows Admin Center Extensions SDK.  In this document, we’ll cover strings and localization.
 
 ## Strings and Localization
 

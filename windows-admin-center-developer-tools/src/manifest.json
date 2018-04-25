@@ -75,7 +75,7 @@
       "locale": "default",
       "strings": {
         "displayName": "Introduction",
-        "description": "Solution detailing all things needed to begin building extensions for Project Honolulu.",
+        "description": "Solution detailing all things needed to begin building extensions for Windows Admin Center.",
         "connectionsListHeader": "Connections",
         "overviewName": "Getting Started",
         "overviewDescription": "A brief intro into the new dev tools",
@@ -83,14 +83,14 @@
         "devDescription": "Tool containing control examples.",
         "devDisplayName": "Development Guide",
         "solutionName": "Developer Tools",
-        "solutionDescription": "Solution detailing all things needed to begin building extensions for Project Honolulu."
+        "solutionDescription": "Solution detailing all things needed to begin building extensions for Windows Admin Center."
       }
     },
     {
       "locale": "en-US",
       "strings": {
         "displayName": "Introduction",
-        "description": "Solution detailing all things needed to begin building extensions for Project Honolulu.",
+        "description": "Solution detailing all things needed to begin building extensions for Windows Admin Center.",
         "connectionsListHeader": "Connections",
         "overviewName": "Getting Started",
         "overviewDescription": "A brief intro into the new dev tools",
@@ -98,7 +98,7 @@
         "devDescription": "Tool containing control examples.",
         "devDisplayName": "Development Guide",
         "solutionName": "Developer Tools",
-        "solutionDescription": "Solution detailing all things needed to begin building extensions for Project Honolulu."
+        "solutionDescription": "Solution detailing all things needed to begin building extensions for Windows Admin Center."
       }
     },
     {
@@ -113,7 +113,7 @@
         "devDescription": "Tool containing control examples.",
         "devDisplayName": "Development Guide",
         "solutionName": "Developer Tools",
-        "solutionDescription": "Solution detailing all things needed to begin building extensions for Project Honolulu."
+        "solutionDescription": "Solution detailing all things needed to begin building extensions for Windows Admin Center."
       }
     }
   ]
