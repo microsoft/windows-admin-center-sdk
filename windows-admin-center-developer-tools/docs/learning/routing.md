@@ -1,6 +1,6 @@
-# Learning about Project Honolulu Extensions: Routing
+# Learning about Windows Admin Center Extensions: Routing
 
-Let’s go more in-depth into the Project Honolulu Extensions SDK!  In this document, we’ll cover routing.
+Let’s go more in-depth into the Windows Admin Center Extensions SDK!  In this document, we’ll cover routing.
 
 ##Routing
 

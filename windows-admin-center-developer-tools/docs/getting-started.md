@@ -1,19 +1,19 @@
-# Getting Started with Project Honolulu Extensions
+# Getting Started with Windows Admin Center Extensions
 
-Let’s get started with the Project Honolulu Extensions SDK!  In this document, we’ll cover installing prerequisites, downloading SDK source code, building and side loading your extension, and renaming your extension.
+Let’s get started with the Windows Admin Center Extensions SDK!  In this document, we’ll cover installing prerequisites, downloading SDK source code, building and side loading your extension, and renaming your extension.
 
 ## Extensions SDK Prerequisites
 
-Before you start developing in Project Honolulu Extensions, download and install the following prerequisites:
+Before you start developing in Windows Admin Center Extensions, download and install the following prerequisites:
 
-- Project Honolulu, available [here](http://aka.ms/smebits)
+- Windows Admin Center, available [here](http://aka.ms/smebits)
 - Visual Studio or [Visual Studio Code](http://code.visualstudio.com)
 - [Node Package Manager](https://npmjs.com/get-npm) (for downloading build dependencies)  
 - [Nuget](https://www.nuget.org/downloads) (for publishing extensions)
 
 ## Download Source Code
 
-The source code and dependencies are available from the Project Honolulu team as a zip file.
+The source code and dependencies are available from the Windows Admin Center team as a zip file.
 
 ## Install Dependencies
 
@@ -48,7 +48,7 @@ Note that you need to choose a port that is currently free.  Make sure you do no
 ## Side Loading Sample Extension
 
 Your project can be side loaded into a local instance of Honolulu for testing by attaching the locally served project into Honolulu.  
--	Launch Project Honolulu in a web browser 
+-	Launch Windows Admin Center in a web browser 
 -	Open the debugger (F12)
 -	Open the Console and type the following command:
 	``` ts

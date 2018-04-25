@@ -1,10 +1,10 @@
-# Project Honolulu Extensions: In Depth
+# Windows Admin Center Extensions: In Depth
 
-Let’s go more in-depth into the Project Honolulu Extensions SDK.  In this document, we’ll cover routing, strings and localization, and incorporating PowerShell into your extension.
+Let’s go more in-depth into the Windows Admin Center Extensions SDK.  In this document, we’ll cover routing, strings and localization, and incorporating PowerShell into your extension.
 
 ## Tools and Languages Used
 
-Project Honolulu is built with languages including Angular and TypeScript for the web stack, and C# for service mode modules, and tools including Node, and Gulp.  For an in-depth look at languages and tools used, click [here](tools-and-languages.md).
+Windows Admin Center is built with languages including Angular and TypeScript for the web stack, and C# for service mode modules, and tools including Node, and Gulp.  For an in-depth look at languages and tools used, click [here](tools-and-languages.md).
 
 ## Project Structure
 

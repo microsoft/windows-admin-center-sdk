@@ -7,7 +7,7 @@ function Get-Status()
     $caption = "MyConstCaption"
     $productType = "MyProductType"
 
-    # A result object needs to conform to the following object structure to be interperated properly by the Honolulu shell.
+    # A result object needs to conform to the following object structure to be interperated properly by the Windows Admin Center shell.
     $result = @{ status = $status; caption = $caption; productType = $productType; version = $version }
 
     # DO FANCY LOGIC #
