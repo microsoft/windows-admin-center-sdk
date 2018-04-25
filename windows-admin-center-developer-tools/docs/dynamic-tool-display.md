@@ -1,13 +1,17 @@
 # Dynamic display of tools in the Tools menu #
+
 While building extensions and tools, there might be situations in which you will want to have your tool hidden from the available tools list.  For instance if you were building a feature that targeted Windows Server 2016 only, but the user connects to a Windows 2012 R2 server, it might be a better user experience to not display the tool rather than have the user click on it, and then wait for the tool to load, only to have a message that it's features are not available for their connection.  All configuration will be done in the tool's manifest.json file.
 
 ## Options for deciding when to show a tool ##
+
 There are 3 different options you can use to determine whether your tool should be displayed and available for a specific server or cluster connection.
+
 * localhost
 * inventory (an array of properties)
 * script
 
 ### LocalHost ###
+
 The localHost property of the Conditions object contains a boolean value that can be evaluated to infer if the connecting node is localHost (the same computer that Honolulu is installed on) or not.  By passing a value to the property, you indicate the condition in which you want the tool to display.  For example if you only wanted the tool to display if the user is in fact connecting to the local host, you will set it up like this:
 
 ``` json
@@ -25,6 +29,7 @@ Alternatively, if you only want your tool to display when the connecting node *i
 ```
 
 A full example of a configuration for only showing a tool when the connecting node is not localhost would look like this:
+
 ``` json
 "entryPoints": [
 {
@@ -55,6 +60,7 @@ A full example of a configuration for only showing a tool when the connecting no
 
 ### Inventory Properties ###
 A pre-curated set of inventory properties are provided, which you can use to build conditions for determining whether your tool should be available or not. The 9 different properties in the 'inventory' array are:
+
 | Property Name | Expected Value Type |
 | ------------- | ------------------- |
 | computerManufacturer | string |
@@ -76,7 +82,9 @@ Every object in the inventory array must conform to the following json structure
     "value": "<expected value to evaulate using the operator>"
 }
 ```
+
 #### Operator Values ####
+
 | Operator | Description |
 | -------- | ----------- |
 | gt | greater than |
@@ -91,7 +99,9 @@ Every object in the inventory array must conform to the following json structure
 | notContains | item does not exist in a string |
 
 #### Data Types ####
+
 Available options for the 'type' property:
+
 | type | description |
 | ---- | ----------- |
 | version | a version number (eg: 10.1.*) |
@@ -100,12 +110,15 @@ Available options for the 'type' property:
 | boolean | true or false |
 
 #### Value Types ####
+
 Available types that the 'value' property accepts:
+
 * string
 * number
 * boolean
 
 A properly formed inventory condition set would look like this:
+
 ``` json
 "entryPoints": [
 {
@@ -146,6 +159,7 @@ A properly formed inventory condition set would look like this:
 ```
 
 ### Script ###
+
 And finally you are able to execute a custom PowerShell script to identify the availability and state of the node.  All scripts must return an object with the following structure:
 
 ``` ps
@@ -159,6 +173,7 @@ And finally you are able to execute a custom PowerShell script to identify the a
 ```
 
 For example, if we only wanted a tool to load if the remote server had bitlocker installed, we could use a script like this:
+
 ``` ps
 $response = @{
     State = 'NotConfigured';
@@ -222,4 +237,94 @@ An entry point configuration using the script option will look like this:
     }
     ]
 }
+```
+
+## Supporting multiple requirement sets ##
+
+It is possible to support more than one set of requirements, by defining multiple "requirements" blocks.
+
+For example, if you would like to display your tool if "scenario A" OR "scenario B" were true, you can define two requirements blocks, and if either is true (that is, all conditions within a requirements block are met), the tool will be displayed.
+
+``` json
+"entryPoints": [
+{
+    "requirements": [
+    {
+        "solutionIds": [
+            …"scenario A"…
+        ],
+        "connectionTypes": [
+            …"scenario A"…
+        ],
+        "conditions": [
+            …"scenario A"…
+        ]
+    },
+    {
+        "solutionIds": [
+            …"scenario B"…
+        ],
+        "connectionTypes": [
+            …"scenario B"…
+        ],
+        "conditions": [
+            …"scenario B"…
+        ]
+    }
+    ]
+}
+
+```
+
+
+## Supporting condition ranges ##
+
+It is possible to support a range of conditions, by defining multiple "conditions" blocks with the same property, but with different operators.
+
+When the same property is defined with different operators, the tool will be displayed as long as the value is between the two conditions.
+
+Here is an example of two conditions blocks defining a range of operating system versions that are supported (between 6.3.0 and 10.0.0).
+
+``` json
+"entryPoints": [
+{
+    "entryPointType": "tool",
+    "name": "main",
+    "urlName": "processes",
+    "displayName": "resources:strings:displayName",
+    "description": "resources:strings:description",
+    "icon": "sme-icon:icon-win-serverProcesses",
+    "path": "",
+    "requirements": [
+    {
+        "solutionIds": [
+             "msft.sme.server-manager!servers"
+        ],
+        "connectionTypes": [
+             "msft.sme.connection-type.server"
+        ],
+        "conditions": [
+        {
+            "inventory": {
+                "operatingSystemVersion": {
+                    "type": "version",
+                    "operator": "gt",
+                    "value": "6.3.0"
+                },
+            }
+        },
+        {
+            "inventory": {
+                "operatingSystemVersion": {
+                    "type": "version",
+                    "operator": "lt",
+                    "value": "10.0.0"
+                }
+            }
+        }
+        ]
+    }
+    ]
+}
+
 ```
