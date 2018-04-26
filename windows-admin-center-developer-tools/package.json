@@ -96,6 +96,7 @@
     "tslint-eslint-rules": "4.1.1",
     "tslint-microsoft-contrib": "5.0.1",
     "typescript": "2.5.3",
+    "vinyl-map": "^1.0.2",
     "winstrap": "0.5.11",
     "zone.js": "0.8.18"
   }

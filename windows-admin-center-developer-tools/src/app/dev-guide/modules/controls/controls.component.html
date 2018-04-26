@@ -1,4 +1,6 @@
-<div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-h">
+<!-- Copyright (c) Microsoft Corporation. All rights reserved.
+     Licensed under the MIT License. -->
+<div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-h">
     <nav role="tablist" class="sme-position-flex-none sme-padding-right-sm">
         <a *ngFor="let link of links" routerLinkActive="sme-active" [routerLink]="link.href" class="sme-scheme-nav-item sme-padding-squish-v-sm sme-arrange-stack-h sme-arrange-ws-nowrap">
             {{link.text}}

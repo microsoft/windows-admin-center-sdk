@@ -1,4 +1,6 @@
-<sme-tree-table [items]="treeData" [(selection)]="selectedData" (onNodeSelect)="onNodeSelect($event)" class="sme-layout-absolute sme-position-inset-none" [showHeader]="false"
+<!-- Copyright (c) Microsoft Corporation. All rights reserved.
+     Licensed under the MIT License. -->
+<sme-tree-table [items]="treeData" [(selection)]="selectedData" (onNodeSelect)="onNodeSelect($event)" class="sme-layout-absolute sme-position-inset-none" [showHeader]="false"
 [showGrid]="false" [showLeftMargin]="false">
     <sme-tree-table-column field="label" header="Name" sortable="true" width="40%">
         <ng-template let-data>
