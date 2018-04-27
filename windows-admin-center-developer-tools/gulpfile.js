@@ -15,37 +15,24 @@ const gulpResJson = require('@msft-sme/shell/dist/tools/gulp-resjson');
 const gulpSvgCode = require('@msft-sme/shell/dist/tools/gulp-svg-code');
 const gulpMergeJsonInFolders = require('@msft-sme/shell/dist/tools/gulp-merge-json-in-folders');
 const manifestResource = require('@msft-sme/shell/dist/tools/gulp-manifest-resource');
-const vinylMap = require('vinyl-map');
+const gulpLicense = require('./tools/gulp-license');
 
-const updateLegal = vinylMap((contents, fileName) => {
-    contents = contents.toString();
-    var type = fileName.split(".");
-    var extType = type[type.length - 1].toLowerCase();
-    var license = 'noop';
-
-    if(extType === 'ts') {
-        license = '// Copyright (c) Microsoft Corporation. All rights reserved.\n// Licensed under the MIT License.\n\r'
-    }
-    else if(extType === 'html') {
-        license = '<!-- Copyright (c) Microsoft Corporation. All rights reserved.\n     Licensed under the MIT License. -->\n\r';
-    }
-
-    if(license !== 'noop' && !contents.includes(license)) {
-        license += contents;
-        return license;
-    }
-
-    return contents;
-});
-
-gulp.task('microsoft-license', () => {
-    gulp.src('src/app/**/*.ts')
-        .pipe(updateLegal)
-        .pipe(gulp.dest('./src/app'));
-
-        gulp.src('src/app/**/*.html')
-        .pipe(updateLegal)
-        .pipe(gulp.dest('./src/app'));
+gulp.task('license', () => {
+    return gulp.src('src/**/*.*')
+        .pipe(gulpLicense((fileType) => {    
+            switch (fileType) {
+                case '.ts': {
+                    return '// Copyright (c) Microsoft Corporation. All rights reserved.\n// Licensed under the MIT License.\n\r';
+                }
+                case '.html': {
+                    return '<!-- Copyright (c) Microsoft Corporation. All rights reserved.\n Licensed under the MIT License. -->\n\r';
+                }
+                default: {
+                    return;
+                }
+            }
+        }))
+        .pipe(gulp.dest('./src'));
 });
 
 gulp.task('clean', () => {
