@@ -1,4 +1,6 @@
-import { SettingsFormService } from '@msft-sme/shell/angular';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { SettingsFormService } from '@msft-sme/shell/angular';
 
 import { Component } from '@angular/core';
 

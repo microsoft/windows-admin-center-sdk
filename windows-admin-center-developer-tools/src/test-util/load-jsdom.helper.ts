@@ -1,4 +1,6 @@
-// Loads JSDOM and configures it so UTs can access all the features as winthin a browser
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+// Loads JSDOM and configures it so UTs can access all the features as winthin a browser
 let jsdom = require('jsdom');
 (<any>global).document = jsdom.jsdom('<body></body>');
 (<any>global).window = document.defaultView;

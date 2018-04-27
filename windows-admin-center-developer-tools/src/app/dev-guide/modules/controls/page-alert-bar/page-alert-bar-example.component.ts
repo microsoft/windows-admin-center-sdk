@@ -1,4 +1,6 @@
-import { Component, OnInit, QueryList } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Component, OnInit, QueryList } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import {
     AppContextService,

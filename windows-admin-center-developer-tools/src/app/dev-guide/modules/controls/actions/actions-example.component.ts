@@ -1,4 +1,6 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 

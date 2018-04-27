@@ -1,4 +1,6 @@
-import { BaseFormData } from '@msft-sme/shell/angular';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { BaseFormData } from '@msft-sme/shell/angular';
 
 export interface Address {
     city: string;

@@ -1,4 +1,6 @@
-/* tslint:disable */
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+/* tslint:disable */
 export var TestData = [
     {
         'Id': 'ALFKI',
