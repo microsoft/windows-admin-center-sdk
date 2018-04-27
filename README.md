@@ -6,13 +6,13 @@ Welcome to the Windows Admin Center SDK!  Windows Admin Center is an evolution o
 
 Windows Admin Center contains three main extensibility points: **Tools**, **Solutions**, and **Gateway API extensions**.  The SDK contains content and examples to guide you in building extensions for these points:
 
-* [Windows Admin Center Developer Tools](/windows-admin-center-developer-tools) is a sample extension containing a rich collection of sample functionality and tool examples that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
+* [Developer Tools](/windows-admin-center-developer-tools) is a sample extension containing a rich collection of sample functionality and tool examples that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
 
 * [IFrame Example](/iframe-example) is a sample extension containing the configuration necessary to load an existing web application into Windows Admin Center in an IFrame.  Use this as a guide in building your own tool extension that uses an IFrame.
 
 * [Solution Example](/solution-example) is a sample extension configured as a solution extension.  Use this as a guide in building your own solution extension.
 
-* [Windows Admin Center Extension Template](https://github.com/Microsoft/windows-admin-center-extension-template) is an empty project you can use to build your own custom extension for Windows Admin Center.  This has been cleared of example content and is ready for you to clone and start building your own tool or solution extension.
+* [Extension Template](https://github.com/Microsoft/windows-admin-center-extension-template) is an empty project you can use to build your own custom extension for Windows Admin Center.  This has been cleared of example content and is ready for you to clone and start building your own tool or solution extension.
 
 ### Get started with the SDK ###
 
