@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DevGuideComponent } from './dev-guide.component';
 import { LandingComponent } from './landing/landing.component';

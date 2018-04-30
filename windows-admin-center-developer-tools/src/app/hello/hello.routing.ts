@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IdleComponent } from '@msft-sme/shell/angular';
 import { CimExampleComponent } from './cim-example/cim-example.component';

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, RouterStateSnapshot } from '@angular/router';
 

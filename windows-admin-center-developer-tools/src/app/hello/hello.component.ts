@@ -1,4 +1,6 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { AppContextService } from '@msft-sme/shell/angular';
 import { Logging, LogLevel } from '@msft-sme/shell/core';

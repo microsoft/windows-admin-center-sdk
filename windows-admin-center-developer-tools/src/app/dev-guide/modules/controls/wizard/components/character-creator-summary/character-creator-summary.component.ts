@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Component, OnInit } from '@angular/core';
 
 import { WizardStepComponent } from '@msft-sme/shell/angular';
 import { CharacterCreatorParams } from '../../models/character-creator-params';

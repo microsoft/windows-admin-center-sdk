@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Injectable } from '@angular/core';
 import { AppContextService, HttpService } from '@msft-sme/shell/angular';
 import { Cim, Http, PowerShell, PowerShellSession } from '@msft-sme/shell/core';
 import { Observable } from 'rxjs';

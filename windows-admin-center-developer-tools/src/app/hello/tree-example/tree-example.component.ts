@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TreeNodeDataItem } from '@msft-sme/shell/angular';
 import { expand } from 'rxjs/operator/expand';
 import { Strings } from '../../../generated/strings';

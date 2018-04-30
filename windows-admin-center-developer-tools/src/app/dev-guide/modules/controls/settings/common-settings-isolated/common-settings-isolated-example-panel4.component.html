@@ -1,4 +1,6 @@
-<form [smeSettingsForm]="form" aria-labelledby="sme-shell-setting-selectedTitle">
+<!-- Copyright (c) Microsoft Corporation. All rights reserved.
+ Licensed under the MIT License. -->
+<form [smeSettingsForm]="form" aria-labelledby="sme-shell-setting-selectedTitle">
   <sme-settings-content>
     <fieldset *ngIf="!loading" [disabled]="saving" [formGroup]="form">
       <span>This is the generic settings message!</span>

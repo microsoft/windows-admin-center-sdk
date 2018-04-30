@@ -1,4 +1,6 @@
-import { ModuleWithProviders } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { FormStylesComponent } from './form-styles.component';

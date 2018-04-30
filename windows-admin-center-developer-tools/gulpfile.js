@@ -15,6 +15,25 @@ const gulpResJson = require('@msft-sme/shell/dist/tools/gulp-resjson');
 const gulpSvgCode = require('@msft-sme/shell/dist/tools/gulp-svg-code');
 const gulpMergeJsonInFolders = require('@msft-sme/shell/dist/tools/gulp-merge-json-in-folders');
 const manifestResource = require('@msft-sme/shell/dist/tools/gulp-manifest-resource');
+const gulpLicense = require('./tools/gulp-license');
+
+gulp.task('license', () => {
+    return gulp.src('src/**/*.*')
+        .pipe(gulpLicense((fileType) => {    
+            switch (fileType) {
+                case '.ts': {
+                    return '// Copyright (c) Microsoft Corporation. All rights reserved.\n// Licensed under the MIT License.\n\r';
+                }
+                case '.html': {
+                    return '<!-- Copyright (c) Microsoft Corporation. All rights reserved.\n Licensed under the MIT License. -->\n\r';
+                }
+                default: {
+                    return;
+                }
+            }
+        }))
+        .pipe(gulp.dest('./src'));
+});
 
 gulp.task('clean', () => {
     return gulp.src(['dist', 'bundle', 'src/generated', 'src/assets/strings', 'inlineSrc'], { read: false })

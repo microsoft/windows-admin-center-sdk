@@ -1,4 +1,6 @@
-/**
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+/**
  * THIS FILE WAS GENERATED FROM msft-sme-build. DO NOT MODIFY. To change this file, make the appropriate changes in build
  * 
  * The build system defaults to the dev environment which uses `environment.ts`, but if you do

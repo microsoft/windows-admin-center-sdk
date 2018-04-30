@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Component } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { AppContextService, DialogService } from '@msft-sme/shell/angular';
 import { ClientNotification, ClientNotificationType, NodeConnection, NotificationState } from '@msft-sme/shell/core';

@@ -1,4 +1,6 @@
-import { Observable, Subject } from 'rxjs';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+import { Observable, Subject } from 'rxjs';
 
 import { ActionButton, ActionButtonAsync, ActionContainer } from '@msft-sme/shell/angular';
 
