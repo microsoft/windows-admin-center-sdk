@@ -6,27 +6,27 @@ The Windows Admin Center SDK is currently in public preview.
 
 ### What is included in the SDK ###
 
-Windows Admin Center contains three main extensibility points: **Tools**, **Solutions**, and **Gateway API extensions**.  The SDK contains content and examples to guide you in building extensions for these points:
+Windows Admin Center contains three main extensibility points: **tools**, **solutions**, and **gateway plugins**.  The SDK contains content and examples to guide you in building extensions for all of these points:
 
-* [Developer Tools](/windows-admin-center-developer-tools) is a sample extension containing a rich collection of sample functionality and tool examples that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
+* [Developer Tools](/windows-admin-center-developer-tools) is a solution extension containing a rich collection of sample functionality and tool examples that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
 
 * [IFrame Example](/iframe-example) is a sample extension containing the configuration necessary to load an existing web application into Windows Admin Center in an IFrame.  Use this as a guide in building your own tool extension that uses an IFrame.
 
-* [Solution Example](/solution-example) is a sample extension configured as a solution extension.  Use this as a guide in building your own solution extension.
+* [Solution Example](/solution-example) is a sample extension configured as a solution.  Use this as a guide in building your own solution extension.
 
-* [Extension Template](https://github.com/Microsoft/windows-admin-center-extension-template) is an empty project you can use to build your own custom extension for Windows Admin Center.  This has been cleared of example content and is ready for you to clone and start building your own tool or solution extension.
+* [Extension Template](https://github.com/Microsoft/windows-admin-center-extension-template) is an empty project you can use to build your own custom extension for Windows Admin Center.  This project is ready for you to clone and start building your own tool or solution extension.
 
 ### Get started with the SDK ###
 
-Getting started with Windows Admin Center development is easy!  Follow along with [step-by-step directions](http://aka.ms/WindowsAdminCenter) prepare your environment, and learn more about writing and publishing extensions at our [documentation site](http://aka.ms/WindowsAdminCenter).
+Getting started with Windows Admin Center development is easy!  Follow along with [step-by-step directions](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/extend/prepare-development-environment) to prepare your environment, and learn more about writing and publishing extensions at our [documentation site](http://aka.ms/WindowsAdminCenter).
 
 ### Get Windows Admin Center ###
 
-You can download Windows Admin Center [here](http://aka.ms/WindowsAdminCenter).
+Don't have Windows Admin Center installed yet?  [Download](http://aka.ms/WindowsAdminCenter) Windows Admin Center.
 
 ### What's New ###
 
-See what has been recently added to the SDK [here](whats-new.md).
+See what has been [recently added to the SDK](whats-new.md).
 
 ### Contributing ###
 
