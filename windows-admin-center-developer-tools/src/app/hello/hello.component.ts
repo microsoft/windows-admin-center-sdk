@@ -1,9 +1,10 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
-import { AppContextService } from '@msft-sme/shell/angular';
-import { Logging, LogLevel } from '@msft-sme/shell/core';
+import { AppContextService } from '@microsoft/windows-admin-center-sdk/angular';
+import { Logging, LogLevel } from '@microsoft/windows-admin-center-sdk/core';
 import { AjaxError } from 'rxjs/observable/dom/AjaxObservable';
 import { Subscription } from 'rxjs/Subscription';
 import { PowerShellScripts } from '../../generated/powerShell-scripts';

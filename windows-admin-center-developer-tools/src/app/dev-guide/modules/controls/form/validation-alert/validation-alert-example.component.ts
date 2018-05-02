@@ -1,7 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component } from '@angular/core';
-import { ValidationAlertSeverity } from '@msft-sme/shell/angular';
+
+import { Component } from '@angular/core';
+import { ValidationAlertSeverity } from '@microsoft/windows-admin-center-sdk/angular';
 @Component({
     selector: 'sme-ng2-control-validation-alert-example',
     templateUrl: './validation-alert-example.component.html'

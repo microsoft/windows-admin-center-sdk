@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-/**
+
+/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
@@ -61,7 +62,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 // Server management tools specific polyfills
-import '@msft-sme/shell/dist/core/polyfills';
+import '@microsoft/windows-admin-center-sdk/dist/core/polyfills';
 
 /**
  * Date, currency, decimal and percent pipes.

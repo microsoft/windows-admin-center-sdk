@@ -1,9 +1,10 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService, DialogService } from '@msft-sme/shell/angular';
-import { ClientNotification, ClientNotificationType, NodeConnection, NotificationState } from '@msft-sme/shell/core';
+import { AppContextService, DialogService } from '@microsoft/windows-admin-center-sdk/angular';
+import { ClientNotification, ClientNotificationType, NodeConnection, NotificationState } from '@microsoft/windows-admin-center-sdk/core';
 
 @Component({
     selector: 'sme-ng2-landing',

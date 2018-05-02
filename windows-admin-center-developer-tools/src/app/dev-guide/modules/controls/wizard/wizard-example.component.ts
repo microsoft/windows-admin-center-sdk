@@ -1,11 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subscription } from 'rxjs/Subscription';
 
-import { AppContextService, WizardComponent, WizardModel, WizardStep } from '@msft-sme/shell/angular';
+import { AppContextService, WizardComponent, WizardModel, WizardStep } from '@microsoft/windows-admin-center-sdk/angular';
 import { CharacterCreatorJobFormComponent } from './components/character-creator-job-form/character-creator-job-form.component';
 import { CharacterCreatorNameFormComponent } from './components/character-creator-name-form/character-creator-name-form.component';
 import { CharacterCreatorSpellFormComponent } from './components/character-creator-spell-form/character-creator-spell-form.component';

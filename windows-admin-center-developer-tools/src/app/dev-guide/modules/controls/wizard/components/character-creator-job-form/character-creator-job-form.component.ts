@@ -1,9 +1,10 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { WizardStepComponent } from '@msft-sme/shell/angular';
+import { WizardStepComponent } from '@microsoft/windows-admin-center-sdk/angular';
 import { CharacterCreatorParams } from '../../models/character-creator-params';
 import { Job } from '../../models/job';
 

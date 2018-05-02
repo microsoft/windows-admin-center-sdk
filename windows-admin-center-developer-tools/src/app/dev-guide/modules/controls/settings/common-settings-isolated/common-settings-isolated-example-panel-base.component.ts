@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { SettingsFormService } from '@msft-sme/shell/angular';
+
+import { SettingsFormService } from '@microsoft/windows-admin-center-sdk/angular';
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';

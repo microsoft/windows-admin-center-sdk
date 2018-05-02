@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { NavigationExtras, RouterStateSnapshot } from '@angular/router';
 
@@ -8,7 +9,7 @@ import {
     CommonSettingsComponentBase,
     CommonSettingsNavigationItem,
     ConfirmationDialogOptions
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 
 @Component({
     selector: 'sme-ng2-controls-common-settings-isolated-example',

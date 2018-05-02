@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -12,8 +13,8 @@ import {
     ActionItemErrorEventArgs,
     ActionItemExecutedEventArgs,
     AppContextService
-} from '@msft-sme/shell/angular';
-import { Logging, LogLevel } from '@msft-sme/shell/core';
+} from '@microsoft/windows-admin-center-sdk/angular';
+import { Logging, LogLevel } from '@microsoft/windows-admin-center-sdk/core';
 import { ModelDrivenAction1, ModelDrivenAction2, ModelDrivenAction3, ModelDrivenActionWithError, MyModel } from './model-driven-action';
 
 @Component({

@@ -1,8 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, ViewChild } from '@angular/core';
+
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { DataTableComponent, DataTableCustomSortEvent, DataTableLazyLoadEvent } from '@msft-sme/shell/angular';
+import { DataTableComponent, DataTableCustomSortEvent, DataTableLazyLoadEvent } from '@microsoft/windows-admin-center-sdk/angular';
 import { TestData } from './testData';
 
 @Component({

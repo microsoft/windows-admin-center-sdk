@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -9,7 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { 
     WizardStepComponent,
     WizardStepValidation 
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 import { CharacterCreatorParams } from '../../models/character-creator-params';
 
 @Component({

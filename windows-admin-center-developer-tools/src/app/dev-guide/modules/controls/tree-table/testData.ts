@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { TreeNodeDataItem } from '@msft-sme/shell/angular';
+
+import { TreeNodeDataItem } from '@microsoft/windows-admin-center-sdk/angular';
 
 /* tslint:disable */
 export var TestData = <TreeNodeDataItem>{

@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { CommonModule } from '@angular/common';
+
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -16,7 +17,7 @@ import {
     SplitViewModule,
     SvgModule,
     ToolHeaderModule
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 import { HelloComponent } from './hello.component';
 import { HelloRouting } from './hello.routing';
 import { HelloService } from './hello.service';

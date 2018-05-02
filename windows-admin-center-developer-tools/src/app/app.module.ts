@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { CommonModule } from '@angular/common';
+
+import { CommonModule } from '@angular/common';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,7 @@ import {
     ResourceService,
     SmeStylesModule,
     SvgModule
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 

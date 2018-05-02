@@ -98,7 +98,7 @@ import {
     SplitViewModule,
     SvgModule,
     ToolHeaderModule
-} from '@msft-sme/shell/core';
+} from '@microsoft/windows-admin-center-sdk/core';
 import { HelloComponent } from './hello.component';
 import { routing } from './hello.routing';
 

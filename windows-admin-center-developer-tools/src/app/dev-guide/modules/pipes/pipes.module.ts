@@ -1,10 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { CommonModule } from '@angular/common';
+
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import * as ng2 from '@msft-sme/shell/angular';
+import * as ng2 from '@microsoft/windows-admin-center-sdk/angular';
 
 import { BooleanConverterExampleComponent } from './boolean-converter/boolean-converter-example.component';
 import { ByteUnitConverterExampleComponent } from './byte-unit-converter/byte-unit-converter-example.component';

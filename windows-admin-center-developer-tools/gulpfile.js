@@ -10,11 +10,11 @@ const argv = require('yargs').argv;
 const runSequence = require('run-sequence');
 const inlineNg2Template = require('gulp-inline-ng2-template');
 const child_process = require('child_process');
-const gulpPsCode = require('@msft-sme/shell/dist/tools/gulp-ps-code');
-const gulpResJson = require('@msft-sme/shell/dist/tools/gulp-resjson');
-const gulpSvgCode = require('@msft-sme/shell/dist/tools/gulp-svg-code');
-const gulpMergeJsonInFolders = require('@msft-sme/shell/dist/tools/gulp-merge-json-in-folders');
-const manifestResource = require('@msft-sme/shell/dist/tools/gulp-manifest-resource');
+const gulpPsCode = require('@microsoft/windows-admin-center-sdk/dist/tools/gulp-ps-code');
+const gulpResJson = require('@microsoft/windows-admin-center-sdk/dist/tools/gulp-resjson');
+const gulpSvgCode = require('@microsoft/windows-admin-center-sdk/dist/tools/gulp-svg-code');
+const gulpMergeJsonInFolders = require('@microsoft/windows-admin-center-sdk/dist/tools/gulp-merge-json-in-folders');
+const manifestResource = require('@microsoft/windows-admin-center-sdk/dist/tools/gulp-manifest-resource');
 const gulpLicense = require('./tools/gulp-license');
 
 gulp.task('license', () => {
@@ -71,7 +71,7 @@ gulp.task('generate-resjson-interface', () => {
 });
 
 gulp.task('merge-localized-json', () => {
-    return gulp.src('./node_modules/@msft-sme/**/dist/assets/strings')
+    return gulp.src(['./node_modules/@microsoft/windows-admin-center-sdk/dist/assets/strings', './node_modules/@msft-sme/**/dist/assets/strings'])
         .pipe(gulpMergeJsonInFolders({ src: './src/assets/strings' }))
         .pipe(gulp.dest('src/assets/strings'));
 });

@@ -1,10 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, Input } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
 
 import { Subject } from 'rxjs/Subject';
 
-import { BaseDialogComponent, DialogOptions, DialogResult, DialogService } from '@msft-sme/shell/angular';
+import { BaseDialogComponent, DialogOptions, DialogResult, DialogService } from '@microsoft/windows-admin-center-sdk/angular';
 
 /**
  * The confirmation dialog options.

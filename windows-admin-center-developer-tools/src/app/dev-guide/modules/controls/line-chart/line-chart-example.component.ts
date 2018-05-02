@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import {
     AppContextService,
@@ -8,8 +9,8 @@ import {
     LineChartData,
     LineChartType,
     TabbedLineChartGroupComponent
-} from '@msft-sme/shell/angular';
-import { Cim, QueryCache } from '@msft-sme/shell/core';
+} from '@microsoft/windows-admin-center-sdk/angular';
+import { Cim, QueryCache } from '@microsoft/windows-admin-center-sdk/core';
 import { Observable, Subject, Subscription } from 'rxjs';
 
 @Component({
