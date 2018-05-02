@@ -313,10 +313,10 @@ The full TypeScript class for implementing a connection provider is below. Note 
 ``` ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppContextService } from '@msft-sme/shell/angular';
-import { Connection, ConnectionUtility } from '@msft-sme/shell/core';
-import { EnvironmentModule } from '@msft-sme/shell/dist/core/manifest/environment-modules';
-import { RpcUpdateData } from '@msft-sme/shell/dist/core/rpc/rpc-base';
+import { AppContextService } from '@microsoft/windows-admin-center-sdk/angular';
+import { Connection, ConnectionUtility } from '@microsoft/windows-admin-center-sdk/core';
+import { EnvironmentModule } from '@microsoft/windows-admin-center-sdk/dist/core/manifest/environment-modules';
+import { RpcUpdateData } from '@microsoft/windows-admin-center-sdk/dist/core/rpc/rpc-base';
 import { Strings } from '../../generated/strings';
 
 @Component({
@@ -402,7 +402,7 @@ Below is a full copy of a manifest.json file that includes a Connection Provider
 
 ``` json
 {
-    "$schema": "../node_modules/@msft-sme/shell/dist/core/manifest/module-schema.json#",
+    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/dist/core/manifest/module-schema.json#",
     "name": "msft.sme.solutionExample-extension",
     "displayName": "resources:strings:displayName",
     "description": "resources:strings:description",

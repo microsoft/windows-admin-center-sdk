@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, RouterStateSnapshot } from '@angular/router';
 
@@ -8,7 +9,7 @@ import {
     CommonSettingsNavigationItem,
     ConfirmationDialogOptions,
     SingleSettingComponentBase
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 
 import { SingleSettingModel } from './single-setting-model';
 

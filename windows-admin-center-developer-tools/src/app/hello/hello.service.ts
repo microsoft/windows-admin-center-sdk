@@ -1,8 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Injectable } from '@angular/core';
-import { AppContextService, HttpService } from '@msft-sme/shell/angular';
-import { Cim, Http, PowerShell, PowerShellSession } from '@msft-sme/shell/core';
+
+import { Injectable } from '@angular/core';
+import { AppContextService, HttpService } from '@microsoft/windows-admin-center-sdk/angular';
+import { Cim, Http, PowerShell, PowerShellSession } from '@microsoft/windows-admin-center-sdk/core';
 import { Observable } from 'rxjs';
 import { PowerShellScripts } from '../../generated/powerShell-scripts';
 import { Strings } from '../../generated/strings';

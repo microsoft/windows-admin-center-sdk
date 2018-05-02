@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 
@@ -12,7 +13,7 @@ import {
     CommonSettingsNavigationItem,
     ConfirmationDialogOptions,
     SettingsFormService
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 
 @Component({
     selector: 'sme-ng2-controls-common-settings-combined-example',

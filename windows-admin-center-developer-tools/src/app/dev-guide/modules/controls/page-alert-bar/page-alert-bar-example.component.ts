@@ -1,13 +1,14 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnInit, QueryList } from '@angular/core';
+
+import { Component, OnInit, QueryList } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import {
     AppContextService,
     HealthAlertSeverity,
     PageAlert,
     PageAlertBarComponent    
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 
 @Component({
     selector: 'sme-ng2-controls-page-alert-bar-example',

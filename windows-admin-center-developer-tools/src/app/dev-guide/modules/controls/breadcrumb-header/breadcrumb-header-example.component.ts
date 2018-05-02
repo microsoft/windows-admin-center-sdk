@@ -1,13 +1,14 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import {
     AppContextService,
     BreadcrumbHeaderComponent,
     BreadcrumbItem,
     BreadcrumbSeparator
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 
 @Component({
     selector: 'sme-ng2-controls-breadcrumb-header-example',

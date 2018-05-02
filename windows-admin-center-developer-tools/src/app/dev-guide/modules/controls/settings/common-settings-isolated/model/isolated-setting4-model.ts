@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { BaseFormData } from '@msft-sme/shell/angular';
+
+import { BaseFormData } from '@microsoft/windows-admin-center-sdk/angular';
 
 export interface Address {
     city: string;

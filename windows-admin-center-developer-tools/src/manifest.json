@@ -1,5 +1,5 @@
 {
-  "$schema": "../node_modules/@msft-sme/shell/dist/core/manifest/module-schema.json#",
+  "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/dist/core/manifest/module-schema.json#",
   "name": "msft.sme.developer-tools",
   "displayName": "resources:strings:displayName",
   "description": "resources:strings:description",

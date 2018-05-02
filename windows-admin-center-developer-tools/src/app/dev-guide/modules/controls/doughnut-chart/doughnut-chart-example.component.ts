@@ -1,8 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService, CapacityDoughnutChartComponent, CapacityDoughnutChartData, DoughnutChartData } from '@msft-sme/shell/angular';
+import {
+    AppContextService, CapacityDoughnutChartComponent, CapacityDoughnutChartData, DoughnutChartData
+} from '@microsoft/windows-admin-center-sdk/angular';
 
 @Component({
     selector: 'sme-doughnut-chart-example',

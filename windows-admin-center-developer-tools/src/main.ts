@@ -1,10 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import './polyfills.ts';
+
+import './polyfills.ts';
 
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { CoreEnvironment } from '@msft-sme/shell/core';
+import { CoreEnvironment } from '@microsoft/windows-admin-center-sdk/core';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 

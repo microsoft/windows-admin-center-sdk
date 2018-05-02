@@ -1,9 +1,10 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/shell/angular';
-import { Net } from '@msft-sme/shell/core';
+import { AppContextService } from '@microsoft/windows-admin-center-sdk/angular';
+import { Net } from '@microsoft/windows-admin-center-sdk/core';
 import { AjaxError, Subscription } from 'rxjs/Rx';
 import { Strings } from '../../../generated/strings';
 import { HelloService } from '../hello.service';

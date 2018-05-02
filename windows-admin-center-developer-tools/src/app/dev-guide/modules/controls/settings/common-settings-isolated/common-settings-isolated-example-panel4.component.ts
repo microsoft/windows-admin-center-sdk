@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -12,7 +13,7 @@ import {
     FormControlContainerValidationMessages,
     FormGroupValidationMessages,
     SettingsFormService
-} from '@msft-sme/shell/angular';
+} from '@microsoft/windows-admin-center-sdk/angular';
 import { Address, IsolatedSetting4FormData, IsolatedSettings4ServiceData } from './model/isolated-setting4-model';
 
 @Component({
