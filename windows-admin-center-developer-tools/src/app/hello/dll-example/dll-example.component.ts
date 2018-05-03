@@ -38,6 +38,7 @@ export class DllExampleComponent implements OnInit, OnDestroy {
 
     public ngOnInit() {
         // todo: init logic.
+        this.callRestService();
     }
 
     public ngOnDestroy() {
