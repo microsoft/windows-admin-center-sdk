@@ -1,0 +1,1 @@
+docker container list -a --format='{{.Image}}${{.ID}}${{.Status}}'
