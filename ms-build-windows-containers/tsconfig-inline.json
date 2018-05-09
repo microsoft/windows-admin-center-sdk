@@ -1,0 +1,25 @@
+{
+  "//": "Inline version of tsconfig",
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true
+  },
+  "compilerOptions": {
+    "baseUrl": "",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "sourceRoot": "./inlineSrc",
+    "target": "es5"
+  },
+  "include": [
+    "inlineSrc/**/*.ts"
+  ]
+}

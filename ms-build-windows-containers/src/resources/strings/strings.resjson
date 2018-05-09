@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "Manifest_displayName": "Windows Containers",
+    "Manifest_description": "Windows Containers",
+    "Manifest_category": "SME",
+
+    "//": "WindowsContainers",
+    "WindowsContainers_title": "Windows Containers",
+
+    "//": "about",
+    "WindowsContainers_about": "About Windows Containers",
+    "WindowsContainers_aboutDescription": "About Windows Containers"
+}
