@@ -72,6 +72,7 @@ A pre-curated set of inventory properties are provided, which you can use to bui
 | isHyperVPowershellInstalled | boolean |
 | isManagementToolsAvailable | boolean |
 | isWmfInstalled | boolean |
+| isRemoteAppEnabled | boolean |
 
 Every object in the inventory array must conform to the following json structure:
 
