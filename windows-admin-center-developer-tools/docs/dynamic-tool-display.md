@@ -86,22 +86,26 @@ Every object in the inventory array must conform to the following json structure
 
 #### Operator Values ####
 
-| Operator | Description |
-| -------- | ----------- |
-| gt | greater than |
-| ge | greater than or equal to |
-| lt | less than |
-| le | less than or equal to |
-| eq | equal to |
-| ne | not equal to |
-| is | checking if a value is true |
-| not | checking if a value is false |
-| contains | item exists in a string |
-| notContains | item does not exist in a string |
+| Operator | Description | Supported Types |
+| -------- | ----------- | --------------- |
+| gt | greater than | number, string (case-insensitive), version |
+| ge | greater than or equal to | number, string (case-insensitive), version |
+| lt | less than | number, string (case-insensitive), version |
+| le | less than or equal to | number, string (case-insensitive), version |
+| eq | equal to | number, string (case-insensitive), version (accepts '\*' as in "1.2.\*") |
+| ne | not equal to | number, string (case-insensitive), version (accepts '\*' as in "1.2.\*") |
+| is | checking if a value is true | number, string, boolean |
+| not | checking if a value is false | number, string, boolean |
+| contains | item exists in a string | string (case-insensitive) |
+| notContains | item does not exist in a string | string (case-insensitive) |
+| anyEq | any one of values equal | numberArray, stringArray |
+| anyNe | any one of values not equal | numberArray, stringArray |
+| anyContains | any one of string contains | stringArray |
+| anyNotContains | any one of string not contains | stringArray |
 
 #### Data Types ####
 
-Available options for the 'type' property:
+Available options for the *"type"* property:
 
 | type | description |
 | ---- | ----------- |
@@ -109,14 +113,18 @@ Available options for the 'type' property:
 | number | a numeric value |
 | string | a string value |
 | boolean | true or false |
+| numberArray | an array of numbers (eg: [5, 10, 15]) |
+| stringArray | an array of strings (eg: []) |
 
 #### Value Types ####
 
-Available types that the 'value' property accepts:
+Available types that the *"value"* property accepts:
 
 * string
 * number
 * boolean
+* array of strings
+* array of numbers
 
 A properly formed inventory condition set would look like this:
 
