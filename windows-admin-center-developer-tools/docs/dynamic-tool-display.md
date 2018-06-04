@@ -84,9 +84,24 @@ Every object in the inventory array must conform to the following json structure
 }
 ```
 
+#### Type Values ####
+
+Available options for the *"type"* property:
+
+| Value | Description |
+| ---- | ----------- |
+| version | a version number (eg: 10.1.*) |
+| number | a numeric value |
+| string | a string value |
+| boolean | true or false |
+| numberArray | an array of numbers (eg: [5, 10, 15]) |
+| stringArray | an array of strings (eg: []) |
+
 #### Operator Values ####
 
-| Operator | Description | Supported Types |
+Available options for the *"operator"* property:
+
+| Value | Description | Supported Types |
 | -------- | ----------- | --------------- |
 | gt | greater than | number, string (case-insensitive), version |
 | ge | greater than or equal to | number, string (case-insensitive), version |
@@ -103,22 +118,9 @@ Every object in the inventory array must conform to the following json structure
 | anyContains | any one of string contains | stringArray |
 | anyNotContains | any one of string not contains | stringArray |
 
-#### Data Types ####
-
-Available options for the *"type"* property:
-
-| type | description |
-| ---- | ----------- |
-| version | a version number (eg: 10.1.*) |
-| number | a numeric value |
-| string | a string value |
-| boolean | true or false |
-| numberArray | an array of numbers (eg: [5, 10, 15]) |
-| stringArray | an array of strings (eg: []) |
-
 #### Value Types ####
 
-Available types that the *"value"* property accepts:
+The *"value"* property will accept data of these types:
 
 * string
 * number
