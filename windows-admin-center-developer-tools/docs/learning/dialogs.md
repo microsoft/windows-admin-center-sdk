@@ -63,23 +63,10 @@ To make the dialog fully functional, you'll need to then subscribe to the callin
             message: this.strings.Dialogs.DeleteSomething.message
         }).subscribe((result: ConfirmationDialogResult) => {
             if (result.confirmed) {
-                this.appList.forEach(app => {
-                    if (app.id === this.selectedApp.id) {
-                        let index = this.appList.indexOf(app);
-                        this.appList.splice(index, 1);
-                        this.settings.setSavedAppLists(this.appList, this.currentNode);
-                        this.saveSettings(
-                            this.strings.RemoteApp.Actions.RemoveAppSuccess.format(app.displayName),
-                            this.strings.RemoteApp.Actions.RemoveAppFail);
-                        this.remoteAppState = RemoteAppState.Default;
-                        if (this.appList.length === 0) {
-                            this.listIsEmpty = true;
-                        }
-                        return null;
-                    }
-                })
-
+                // Continue with deleting something
             }
+
+            // Else, do nothing
         })
     }
 ```
