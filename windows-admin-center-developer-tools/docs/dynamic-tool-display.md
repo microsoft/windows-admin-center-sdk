@@ -180,6 +180,10 @@ And finally you are able to execute a custom PowerShell script to identify the a
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
+NOTE: All 3 properties ('State', 'Message' and 'Properties') are required in your return object:
+* 'State' should always return one of the 3 available values ('Available', 'NotSupported' and 'NotConfigured')
+* 'Message' may be an empty string but should return an explanation for 'NotSupported' & 'NotConfigured' states
+* 'Properties' should contain an empty object if we don't plan on using it (eg. @{ })
 
 For example, if we only wanted a tool to load if the remote server had bitlocker installed, we could use a script like this:
 
@@ -247,6 +251,8 @@ An entry point configuration using the script option will look like this:
     ]
 }
 ```
+
+NOTE: The 'script' example above includes a script that has converted to a string and condensed to a single line for portability. Keep in mind that quotes and backslashes need to be escaped.
 
 ## Supporting multiple requirement sets ##
 
