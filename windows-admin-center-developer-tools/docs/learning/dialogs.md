@@ -39,7 +39,7 @@ Assuming that all our strings were saved with the 'ExampleTool' prefix within th
 ## Confirmation Dialogs
 One of the most common dialogs we use within the Admin Center is confirmation dialogs. This is used to pause any given action and present the user with a confirmation option that will either continue or cancel the action. This should be used during all destructive procedures such as deleting, renaming or changing data that isn't easily reversible.
 
-To use the confirmation dialog, you'll need to use the 'showConfirmation' method and define the content of the dialog object:
+To use the confirmation dialog, you'll need to use the 'showConfirmation' method and define the content of the dialog object. In this example, we just use our localized strings that we imported earlier:
 
 ```ts
     public deleteSomething() {
@@ -52,7 +52,7 @@ To use the confirmation dialog, you'll need to use the 'showConfirmation' method
     }
 ```
 
-To make the dialog fully functional, you'll need to then subscribe to the calling method so that you can take the appropriate action based on the user's selection:
+To make the dialog fully functional, you'll need to then 'subscribe' to the calling method so that you can take the appropriate action based on the result of the user's selection:
 
 ```ts
     public deleteSomething() {
@@ -70,3 +70,7 @@ To make the dialog fully functional, you'll need to then subscribe to the callin
         })
     }
 ```
+
+## Action Pane Dialogs
+
+The other common dialog used is the Action Pane dialog. This is a dialog that slides in from the right side of the screen and is highly customizable.
