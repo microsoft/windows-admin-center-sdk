@@ -1,8 +1,8 @@
-# Getting Started with Windows Admin Center Extensions
+# Getting Started with Windows Admin Center Extensions #
 
 Let’s get started with the Windows Admin Center Extensions SDK!  In this document, we’ll cover installing prerequisites, downloading SDK source code, building and side loading your extension, and renaming your extension.
 
-## Extensions SDK Prerequisites
+## Extensions SDK Prerequisites ##
 
 Before you start developing in Windows Admin Center Extensions, download and install the following prerequisites:
 
@@ -11,11 +11,11 @@ Before you start developing in Windows Admin Center Extensions, download and ins
 - [Node Package Manager](https://npmjs.com/get-npm) (for downloading build dependencies)  
 - [Nuget](https://www.nuget.org/downloads) (for publishing extensions)
 
-## Download Source Code
+## Download Source Code ##
 
 The source code and dependencies are available from the Windows Admin Center team as a zip file.
 
-## Install Dependencies
+## Install Dependencies ##
 
 Install dependencies for your project with npm.
 -	Install global dependencies for your project:
@@ -25,115 +25,67 @@ Install dependencies for your project with npm.
 	npm install -g gulp
     npm install typescript@2.5.3 -g
     npm install tslint@5.7.0 -g
+    npm isntall -g windows-admin-center-cli
 
 	```
 
-- Install local dependencies for your project (project.json):
-    ```
-    npm install
-    ```
+### Install the Developer Tools ###
 
-## Build Sample Extension
+As an optional tool, we provide the Windows Admin Center Developer Tools as an optional extension that you can download and install in your instance of the gateway.
 
-To build the sample extension, open a command window, change directory to the unpacked source directory "cd C:\<your root>\msft-sme-developer-tools", and then you're ready to build.
+To install the extension, click the Settings gear in the top right hand corner of Windows Admin Center, and then click "Extensions" in the navigation menu on the right side of the page.  From the table that loads under "Available Extensions" (assuming you have not already performed the installation), click Windows Admin Center Developer Tools, and click "Install".
 
--	Build and serve with gulp:
-	``` js
-	gulp build
-	gulp serve -p 4201
-	```
+This process requires Admin permissions to update files on the local file system, so you will need to accept the elevation confirmation and wait for the page to refresh.  You will notice a notification in the top right hand bar, and the tables will refresh when the install is complete.
 
-Note that you need to choose a port that is currently free.  Make sure you do not attempt to use the port that Honolulu is running on.
+The Developer Tools are a new solution that is available to you from the "Installed Solutions" drop down next to the product name.  Select it, and then choose a server to connect to from the following connection list.
 
-## Side Loading Sample Extension
+You can use the Developer Tools as a simple solution from which you can start building your extension.
 
-Your project can be side loaded into a local instance of Honolulu for testing by attaching the locally served project into Honolulu.  
--	Launch Windows Admin Center in a web browser 
--	Open the debugger (F12)
--	Open the Console and type the following command:
-	``` ts
-	MsftSme.sideLoad("http://localhost:4201")
-	```
--	Refresh the web browser
-Your project will now be visible in the Tools list with (side loaded) next to the name.
+## Creating your own extension ##
 
-## Renaming your extension
-
-To change the displayed name of the extension within Honolulu, navigate to the manifest.json file locacted in the msft-sme-developer-tools/src folder.  Inside this JSON file, change the "displayName" and "description" properties of all the specific local objects within the resources collection (starting on line 37).  This will only change the rendered Display Name for the extension.
-
-## Removing sample code from your extension
-
-Once you are familiar will the code and structure of the extensions, you can also use this project as the starting point for a clean extension.  To start fresh:  Navigate to the msft-sme-developer-tools/src/app directory, and make a new directory with the name of your extension.
-Inside this new folder, make 4 new files:
-	<your-extension-name>.component.html
-	<your-extension-name>.component.ts
-	<your-extension-name>.module.ts
-	<your-extension-name>.routing.ts
-
-Add the following code to the *.component.html file:
-	``` html
-	<div class="stretch-absolute flex-layout vertical">
-		<div class="auto-flex-size relative">
-			<router-outlet></router-outlet>
-		</div>
-	</div>
-	```
-
-Copy the contents of hello.component.ts and change the selector and template urls, replacing "hello" with the name of your extension (lines 21 and 22).  Change the class name, replacing 'Hello' with your extension name (line 24).
-On line 35 change the source, replacing 'hello' with your extension name.
-
-Add this to the new .module.ts file:
-
-``` ts
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {
-    ActionsModule,
-    AlertBarModule,
-    DetailsModule,
-    LoadingWheelModule,
-    MasterViewModule,
-    SmeStylesModule,
-    SplitViewModule,
-    SvgModule,
-    ToolHeaderModule
-} from '@microsoft/windows-admin-center-sdk/core';
-import { HelloComponent } from './hello.component';
-import { routing } from './hello.routing';
-
-import { ContextMenuModule, DataTableModule, SharedModule, TreeTableModule } from 'primeng/primeng';
-
-@NgModule({
-    declarations: [
-        HelloComponent
-    ],
-    providers: [
-    ],
-    imports: [
-        ActionsModule,
-        AlertBarModule,
-        CommonModule,
-        DataTableModule,
-        DetailsModule,
-        FormsModule,
-        LoadingWheelModule,
-        SmeStylesModule,
-        SvgModule,
-        routing,
-        ToolHeaderModule,
-        TreeTableModule,
-        SplitViewModule,
-        MasterViewModule
-    ]
-})
-export class HelloModule { }
+With the addition of the Windows Admin Center CLI, we now have a simple, streamlined process for creating your own custom Windows Admin Center extension.  If you followed the "Install Dependencies" section of the document, you already have the CLI installed, and can open up a CMD, CD to the directory in which you want to create the tool, and then type:
 
 ```
-Make sure you change every instance of "Hello" to your extension name.
+wac create --company <Your Company Here> --tool <Your Tool Name Here>
+```
 
-Next, open up the "app-routing.module.ts" file  in the /src/app directory.  On line 15 change all the instances of "Hello" to your extension name.
+and press enter.  This will create a new folder, and fill it with all the components you need to get up and running with a new tool.
 
-## Honolulu Extensions SDK in-depth
+In order to use a company or tool name with spaces, make sure to enclose the entire name in double quotes like so:
+
+```
+wac create --company "My Company" --tool "My Tool"
+```
+
+The CLI will automatically convert spaces to "-" for internal settings, but keep spaces for all public visible fields.
+
+### Building the Extension ###
+
+Once the wac create command completes, you have everything you need to run your new extension.  Cd into the new directory that was created:
+```
+cd MyTestProject
+```
+
+and then you need to install all dependencies bofore building.
+
+```
+npm install
+```
+
+Once that completes follow it up with the following:
+
+```
+gulp build
+```
+
+and then
+
+```
+gulp serve -p 4200
+```
+
+Please not that the 4200 is just the port that the extension gets hosted on.  You can choose any port number as long as it's not already in use.
+
+## Honolulu Extensions SDK in-depth ##
 
 For a more in-depth look at Honolulu extensions SDK sample source code, click [here](extensions-in-depth.md).
