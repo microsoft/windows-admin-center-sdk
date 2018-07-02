@@ -1,0 +1,1 @@
+This dependency will be replaced by a NuGet package as soon as it gets published.

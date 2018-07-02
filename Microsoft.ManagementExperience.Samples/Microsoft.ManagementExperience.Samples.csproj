@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <TargetFramework>net452</TargetFramework>
+    <AssemblyTitle>$(ProductName) Feature Sample</AssemblyTitle>
+    <Description>A sample feature library for the $(ProductName).</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.ManagementExperience.FeatureInterface">
+      <HintPath>inc\Microsoft.ManagementExperience.FeatureInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+</Project>
