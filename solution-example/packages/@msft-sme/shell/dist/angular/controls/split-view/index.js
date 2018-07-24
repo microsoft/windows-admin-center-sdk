@@ -1,3 +1,0 @@
-export { SplitViewComponent, SplitViewContentComponent, SplitViewPaneComponent } from './split-view.component';
-export { SplitViewModule } from './split-view.module';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFuZ3VsYXIvY29udHJvbHMvc3BsaXQtdmlldy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsa0JBQWtCLEVBQUUseUJBQXlCLEVBQXdCLHNCQUFzQixFQUFFLE1BQU0sd0JBQXdCLENBQUM7QUFDckksT0FBTyxFQUFFLGVBQWUsRUFBRSxNQUFNLHFCQUFxQixDQUFDIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlUm9vdCI6IkM6L0JBLzEzMS9zL2lubGluZVNyYy8ifQ==
