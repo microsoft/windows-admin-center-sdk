@@ -24,6 +24,9 @@
 .settings/
 /ssl
 *.log
+bin/
+obj/
+.vs/
 
 # test
 **/*junit*.xml
