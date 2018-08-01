@@ -15,6 +15,7 @@ namespace Microsoft.ManagementExperience.Samples
     /// <summary>
     /// Represents a sample HTTP plug-in.
     /// </summary>
+    [Serializable]
     public class SampleHttpPlugIn : HttpPlugIn
     {
         /// <summary>
