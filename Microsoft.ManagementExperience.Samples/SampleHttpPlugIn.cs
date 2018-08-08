@@ -41,7 +41,7 @@ namespace Microsoft.ManagementExperience.Samples
             return new HttpResponseMessage()
             {
                 StatusCode = HttpStatusCode.OK,
-                Content = new StringContent($"Hello world from '{this.Name}'", Encoding.UTF8, "text/plain"),
+                Content = new StringContent($"{{\"message\":\"Hello world from '{this.Name}'\"}}", Encoding.UTF8, "application/json"),
             };
         }
     }
