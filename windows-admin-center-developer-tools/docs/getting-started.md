@@ -25,7 +25,7 @@ Install dependencies for your project with npm.
 	npm install -g gulp
     npm install typescript@2.5.3 -g
     npm install tslint@5.7.0 -g
-    npm isntall -g windows-admin-center-cli
+    npm install -g windows-admin-center-cli
 
 	```
 
@@ -66,7 +66,7 @@ Once the wac create command completes, you have everything you need to run your 
 cd MyTestProject
 ```
 
-and then you need to install all dependencies bofore building.
+and then you need to install all dependencies before building.
 
 ```
 npm install
