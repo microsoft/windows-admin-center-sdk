@@ -14,15 +14,13 @@ Don't have Windows Admin Center installed yet?  [Download](http://aka.ms/Windows
 
 ### Sample Code included with the SDK ###
 
-Windows Admin Center contains three main extensibility points: **tools**, **solutions**, and **gateway plugins**.  The SDK contains content and examples to guide you in building extensions for all of these points
-
 * Sample code can be found for **tool**, **solution**, and **gateway plugin** extension types in our [SDK documentation](http://aka.ms/WACSDKDocs).  There you will leverage the Windows Admin Center CLI to build a new extension project, then follow the individual guides to customize your project to meet your needs.  
 
 * [Developer Tools](/windows-admin-center-developer-tools) is a sample solution extension containing a rich collection of controls that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
 
 ### SDK design toolkit ###
 
-Check out our Windows Admin Center SDK design toolkit! This toolkit is designed to help you rapidly mock up extensions in PowerPoint using Windows Admin Center styles, controls, and page templates. See what your extension can look like in Windows Admin Center before you start coding!
+Check out our Windows Admin Center [SDK design toolkit](WindowsAdminCenterDesignToolkit.zip)! This toolkit is designed to help you rapidly mock up extensions in PowerPoint using Windows Admin Center styles, controls, and page templates. See what your extension can look like in Windows Admin Center before you start coding!
 
 ### Contributing ###
 
