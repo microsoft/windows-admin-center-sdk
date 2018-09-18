@@ -6,13 +6,13 @@ The Windows Admin Center SDK is currently in public preview.
 
 ### Get started with the SDK ###
 
-Getting started with Windows Admin Center development is easy!  Follow along with [step-by-step directions](https://docs.microsoft.com/windows-server/manage/windows-admin-center/extend/prepare-development-environment) to prepare your environment, and learn more about writing and publishing extensions at our [documentation site](http://aka.ms/WindowsAdminCenter).
+Getting started with Windows Admin Center development is easy!  Follow along with [step-by-step directions](https://docs.microsoft.com/windows-server/manage/windows-admin-center/extend/prepare-development-environment) to prepare your environment, and learn more about writing and publishing extensions at our [documentation site](https://aka.ms/WACSDKDocs).
 
 Don't have Windows Admin Center installed yet?  [Download](https://aka.ms/WACDownloadPage) Windows Admin Center.
 
 ### Sample Code included with the SDK ###
 
-* Sample code can be found for **tool**, **solution**, and **gateway plugin** extension types in our [SDK documentation](http://aka.ms/WACSDKDocs).  There you will leverage the Windows Admin Center CLI to build a new extension project, then follow the individual guides to customize your project to meet your needs.  
+* Sample code can be found for **tool**, **solution**, and **gateway plugin** extension types in our [SDK documentation](https://aka.ms/WACSDKDocs).  There you will leverage the Windows Admin Center CLI to build a new extension project, then follow the individual guides to customize your project to meet your needs.  
 
 * [Developer Tools](/windows-admin-center-developer-tools) is a sample solution extension containing a rich collection of controls that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
 
