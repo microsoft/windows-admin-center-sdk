@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "Manifest_displayName": "GatewayPluginExample",
+    "Manifest_description": "{!product-description}",
+    "Manifest_category": "SME",
+
+    "//": "GatewayPluginExample",
+    "GatewayPluginExample_title": "GatewayPluginExample",
+
+    "//": "about",
+    "GatewayPluginExample_about": "{!product-about}",
+    "GatewayPluginExample_aboutDescription": "{!product-about-description}"
+}
