@@ -2,8 +2,6 @@
 
 Welcome to the Windows Admin Center SDK!  Windows Admin Center is an evolution of Windows Server in-box management tools; a locally deployed, browser-based management experience that supports scenarios where customers need full control of all aspects of their deployment, including private networks which aren’t Internet-connected.
 
-The Windows Admin Center SDK is currently in public preview. 
-
 ### Get started with the SDK ###
 
 Getting started with Windows Admin Center development is easy!  Follow along with [step-by-step directions](https://docs.microsoft.com/windows-server/manage/windows-admin-center/extend/prepare-development-environment) to prepare your environment, and learn more about writing and publishing extensions at our [documentation site](https://aka.ms/WACSDKDocs).
