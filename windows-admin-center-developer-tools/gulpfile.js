@@ -57,9 +57,9 @@ gulp.task('serve', (cb) => {
 });
 
 gulp.task('doNotUse', (cb) => {
-    process.stdout.write('It is not recommended to build this extension.  ');
-    process.stdout.write('Please use the CLI to create your extension and then reference the example code here.  ');
-    process.stdout.write('The CLI can be found here: https://www.npmjs.com/package/windows-admin-center-cli');
+    process.stdout.write('\nIt is not recommended to build this extension.\n');
+    process.stdout.write('Please use the CLI to create your extension and then reference the example code here.\n');
+    process.stdout.write('The CLI can be found here: https://www.npmjs.com/package/windows-admin-center-cli\n');
 });
 
 gulp.task('build', (cb) => {
