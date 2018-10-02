@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-
 import { TreeNodeDataItem } from '@microsoft/windows-admin-center-sdk/angular';
 
 /* tslint:disable */
@@ -46,24 +45,6 @@ export var TestData = <TreeNodeDataItem>{
         type: '',
         expanded: true,
         data: 'UserProfile',
-        isLeaf: true
-      }
-    },
-    {
-      data: {
-        label: 'Notifications',
-        type: '',
-        expanded: true,
-        data: 'Notifications',
-        isLeaf: true
-      }
-    },
-    {
-      data: {
-        label: 'Gateway Extensions',
-        type: '',
-        expanded: true,
-        data: 'DLL',
         isLeaf: true
       }
     }

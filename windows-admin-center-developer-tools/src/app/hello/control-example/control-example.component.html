@@ -10,9 +10,7 @@
     </div>
     <sme-cim-example class="auto-flex-size relative" *ngIf="selectedPath === 'WMI'"></sme-cim-example>
     <sme-powershell-example class="auto-flex-size relative" *ngIf="selectedPath === 'PowerShell'"></sme-powershell-example>
-    <sme-dll-example *ngIf="selectedPath === 'DLL'"></sme-dll-example>
     <sme-user-profile-example *ngIf="selectedPath === 'UserProfile'"></sme-user-profile-example>
-    <sme-notifications-example *ngIf="selectedPath === 'Notifications'"></sme-notifications-example>
 
     <div *ngIf="selectedPath === 'TreeCode'" class="overflow-margins table-indent full-row">
         The full code examples for the Tree Table can be found in this extension: "/src/app/hello/tree-example".
