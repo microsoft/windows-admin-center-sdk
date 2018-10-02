@@ -40,100 +40,28 @@ gulp.task('clean', () => {
         .pipe(clean({ force: true }));
 });
 
-gulp.task('generate-powershell', () => {
-    return gulp.src(['src/resources/scripts/**/*.ps1'])
-        .pipe(gulpPsCode({ powerShellModuleName: 'Contoso.Honolulu.HelloExtension', validate: false, jea: false }))
-        .pipe(gulp.dest('src/generated'));
-});
-
-gulp.task('generate-svg', () => {
-    return gulp.src('src/resources/icons/**/*.svg')
-        .pipe(gulpSvgCode())
-        .pipe(gulp.dest('src/generated'));
-});
-
-gulp.task('generate-resjson-json', () => {
-    return gulp.src('src/resources/strings/**/*.resjson')
-        .pipe(gulpResJson({ json: true }))
-        .pipe(gulp.dest('src/assets/strings'));
-});
-
-gulp.task('generate-resjson-json-localized', () => {
-    return gulp.src('loc/**/*.resjson')
-        .pipe(gulpResJson({ json: true, localeOffset: 0 }))
-        .pipe(gulp.dest('src/assets/strings'));
-});
-
-gulp.task('generate-resjson-interface', () => {
-    return gulp.src('src/resources/strings/**/*.resjson')
-        .pipe(gulpResJson({ typescript: 'interface' }))
-        .pipe(gulp.dest('src/generated'));
-});
-
-gulp.task('merge-localized-json', () => {
-    return gulp.src(['./node_modules/@microsoft/windows-admin-center-sdk/dist/assets/strings', './node_modules/@msft-sme/**/dist/assets/strings'])
-        .pipe(gulpMergeJsonInFolders({ src: './src/assets/strings' }))
-        .pipe(gulp.dest('src/assets/strings'));
-});
-
-gulp.task('update-manifest-resource', () => {
-    return gulp.src(['src/resources/strings/strings.resjson', 'loc/**/*.resjson'])
-        .pipe(manifestResource({ resourceName: 'HelloWorld', localeOffset: 0 }))
-        .pipe(gulp.dest('.'));
-});
-
-gulp.task('generate-resjson', (cb) => {
-    runSequence(['generate-resjson-json', 'generate-resjson-json-localized', 'generate-resjson-interface'], 'merge-localized-json', 'update-manifest-resource', cb);
-});
-
 gulp.task('generate', (cb) => {
-    runSequence(['generate-powershell', 'generate-svg', 'generate-resjson'], cb);
-});
-
-gulp.task('lint', () => {
-    var program = tslint.Linter.createProgram("./tsconfig.json");
-    return gulp.src('src/**/*.ts')
-      .pipe(gulpTslint({ program }))
-      .pipe(gulpTslint.report({
-            "emitError": true,
-            "reportLimit": 0,
-            "summarizeFailureOutput": true
-        }));
-});
-
-gulp.task('inline', function() {
-    return gulp.src('./src/**/*.ts')
-        .pipe(inlineNg2Template({ useRelativePaths: true }))
-        .pipe(gulp.dest('inlineSrc'));
-});
-
-gulp.task('copy', () => {
-    return gulp.src(['src/**/*.json', 'src/**/*.d.ts', 'src/assets/**/*.*'], { base: 'src' })
-        .pipe(gulp.dest('dist'));
+    runSequence('doNotUse', cb);
 });
 
 gulp.task('compile', () => {
-    return ngCompile('./tsconfig-inline.json');
+    runSequence('doNotUse', cb);
 });
 
 gulp.task('bundle', cb => {
-    var args = process.argv.slice(3);
-    args.splice(0, 0, 'build', '-progress=false');
-    var cmd = child_process.spawn('ng.cmd', args);
-    cmd.stdout.on('data', function (data) { gutil.log(data.toString()); });
-    cmd.stderr.on('data', function (data) { gutil.log(data.toString()); });
-    cmd.on('exit', function (code) { cb(); });
+    runSequence('doNotUse', cb);
 });
 
 gulp.task('serve', (cb) => {
-    var args = process.argv.slice(3);
-    args.splice(0, 0, 'serve', '-progress=false');
-    var cmd = child_process.spawn('ng.cmd', args);
-    cmd.stdout.on('data', function (data) { gutil.log(data.toString()); });
-    cmd.stderr.on('data', function (data) { gutil.log(data.toString()); });
-    cmd.on('exit', function (code) { cb(); });
+    runSequence('doNotUse', cb);
+});
+
+gulp.task('doNotUse', (cb) => {
+    process.stdout.write('It is not recommended to build this extension.  ');
+    process.stdout.write('Please use the CLI to create your extension and then reference the example code here.  ');
+    process.stdout.write('The CLI can be found here: https://www.npmjs.com/package/windows-admin-center-cli');
 });
 
 gulp.task('build', (cb) => {
-    runSequence('clean', 'generate', 'lint', 'inline', ['compile', 'copy'], 'bundle', cb);
+    runSequence('doNotUse', cb);
 });
