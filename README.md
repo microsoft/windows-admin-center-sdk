@@ -10,9 +10,11 @@ Don't have Windows Admin Center installed yet?  [Download](https://aka.ms/WACDow
 
 ### Sample Code included with the SDK ###
 
-* Sample code can be found for **tool**, **solution**, and **gateway plugin** extension types in our [SDK documentation](https://aka.ms/WACSDKDocs).  There you will leverage the Windows Admin Center CLI to build a new extension project, then follow the individual guides to customize your project to meet your needs.  
+* Sample code can be found for **tool**, **solution**, and **gateway plugin** extension types in our [SDK documentation](https://aka.ms/WACSDKDocs).  There you will leverage the Windows Admin Center CLI to build a new extension project, then follow the individual guides to customize your project to meet your needs.
 
-* [Developer Tools](/windows-admin-center-developer-tools) is a sample solution extension containing a rich collection of controls that you can browse and use in your own extension.  Developer Tools is a fully functioning extension that can be side-loaded into Windows Admin Center in Developer Mode.
+* [Developer Tools](/windows-admin-center-developer-tools) is a repository of code to give you an example of how to use and include Windows Admin Center controls and styles in your extensions.  Just use the CLI to create your tool or solution, and then reference the code in the repository to see what is available.
+
+To actually see the code in action, Use the [Extension Manager](/https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/configure/using-extensions) to find the "Windows Admin Center Developer Tools (Preview)" extension and install it.  This will add a new solution to your gateway instance that has tools to help you explore the development environment.
 
 ### SDK design toolkit ###
 
