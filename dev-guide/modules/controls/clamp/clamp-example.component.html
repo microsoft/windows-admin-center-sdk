@@ -1,0 +1,23 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+    <h1>Clamp Directive</h1>
+    <p>
+        The Clamp directive uses clampy.js to achieve consistent multiline ellipsis.
+    </p>
+
+    <h3>5 Lines</h3>
+    <p style="width:300px;" [smeClamp]="loremIpsum" [smeClampLines]="5" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"></p>
+    <code>&lt;p style="width:300px;" [smeClamp]="loremIpsum" [smeClampLines]="5" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"&gt;&lt;/p&gt;</code>
+
+    <h3>2 Lines</h3>
+    <p style="width:300px;" [smeClamp]="loremIpsum" [smeClampLines]="2" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"></p>
+    <code>&lt;p style="width:300px;" [smeClamp]="loremIpsum" [smeClampLines]="2" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"&gt;&lt;/p&gt;</code>
+
+    <h3>Auto Lines (Height 200px)</h3>
+    <p style="width:300px; height: 200px;" [smeClamp]="loremIpsum" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"></p>
+    <code>&lt;p style="width:300px; height: 200px;" [smeClamp]="loremIpsum" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"&gt;&lt;/p&gt;</code>
+
+    <h3>2 Lines, label text</h3>
+    <label style="width:300px;" [smeClamp]="loremIpsum" [smeClampLines]="2" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"></label>
+    <code>&lt;label style="width:300px; height: 200px;" [smeClamp]="loremIpsum" [smeClampLines]="2" class="sme-border-inset-sm sme-margin-inset-sm sme-border-color-dark"&gt;&lt;/label&gt;</code>
+
+</div>

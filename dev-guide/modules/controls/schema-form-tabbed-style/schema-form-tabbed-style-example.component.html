@@ -1,0 +1,18 @@
+<section class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-h sme-arrange-overflow-hide">
+    <div class="sme-position-flex-auto sme-layout-relative">
+        <div class="sme-layout-absolute sme-position-inset-none sme-arrange-overflow-auto-y">
+            <sme-form #tabbedFormGroup [schema]="tabbedFormGroupSchema" [(data)]="tabbedFormGroupData" [formController]="formController"
+                (formActionExecuted)="onFormActionExecuted($event.action, $event.data)"></sme-form>
+        </div>
+    </div>
+    <div class="sme-position-flex-auto sme-layout-relative">
+        <div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
+            <div class="sme-position-flex-auto sme-layout-relative" style="word-break: break-all">
+                <textarea class="sme-layout-absolute sme-position-inset-none" style="max-width:none" [ngModel]="getDataJsonText()"></textarea>
+            </div>
+            <div class="sme-position-flex-auto sme-layout-relative">
+                    <textarea class="sme-layout-absolute sme-position-inset-none" style="max-width:none" [ngModel]="formActionLog"></textarea>
+            </div>
+        </div>
+    </div>
+</section>

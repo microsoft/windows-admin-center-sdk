@@ -1,0 +1,10 @@
+<sme-doughnut-chart chartTitle="Storage" [doughnutChartData]="doughnutChartData" centerChartText="50GB" centerChartSubtext="50GB free"></sme-doughnut-chart>
+<!-- TODO: make example tooltip -->
+<sme-capacity-doughnut-chart #capacityChart1 chartTitle="Capacity Chart with Default Thresholds" [capacityChartData]="capacityChartData" centerChartSubtext="space available" refreshIntervalString="5 seconds" [total]="100" [showTooltip]="true"></sme-capacity-doughnut-chart>
+<sme-capacity-doughnut-chart #capacityChart2 chartTitle="Capacity Chart with No Critical Threshold and Warning Threshold of 0.6" [capacityChartData]="capacityChartData" centerChartSubtext="space available" refreshIntervalString="5 seconds" [total]="100" [showTooltip]="true" criticalThreshold="disabled" [warningThreshold]="0.6"></sme-capacity-doughnut-chart>
+<sme-capacity-doughnut-chart #capacityChart3 chartTitle="Capacity Chart with No Thresholds" [capacityChartData]="capacityChartData" centerChartSubtext="space available" [total]="100" [showTooltip]="true" criticalThreshold="disabled" warningThreshold="disabled"></sme-capacity-doughnut-chart>
+
+<sme-capacity-doughnut-chart #capacityChart4 chartTitle="Capacity chart with legend on right" legendPosition="right" [capacityChartData]="capacityChartData" centerChartSubtext="space available" [total]="100" [showTooltip]="true" criticalThreshold="disabled" warningThreshold="disabled"></sme-capacity-doughnut-chart>
+
+<h3>Capacity chart with no title</h3>
+<sme-capacity-doughnut-chart #capacityChart5 chartTitle="Capacity chart with no title" [showTitle]="false" [capacityChartData]="capacityChartData" centerChartSubtext="space available" [total]="100" [showTooltip]="true" criticalThreshold="disabled" warningThreshold="disabled"></sme-capacity-doughnut-chart>

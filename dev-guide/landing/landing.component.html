@@ -1,0 +1,14 @@
+<div class="sme-focus-zone sme-layout-absolute sme-position-horizontal-sm sme-position-vertical-none">
+  <div class="sme-arrange-stack-v">
+    <div class="sme-padding-bottom-sm">
+      <button class="sme-button-primary" (click)="manageAs('MyServer')">Show Manage As Dialog for 'MyServer'</button>
+      <button (click)="manageAs('MyServer', true)">With Pre-Exsisting credentials</button>
+    </div>
+    <div>
+      <button (click)="clientNotificationClick()">Client Notification</button>
+      <button (click)="onClickLongRunning(true)">Long Running Notification Success</button>
+      <button (click)="onClickLongRunning(false)">Long Running Notification Failure</button>
+    </div>
+  </div>
+</div>
+<sme-long-running-notification-dialog></sme-long-running-notification-dialog>

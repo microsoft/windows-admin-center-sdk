@@ -1,0 +1,29 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+  <section>
+    <div class="sme-documentation-example">
+      <h3>Standard search box with a label that is hidden</h3>
+      <br>
+
+      <form>
+        <sme-form-field type="search" name="searchBox" [description]="'test'" label="Search box #1" [(ngModel)]="search" (search)="onSearch($event)"
+                        (deliberateSearch)="onDeliberateSearch($event)"></sme-form-field>
+      </form>
+      <br>
+      <p>Searched for: {{searchedString}}</p>
+      <p>Deliberately Searched for: {{deliberatelySearchedString}}</p>
+    </div>
+
+    <div class="sme-documentation-example">
+      <h3>Search box with a label, description, and required attribute</h3>
+      <br>
+
+      <form>
+        <sme-form-field type="search" name="searchBox2" [hideHeader]="false" [required]="true" [description]="'Tooltip test'" label="Search box #2"
+                        [(ngModel)]="search2" (search)="onSearch2($event)" (deliberateSearch)="onDeliberateSearch2($event)"></sme-form-field>
+      </form>
+      <br>
+      <p>Searched for: {{searchedString2}}</p>
+      <p>Deliberately Searched for: {{deliberatelySearchedString2}}</p>
+    </div>
+  </section>
+</div>

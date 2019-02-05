@@ -1,0 +1,201 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+  <h1>Animation</h1>
+  <section>
+    <p> You can use the animation CSS classes for navigation, panels, dialogs, and more. Animations include directionality (up, down, left,
+      right relating to origin and completion of tasks), enter/exit (fade in, fade out, zoom in, zoom out), and duration
+      (speed of enter/exit relating to urgency or content type).</p>
+    <p>In General, animations should be used in common controls and components. Use animations in custom scenarios only after carefull
+      consideration.</p>
+
+  </section>
+
+
+  <h2>Slide</h2>
+  <p>Slides fade in or out and come from left, right, up, or down. The tshirt sizes represent the length of the animation.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let direction of [['up', 'down'], ['down', 'up'], ['left', 'right'], ['right', 'left']]">
+        <tr *ngFor="let size of ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']">
+          <td>
+            <div>sme-animation-slide-in-{{direction[0]}}-{{size}}</div>
+            <div>sme-animation-slide-out-{{direction[1]}}-{{size}}</div>
+          </td>
+          <td>
+            <div class="sme-layout-relative sme-arrange-overflow-hide sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80"
+                 style="width:200px" (click)="toggleAnimation($event, 'sme-animation-slide-in-' + direction[0] +'-' + size, 'sme-animation-slide-out-' + direction[1] +'-' + size)">
+              <div class="sme-layout-absolute sme-position-inset-none sme-background-color-accent sme-opacity-none"></div>
+              <div class="sme-layout-absolute sme-position-center">Click Me</div>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <h2>Scale</h2>
+  <p>Scales fade in or out and and increase or decrease the area of the effected element. sm is 98%, nuetral is 100%, and lg is 103%</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div>sme-animation-scale-in-up-neutral</div>
+          <div>sme-animation-scale-in-up-lg</div>
+          <div>sme-animation-scale-in-down-neutral</div>
+          <div>sme-animation-scale-in-down-sm</div>
+          <div>sme-animation-scale-out-up-neutral</div>
+        </td>
+        <td>
+          <div class="sme-layout-relative sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80" style="width:200px"
+               (click)="toggleAnimation($event, 'sme-animation-scale-in-up-neutral', 'sme-animation-scale-in-up-lg', 'sme-animation-scale-in-down-neutral', 'sme-animation-scale-in-down-sm', 'sme-animation-scale-out-up-neutral')">
+            <div class="sme-layout-absolute sme-position-inset-none sme-background-color-accent sme-opacity-none"></div>
+            <div class="sme-layout-absolute sme-position-center">Click Me</div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Fade</h2>
+  <p>Fades are simple fade in/out animations. The tshirt sizes represent the length of the animation.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let size of ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']">
+        <td>
+          <div>sme-animation-fade-in-{{size}}</div>
+          <div>sme-animation-fade-out-{{size}}</div>
+        </td>
+        <td>
+          <div class="sme-layout-relative sme-arrange-overflow-hide sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80"
+               style="width:200px" (click)="toggleAnimation($event, 'sme-animation-fade-in-' + size, 'sme-animation-fade-out-' + size)">
+            <div class="sme-layout-absolute sme-position-inset-none sme-background-color-accent sme-opacity-none"></div>
+            <div class="sme-layout-absolute sme-position-center">Click Me</div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Rotate</h2>
+  <p>Rotations are left or right and currently only exist in 1 size (md) which can be used for elements such as expanders that rotate
+    coditionally.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div>sme-animation-rotate-right-md</div>
+          <div>sme-animation-rotate-left-md</div>
+        </td>
+        <td>
+          <div class="sme-layout-relative sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80" style="width:200px"
+               (click)="toggleAnimation($event, 'sme-animation-rotate-left-md', 'sme-animation-rotate-right-md')">
+            <div class="sme-layout-absolute sme-position-inset-none sme-background-color-accent">
+              <div class="sme-layout-absolute sme-position-center">Click Me</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h2>Transitions</h2>
+  <p>Transitions are special animations that take effect on one or more css properties are changed.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let size of ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']">
+        <td>sme-animation-transition-height-{{size}} </td>
+        <td>
+          <div class="sme-layout-relative sme-arrange-overflow-hide sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80"
+               style="width:200px" (click)="toggleAnimation($event, 'sme-height-none')">
+            <div class="sme-position-stretch-v sme-background-color-accent sme-animation-transition-height-{{size}}"></div>
+            <div class="sme-layout-absolute sme-position-center">Click Me</div>
+          </div>
+        </td>
+      </tr>
+      <tr *ngFor="let size of ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']">
+        <td>sme-animation-transition-width-{{size}} </td>
+        <td>
+          <div class="sme-layout-relative sme-arrange-overflow-hide sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80"
+               style="width:200px" (click)="toggleAnimation($event, 'sme-width-none')">
+            <div class="sme-position-stretch-h sme-height-xxxl sme-background-color-accent sme-animation-transition-width-{{size}}"></div>
+            <div class="sme-layout-absolute sme-position-center">Click Me</div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h2>Spins</h2>
+  <p>Spins are infinite animations that spin an element at various speeds. Consider using progress styles instead.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let size of ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']">
+        <td>sme-animation-spin-{{size}} </td>
+        <td>
+          <div class="sme-layout-relative sme-arrange-overflow-hide sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80"
+               style="width:200px">
+            <div class="sme-position-center-h-block sme-square-md sme-margin-top-md sme-background-color-accent sme-animation-spin-{{size}}"></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Delay</h2>
+  <p>Delays cna delay the start of a animation squence. Tshirt sizes indicate the length of the delay.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let size of ['xs', 'sm', 'md', 'lg', 'xl']">
+        <td>
+          <div>sme-animation-delay-{{size}}</div>
+        </td>
+        <td>
+          <div class="sme-layout-relative sme-arrange-overflow-hide sme-height-xxxl sme-margin-inset-xxs sme-border-inset-sm sme-border-color-white-80"
+               style="width:200px" (click)="toggleAnimation($event, 'sme-animation-fade-in-xl', 'sme-animation-fade-out-xl')">
+            <div class="sme-layout-absolute sme-position-inset-none sme-background-color-accent sme-opacity-none sme-animation-delay-{{size}}"></div>
+            <div class="sme-layout-absolute sme-position-center">Click Me</div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

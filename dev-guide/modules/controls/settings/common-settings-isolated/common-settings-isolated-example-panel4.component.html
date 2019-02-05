@@ -1,0 +1,34 @@
+<sme-settings-page>
+  <sme-settings-content>
+    <sme-loading-wheel *ngIf="loading"></sme-loading-wheel>
+    <form *ngIf="!loading" id="sme-isolated-settings-form4" [smeSettingsForm]="form" [formGroup]="form" aria-labelledby="sme-shell-setting-selectedTitle">
+      <sme-alert [alert]="formInfoAlert"></sme-alert>
+      <h4 id="sme-isolated-settings-form4-identity-header">Identity</h4>
+      <fieldset aria-labelledby="sme-isolated-settings-form4-identity-header">
+        <sme-form-field type="text" label="Name Label" formControlName="name" [required]="true" [autofocus]="true"></sme-form-field>
+      </fieldset>
+
+      <h4 id="sme-isolated-settings-form4-financial-header">Financial</h4>
+      <fieldset aria-labelledby="sme-isolated-settings-form4-financial-header">
+        <sme-form-field type="text" label="Salary Label" formControlName="salary" [required]="true"></sme-form-field>
+      </fieldset>
+
+      <ng-container formArrayName="addresses">
+        <ng-container *ngFor="let address of form.controls.addresses.controls; let i = index;" [formGroupName]="i">
+          <h4 [id]="'sme-isolated-settings-form4-address-header' + i">Address {{ i + 1 }}</h4>
+          <fieldset [attr.aria-labelledby]="'sme-isolated-settings-form4-address-header' + i">
+            <sme-form-field type="text" label="City Label" formControlName="city" [required]="true"></sme-form-field>
+            <sme-form-field type="text" label="State Label" formControlName="state" [required]="true"></sme-form-field>
+            <sme-form-field type="text" label="Street Label" formControlName="street" [required]="true"></sme-form-field>
+            <sme-form-field type="text" label="Zip Label" formControlName="zipCode" [required]="true"></sme-form-field>
+          </fieldset>
+        </ng-container>
+      </ng-container>
+    </form>
+  </sme-settings-content>
+  <sme-settings-footer>
+    <button type="submit" form="sme-isolated-settings-form4" class="sme-button-primary" (click)="onSave()" [disabled]="!form || !form.dirty || !form.valid || saving">Save</button>
+    <button type="button" (click)="onDiscard()" [disabled]="!form || !form.dirty || saving">Discard</button>
+    <button type="button" (click)="onCloseClick()">Close</button>
+  </sme-settings-footer>
+</sme-settings-page>
