@@ -1,17 +1,0 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved.
- Licensed under the MIT License. -->
-<h4>Choose a Spell</h4>
-<form [formGroup]="form">
-  <div class="form-controls">
-    <div class="form-group">
-      <div class="form-input">
-        <label for="spell">{{ spellLabel }}</label>
-        <div class="combobox">
-          <select class="form-control" id="spell" formControlName="spell" [(ngModel)]="model.spell">
-            <option *ngFor="let spell of spells" [ngValue]="spell">{{ spellMap[spell] }}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>

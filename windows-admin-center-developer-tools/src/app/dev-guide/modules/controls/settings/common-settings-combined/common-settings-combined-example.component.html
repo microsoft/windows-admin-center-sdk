@@ -1,9 +1,0 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved.
- Licensed under the MIT License. -->
-<form class="tool-container">
-  <sme-common-settings settingsTitle="Common Settings" [settings]="settingItems" [backRoute]="backRoute">
-      <button type="submit" class="btn btn-primary" (click)="onSaveClick()" [disabled]="!combinedForm || (!combinedForm.dirty || !combinedForm.valid) || saving">{{ saveButtonLabel }}</button>
-      <button type="button" class="btn btn-secondary" (click)="onDiscardClick()" [disabled]="!combinedForm || !combinedForm.dirty || saving">{{ discardButtonLabel }}</button>
-      <button type="button" class="btn btn-secondary" (click)="onCloseClick()">{{ closeButtonLabel }}</button>
-  </sme-common-settings>
-</form>
