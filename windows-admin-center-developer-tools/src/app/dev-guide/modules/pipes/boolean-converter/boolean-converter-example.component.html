@@ -1,16 +1,0 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved.
- Licensed under the MIT License. -->
-<div class="p-xxs tool-container">
-    <div>
-        <label>boolean-converter input</label>
-        <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
-    </div>
-    <div>
-        <span>Default Output:</span>
-        <span style="font-weight: bold">{{ checked | smeBooleanConverter }}</span>
-    </div>
-    <div>
-        <span>Mapped Pipe Output:</span>
-        <span style="font-weight: bold">{{ checked | smeBooleanConverter : checkedMap }}</span>
-    </div>
-</div>

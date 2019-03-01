@@ -1,18 +1,0 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved.
- Licensed under the MIT License. -->
-<div class="p-xxs tool-container">
-    <div>
-        <label>enum-converter input</label>
-        <select [(ngModel)]="value">
-            <option [ngValue]="i" *ngFor="let i of colors">{{i}} - {{colorEnum[i]}}</option>
-        </select>
-    </div>
-    <div>
-        <span>Default Output:</span>
-        <span style="font-weight: bold">{{ value | smeEnumConverter }}</span>
-    </div>
-    <div>
-        <span>Mapped Pipe Output:</span>
-        <span style="font-weight: bold" [style.color]="value | smeEnumConverter : colorMap">{{ value | smeEnumConverter : colorMap }}</span>
-    </div>
-</div>

@@ -1,19 +1,0 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved.
- Licensed under the MIT License. -->
-<!-- Copyright (c) Microsoft Corporation. All rights reserved.
-     Licensed under the MIT License. -->
-<div class="p-xxs tool-container">
-    <div>
-        <label>byte-unit-converter input (number)</label>
-        <input type="text" [(ngModel)]="value" />
-    </div>
-    <div>
-        <span>1024 Base Output:</span>
-        <span style="font-weight: bold">{{ value | smeByteUnitConverter:1024 }}</span>
-    </div>    
-    
-    <div class="m-t-xxs">
-        <span>1000 Base Output:</span>
-        <span style="font-weight: bold">{{ value | smeByteUnitConverter:1000 }}</span>
-    </div>  
-</div>
