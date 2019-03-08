@@ -1,0 +1,51 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+    <h1>Tooltip</h1>
+    <p>
+        The tooltip directives work in conjunction with the
+        <code>sme-tooltip-host</code> component. This component should be generally use in the root component of your project after all of your application
+        content.
+    </p>
+    <code>... application content ...
+&lt;sme-tooltip-host&gt;&lt;/sme-tooltip-host&gt;</code>
+
+    <h2>Title Example</h2>
+    <section>
+        <p>
+            The tooltip directive automatically applies itself when you use the standard
+            <code>[title]</code> attribute. Not that if the attribute is not bound with '[]' the native tooltip may still appear in addition
+            to the styled one. If you want to use only the native tooltip, then bind to
+            <code>[attr.title]</code> instead.
+        </p>
+        <div class="sme-documentation-example">
+            <button [title]="'This is a tooltip'">Hover Over Me</button>
+        </div>
+        <code>&lt;button [title]="'This is a tooltip'"&gt;Hover Over Me&lt;/button&gt;</code>
+    </section>
+
+
+    <h2>Custom Example</h2>
+    <section>
+        <p>
+            Tooltips can have custom content as well using the
+            <code>smeTooltip</code> and
+            <code>smeTooltipContext</code> attribute instead.
+        </p>
+        <div class="sme-documentation-example">
+            <button [smeTooltip]="template" [smeTooltipContext]="{ linkText: 'Microsoft Bing', link: 'www.bing.com' }">Hover Over Me</button>
+            <button style="float:right;display:block" [smeTooltip]="template" [smeTooltipContext]="{ linkText: 'Microsoft Bing', link: 'www.bing.com' }">Hover Over Me</button>            
+            <ng-template #template let-data>
+                This is a custom tooltip. It even has a link to
+                <a class="sme-link" target="about:blank" [href]="data.link">{{data.linkText}}</a>
+                <br/> Also, it's a multiple line tooltip.
+            </ng-template>
+        </div>
+        <code>&lt;button [smeTooltip]="template" [smeTooltipContext]="{{'{'}} linkText: 'Microsoft Bing', link: 'www.bing.com' }"&gt;Hover Over Me&lt;/button&gt;
+&lt;ng-template #template let-data&gt;
+    &lt;p&gt;
+        This is a custom tooltip. It even has a link to &lt;a class="sme-link" target="about:blank" [href]="data.link"&gt;{{'{'}}{{'{'}}data.linkText}}&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/ng-template&gt;</code>
+    </section>
+
+
+</div>

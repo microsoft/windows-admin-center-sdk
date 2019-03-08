@@ -1,0 +1,34 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
+    <sme-pivot [selection]="tab1" class="sme-position-flex-auto">
+        <sme-pivot-tab #tab1 label="Playground">
+            <ng-template>
+                <section class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-h sme-arrange-overflow-hide">
+                    <div class="sme-position-flex-auto sme-layout-relative">
+                        <div class="sme-layout-absolute sme-position-inset-lg sme-arrange-overflow-auto-y">
+                            <sme-form #form [schema]="playgroundSchema" [(data)]="playgroundData" [formController]="formController"></sme-form>
+                            <button [disabled]="!form.isFormReadyToSubmit">Submit</button>
+                        </div>
+                    </div>
+                    <div class="sme-position-flex-none" style="width:50%;word-break: break-all">
+                        <textarea style="width:100%;height:100%;max-width:none" [ngModel]="getDataJsonText(1)"></textarea>
+                    </div>
+                </section>
+            </ng-template>
+        </sme-pivot-tab>
+        <sme-pivot-tab label="Soda Form">
+            <ng-template>
+                <section class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-h sme-arrange-overflow-hide">
+                    <div class="sme-position-flex-auto sme-layout-relative">
+                        <div class="sme-layout-absolute sme-position-inset-lg sme-arrange-overflow-auto-y">
+                            <sme-form #form [schema]="sodaFormSchema" [(data)]="sodaFormData" [formController]="formController" (formActionExecuted)="onFormActionExecuted($event.action, $event.data)"></sme-form>
+                            <button [disabled]="!form.isFormValid">Submit</button>
+                        </div>
+                    </div>
+                    <div class="sme-position-flex-none" style="width:50%;word-break: break-all">
+                        <textarea style="width:100%;height:100%;max-width:none" [ngModel]="getDataJsonText(2)"></textarea>
+                    </div>
+                </section>
+            </ng-template>
+        </sme-pivot-tab>
+    </sme-pivot>
+</div>

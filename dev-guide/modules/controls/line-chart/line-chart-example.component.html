@@ -1,0 +1,149 @@
+<h3> Line Chart Control </h3>
+
+
+<h3> Tabbed Line Chart With Assync Loading</h3>
+<br> This uses loading wheels. Clicking a tabl results in "new" data being loaded. The loading wheel reappears, and then disappears after
+data is "loaded". In this case, the left chart always loads first after 1 second and the right chart loads after 1.5 seconds.
+<sme-tabbed-line-chart-group #linechart6 [loadingWheels]="true" [loadingMessage]="loadingMessage" [groupData]="groupData3" [tabList]="tabList3"
+                             (onTabClick)="mockAssyncDataLoading($event)"></sme-tabbed-line-chart-group>
+
+
+<h3> Line Chart Control </h3>
+
+
+<h3> Single Line Chart </h3>
+<p>
+  Use sme-line-chart to render a single line chart. To use it, you need to pass in a LineChartData object
+</p>
+<p>LineChartData</p>
+<div style="padding-left: 30px">
+  title: string; ----> This is the title that will show up above the chart
+  <br> chartData: LinearChartData; ----> This is the LinearChartData object that is actually passed to ChartJs
+  <br> currentValueLabel?: string; ----> This is the at-a-glance value of the most recent data point. It is displayed under
+  the title
+  <br> firstCurrentValueLabel?: string; ----> This is the at-a-glance value of the most recent data point for dataset 1 in SDDC. It is
+  displayed under
+  the title.
+  <br> secondCurrentValueLabel?: string; ----> This is the at-a-glance value of the most recent data point for dataset 2 in SDDC (if 2
+  datasets). It is displayed under
+  the title
+  <br> totalCurrentValueLabel?: string; ----> This is the at-a-glance value of the sum of the most recent data point from each dataset in
+  SDDC (if 2 datasets). It is displayed under
+  the title
+  <br> yAxisMinLabel?: string; ----> This is the minimum label for the y-axis
+  <br> yAxisMaxLabel?: string; ----> This is the maximum label for the y-axis
+  <br> xAxisMaxLabel?: string; ----> This is the maximum label for the x-axis
+  <br> xAxisMinLabel?: string; ----> This is the minimum label for the x-axis
+  <br> ymaxValue?: number; ----> This should hold the maximum y-value for the chart. It is used to scale the size of the
+  chart. Without it, the scaling of the graph is done automatically
+  <br> type?: LineChartType; ----> The LineChartType of the graph
+</div>
+
+<p>LinearChartData </p>
+<div style="padding-left: 30px">
+  This is a data type native to chartjs. It takes in an array of datasets that can be used to render multiple lines on one
+  graph.
+  <br> Please view the line-chart-example source code for an example of the default values to be used for the linear chart
+  data.
+</div>
+
+<p>LineChartType</p>
+<div style="padding-left: 30px">
+  There are currently 3 types of line charts supported by sme-line-chart:
+  <br><br> Line: linearChartData.datasets&#91;i&#93;.data is of type number&#91;&#93;
+  <div style="padding-left: 30px">
+    This is a line chart that takes in an array of numbers representing y-values.<br> The x-axis is spaced evenly based on
+    the number of tick marks you specify for thegraph when initializing the data.<br> X-axis tick marks can be added by pushing
+    '' onto the linearChartData.labels array. See example component.<br> Tooltip labels in this chart will only show the
+    y-values when the user hovers over the point. This is<br>
+  </div>
+  <br> Scatter: linearChartData.datasets&#91;i&#93;.data is of type ChartPoint&#91;&#93;
+  <div style="padding-left: 30px">
+    This is a line chart that takes in an array of ChartPoint objects, which have an x and y value. Points are charted according
+    to their x and y values, as opposed to the even spacing of a Line chart type. Tooltip labels in this chart will show
+    the x value and y value as given in the data set
+  </div>
+  <br> Historical: linearChartData.datasets&#91;i&#93;.data is of type ChartPoint&#91;&#93; with &#123;x, y&#125; where x
+  is a timestamp
+  <div style="padding-left: 30px">
+    This is a line chart that behaves exactly as a Scatter chart. The only difference is that it expects the x values in the
+    data set to be in the form of integer time stamps. Historical chart tooltips will parse these timestamps into readable
+    dates when the user hovers over a point.
+  </div>
+  <br> If no LineChartType is specified, sme-line-chart will select the Line type
+</div>
+
+<h3> Single Line Chart Examples </h3>
+
+<p>
+  To see these examples with real time data add ?gateway=&#91;your gateway url&#93;&amp;connection=&#91;your node name&#93;
+  to url for this page. This is a single sme-line-chart. All sme-line charts take up the size of its parent div. To select
+  a fixed size, wrap the sme-line-chart object in a div with a fixed width.
+  <br> With a gateway and node connected, the following graph shows live data with custom labels and sizing with the Historical
+  chart type. Hover over a point on the graph to see the tool tip with a date.
+  <br>This chart uses a ymax value of 100.
+</p>
+<br>
+<div style="width:250px">
+  <sme-line-chart #linechart1 [lineChartData]="lineChartData1"></sme-line-chart>
+</div>
+
+<p>
+  With a gateway and node connected, the following graph shows live data with custom labels and sizing with the Scatter chart
+  type. Hover over a point on the graph to see the tool tip with the corresponding x and y value.
+  <br>This chart uses a ymax value of 200, so the same data will appear shorter than the previous chart.
+</p>
+<br>
+<div style="width:500px">
+  <sme-line-chart #linechart2 [lineChartData]="lineChartData2"></sme-line-chart>
+</div>
+
+<br>
+<p>This chart has 2 series plotted and a hero value for each. The third hero value is the sum total of the 2 hero values in this case.
+  Your own code must determine this value - it is not automatically set to the sum.</p>
+
+<div style="width:500px">
+  <sme-line-chart #linechart3 [lineChartData]="lineChartData4"></sme-line-chart>
+</div>
+
+<br>
+<p>This chart has 3 series plotted</p>
+
+<div style="width:500px">
+  <sme-line-chart #linechart3 [lineChartData]="lineChartData5"></sme-line-chart>
+</div>
+
+<h3> Tabbed Line Chart Group </h3>
+<p>
+  Use sme-tabbed-line-chart-group to create a group of line charts that share a layout and tab control
+  <br> The control takes in a groupData object and a tabList object, with an optional chartsPerRow number
+</p>
+<p>tabList:</p>
+<div style="padding-left: 30px">
+  The tabList is a list of strings that will be used to name the tabs in your tab control The order of strings in the tabList
+  will be the order that the tabs are shown in over the group of charts For example, &#91;'Live', 'Hour', 'Day', 'Month,
+  'Year'&#93;
+</div>
+
+<p>groupData:</p>
+<div style="padding-left: 30px">
+  The groupData object is a Map&lt;string, LineChartData&gt;&#91;&#93;. So, a list of mappings between the tab names and data
+  to show for each tab.
+  <br> Each chart in the group gets 1 map that tells the control which set of data to show for each tab.
+  <br> The key strings in the map must match the key strings in the tabsList.
+</div>
+
+<p>chartsPerRow:</p>
+<div style="padding-left: 30px">
+  This is the number of charts you want in each row of the group of charts. It is used to space out the charts in the chart
+  group in a way that allows them to resive relative to the space they are given on the page The default value of this is 3.
+</div>
+
+<h3> Tabbed Line Chart Group Examples </h3>
+This is a group of charts with the default number of charts per row and 5 tabs.
+<sme-tabbed-line-chart-group #linechart3 [groupData]="groupData" [tabList]="tabList1"></sme-tabbed-line-chart-group>
+<br> This is a group of charts with only 2 chartsPer row and 2 tabs.
+<sme-tabbed-line-chart-group #linechart4 [groupData]="groupData" [tabList]="tabList2" [chartsPerRow]="2"></sme-tabbed-line-chart-group>
+<br> This utilizes the onTabClick event to display the tab that was clicked. It also makes use of tooltipFormatters input.
+<sme-tabbed-line-chart-group #linechart5 [groupData]="groupData3" [tooltipFormatters]="tooltipFormatters" [tabList]="tabList3" (onTabClick)="showClickedTab($event)"></sme-tabbed-line-chart-group>
+<p>Tab clicked: {{clickedTab}}</p>

@@ -1,0 +1,13 @@
+<sme-dialog #dialog dialogMode="fullscreen" fullScreenLeftDistance="20%">
+  <sme-dialog-header>
+    <h3 id="sme-dialog-title">{{ title }}</h3>
+  </sme-dialog-header>
+  <sme-dialog-content>
+    <p id="sme-dialog-desc">{{ label }}</p>
+    <sme-loading-wheel></sme-loading-wheel>
+  </sme-dialog-content>
+  <sme-dialog-footer class="sme-layout-float-right">
+      <button type="button" class="sme-button-primary" (click)="onClose()">{{ closeButtonText }}</button>
+      <button type="button" (click)="onCancel()">{{ cancelButtonText }}</button>
+  </sme-dialog-footer>
+</sme-dialog>

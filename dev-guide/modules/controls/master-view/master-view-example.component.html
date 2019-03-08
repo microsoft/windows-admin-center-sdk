@@ -1,0 +1,44 @@
+<sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv>
+  <sme-split-view-pane>
+    <sme-details title="My Details Title" [(isExpanded)]="sv.isExpanded">
+      <div class="sme-documentation">
+        <sme-lorem-ipsum></sme-lorem-ipsum>
+      </div>
+    </sme-details>
+  </sme-split-view-pane>
+
+  <sme-split-view-content>
+    <sme-master-view #masterView header="Master View Example" [showGroup]="true" [total]="smeDataTable.renderedItems.length" [selection]="selection"
+                     [filterActive]="active" [groupActive]="groupActive" (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')"
+                     (filter)="active = !active; alert('filter active: ' + active)" (group)="groupActive = !groupActive; alert('group active: ' + groupActive)"
+                     (clearSelection)="selection=null">
+      <sme-action-bar #actionBar>
+        <sme-action-button #action [text]="'Toggle Search'" (execute)="masterView.searchable = !masterView.searchable"></sme-action-button>
+        <sme-action-button #action [text]="'Toggle Header'" (execute)="masterView.header = masterView.header ? '' : 'Header' "></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder1'"></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder2'"></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder3'"></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder4'"></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder5'"></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder6'"></sme-action-button>
+        <sme-action-button #action [text]="'Placeholder7'"></sme-action-button>
+      </sme-action-bar>
+
+      <sme-form-field #search type="search" [placeholder]="strings.MsftSmeShell.Angular.Common.search" [autofocus]="true" [label]="strings.MsftSmeShell.Angular.Common.search"
+                      [count]="smeDataTable.renderedItems.length" [(ngModel)]="searchString"></sme-form-field>
+
+      <sme-data-table #smeDataTable [items]="items" [(selection)]="selection" [globalFilter]="search">
+        <sme-data-table-column field="name" header="Name" sortable="true">
+        </sme-data-table-column>
+        <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
+        </sme-data-table-column>
+        <sme-data-table-column field="name" header="Custom Content" sortable="true" [filterOverridingFunction]="convertForCustomColumn">
+          <ng-template let-data>
+            <span class="sme-icon sme-icon-cluster"></span>
+            <strong>{{convertForCustomColumn(data.name)}}</strong>
+          </ng-template>
+        </sme-data-table-column>
+      </sme-data-table>
+    </sme-master-view>
+  </sme-split-view-content>
+</sme-split-view>

@@ -1,0 +1,10 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-h">
+    <nav role="navigation" class="sme-position-flex-none sme-padding-right-sm">
+        <a *ngFor="let link of links" routerLinkActive="sme-active" [routerLink]="link.path" class="sme-scheme-nav-item sme-padding-squish-v-sm sme-arrange-stack-h sme-arrange-ws-nowrap">
+            {{link.title}}
+        </a>
+    </nav>
+    <div class="sme-layout-relative sme-position-flex-auto sme-arrange-overflow-auto-y sme-focus-zone">
+        <router-outlet></router-outlet>
+    </div>
+</div>

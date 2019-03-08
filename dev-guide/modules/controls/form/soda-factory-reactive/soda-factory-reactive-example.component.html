@@ -1,0 +1,148 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+
+  <h2>Soda Factory</h2>
+
+  <div class="sme-documentation-example">
+    <form #formCtrl="ngForm" [formGroup]="sodaFactory">
+      <sme-form-field type="readonly" formControlName="model" [label]="model.model.label"></sme-form-field>
+      <sme-form-field type="password" formControlName="password" [label]="model.password.label" [description]="model.password.description"></sme-form-field>
+      <sme-form-field type="radiogroup" formControlName="recipeType" [label]="model.recipeType.label">
+        <sme-option [value]="model.recipeType.options.upload.value" [label]="model.recipeType.options.upload.label">
+          <ng-template>
+            <sme-form-field type="file" formControlName="upload" [label]="model.upload.label" [description]="model.upload.description"
+                            [required]="true" [multiple]="true" [fileTypes]="['.recipe']"></sme-form-field>
+          </ng-template>
+        </sme-option>
+        <sme-option [value]="model.recipeType.options.create.value" [label]="model.recipeType.options.create.label">
+          <ng-template>
+            <sme-form-field type="text" formControlName="sodaName" [label]="model.name.label" [required]="true"></sme-form-field>
+            <sme-form-field type="text" formControlName="details" [label]="model.details.label" [multiline]="true"></sme-form-field>
+            <sme-form-field type="orderedlist" formControlName="orderedList" [label]="model.orderedList.label" [required]="true">
+              <sme-option *ngFor="let option of model.orderedList.options" [value]="option.value" [label]="option.label"></sme-option>
+            </sme-form-field>
+            <sme-form-field type="checklist" formControlName="flavorMix" [label]="model.flavorMix.label" [required]="true">
+              <sme-option [value]="model.flavorMix.options.cola.value" [label]="model.flavorMix.options.cola.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.pepper.value" [label]="model.flavorMix.options.pepper.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.orange.value" [label]="model.flavorMix.options.orange.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.grape.value" [label]="model.flavorMix.options.grape.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.lemonlime.value" [label]="model.flavorMix.options.lemonlime.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.cherry.value" [label]="model.flavorMix.options.cherry.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.rootbeer.value" [label]="model.flavorMix.options.rootbeer.label">
+                <ng-template>
+                  <sme-form-field type="radiogroup" formControlName="rootbeerType" [label]="model.rootbeerType.label" [description]="model.rootbeerType.description">
+                    <sme-option *ngFor="let option of model.rootbeerType.options" [value]="option.value" [label]="option.label"></sme-option>
+                  </sme-form-field>
+                </ng-template>
+              </sme-option>
+            </sme-form-field>
+            <sme-form-field type="combobox" formControlName="flavorMix2" [label]="model.flavorMix.label2" [multiple]="true" [required]="true">
+              <sme-option [value]="model.flavorMix.options.cola.value" [label]="model.flavorMix.options.cola.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.pepper.value" [label]="model.flavorMix.options.pepper.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.orange.value" [label]="model.flavorMix.options.orange.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.grape.value" [label]="model.flavorMix.options.grape.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.lemonlime.value" [label]="model.flavorMix.options.lemonlime.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.cherry.value" [label]="model.flavorMix.options.cherry.label"></sme-option>
+              <sme-option [value]="model.flavorMix.options.rootbeer.value" [label]="model.flavorMix.options.rootbeer.label"></sme-option>
+            </sme-form-field>
+            <sme-form-field type="slider" formControlName="carbonationLevel" [label]="model.carbonationLevel.label" [description]="model.carbonationLevel.description"
+                            [min]="model.carbonationLevel.min" [max]="model.carbonationLevel.max" [step]="model.carbonationLevel.step"
+                            (customValidate)="onCustomValidate('carbonationLevel', $event)"></sme-form-field>
+            <sme-form-field type="tags" formControlName="tags" [suggestions]="model.tags.suggestions" [label]="model.tags.label"
+                            [description]="model.tags.description"></sme-form-field>
+            <sme-form-field type="combobox" formControlName="size" [label]="model.size.label" [description]="model.size.description">
+              <sme-option *ngFor="let option of model.size.options" [value]="option.value" [label]="option.label"></sme-option>
+            </sme-form-field>
+            <sme-form-field type="number" formControlName="extraSugar" [label]="model.extraSugar.label" [description]="model.extraSugar.description"
+                            [min]="model.extraSugar.min" [max]="model.extraSugar.max" [step]="model.extraSugar.step" (customValidate)="onCustomValidate('extraSugar', $event)"></sme-form-field>
+            <sme-form-field type="checkbox" formControlName="isDiet" [label]="model.isDiet.label">
+              <ng-template>
+                <sme-form-field type="combobox" formControlName="dietSweetener" [label]="model.dietSweetener.label">
+                  <sme-option *ngFor="let option of model.dietSweetener.options" [value]="option.value" [label]="option.label"></sme-option>
+                </sme-form-field>
+              </ng-template>
+            </sme-form-field>
+            <sme-form-field type="toggle-switch" formControlName="emergencyProduction" [label]="model.emergencyProduction.label"
+                            [description]="model.emergencyProduction.description" (customValidate)="onCustomValidate('emergencyProduction', $event)"></sme-form-field>
+            <sme-form-field type="radiogroup" [displayMode]="'inline'" formControlName="inlineRadio" [label]="model.inlineRadio.label">
+              <sme-option *ngFor="let option of model.inlineRadio.options" [value]="option.value" [label]="option.label"></sme-option>
+            </sme-form-field>
+          </ng-template>
+        </sme-option>
+      </sme-form-field>
+      <sme-form-field type="array" name="quotes" formControlName="quotes" [label]="model.quotes.label" [newItem]="model.quotes.newValue">
+        <sme-array-item>
+          <ng-template let-item let-context="context">
+            <p [id]="context.ariaLabelId"><b>{{model.quotes.heading.format(context.index)}}</b></p>
+            <sme-form-field type="text" [(ngModel)]="item.customerName" [label]="model.quotes.fields.customerName.label" [required]="true"></sme-form-field>
+            <sme-form-field type="text" [(ngModel)]="item.location" [label]="model.quotes.fields.location.label" [required]="true"></sme-form-field>
+            <sme-form-field type="text" [(ngModel)]="item.quote" [label]="model.quotes.fields.quote.label" [required]="true" [multiline]="true"></sme-form-field>
+          </ng-template>
+        </sme-array-item>
+      </sme-form-field>
+    </form>
+  </div>
+
+  <h3>Form Status</h3>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 200px">Property</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>dirty</td>
+          <td>{{formCtrl.dirty}}</td>
+        </tr>
+        <tr>
+          <td>disabled</td>
+          <td>{{formCtrl.disabled}}</td>
+        </tr>
+        <tr>
+          <td>enabled</td>
+          <td>{{formCtrl.enabled}}</td>
+        </tr>
+        <tr>
+          <td>invalid</td>
+          <td>{{formCtrl.invalid}}</td>
+        </tr>
+        <tr>
+          <td>pending</td>
+          <td>{{formCtrl.pending}}</td>
+        </tr>
+        <tr>
+          <td>pristine</td>
+          <td>{{formCtrl.pristine}}</td>
+        </tr>
+        <tr>
+          <td>status</td>
+          <td>{{formCtrl.status}}</td>
+        </tr>
+        <tr>
+          <td>touched</td>
+          <td>{{formCtrl.touched}}</td>
+        </tr>
+        <tr>
+          <td>untouched</td>
+          <td>{{formCtrl.untouched}}</td>
+        </tr>
+        <tr>
+          <td>valid</td>
+          <td>{{formCtrl.valid}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <h3>Form Value</h3>
+  <section>
+    <code>{{ formCtrl.value | json }}</code>
+  </section>
+
+  <h3>Model Value</h3>
+  <section>
+    <code>{{ sodaFactory.value | json }}</code>
+  </section>
+</div>

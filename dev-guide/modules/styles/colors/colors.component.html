@@ -1,0 +1,35 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+  <h1>Colors</h1>
+  <section>
+    <p>
+      <span>In general,</span>
+      <a class="sme-link" routerLink="/dev/styles/schemes">Schemes</a>
+      <span>should be used instead of these color utilities.</span>
+    </p>
+    <p>Hover over a color to get the classes accosiated with it</p>
+  </section>
+  <h2>Named Colors</h2>
+  <section>
+    <p>These colors change with the current theme.</p>
+    <div *ngFor="let color of namedColors">
+      <h3>{{getColorName(color)}}</h3>
+      <div class="sme-arrange-stack-h sme-margin-bottom-sm">
+        <div class="sme-square-md" [ngClass]="'sme-background-color-' + color" [title]="getColorClasses(color)"></div>
+        <div *ngFor="let mix of mixes" class="sme-square-md" [ngClass]="'sme-background-color-' + color + '-' + mix" [title]="getColorClasses(color, mix)"></div>
+      </div>
+    </div>
+  </section>
+  <h2>Base Colors</h2>
+  <section>
+    <p>These colors do not change with the current theme.</p>
+    <div *ngFor="let color of baseColors">
+      <h3>{{getColorName(color)}}</h3>
+      <div class="sme-arrange-stack-h sme-margin-bottom-sm">
+        <div *ngFor="let mix of mixes.slice().reverse()" class="sme-square-md" [ngClass]="'sme-background-color-' + color + '-' + mix"
+             [title]="getColorClasses(color, mix)"></div>
+        <div class="sme-square-md" [ngClass]="'sme-background-color-' + color" [title]="getColorClasses(color)"></div>
+        <div *ngFor="let mix of mixes" class="sme-square-md" [ngClass]="'sme-background-color-' + color + '-dark-' + mix" [title]="getColorClasses(color+ '-dark', mix)"></div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,28 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation sme-arrange-stack-v">
+    <h1>Property Grid Component</h1>
+    <p>
+        The Property Grid component displays a list of properties related to an object or context in a grid-like fashion.
+    </p>
+
+    <form class="sme-margin-bottom-lg">
+        <sme-form-field type="toggle-switch" name="oneColumn" [(ngModel)]="oneColumn" label="Arrange Vertically"></sme-form-field>
+    </form>
+
+    <h2>Example</h2>
+
+    <sme-property-grid class="sme-position-flex-auto sme-documentation-example" [class.sme-property-grid-arrange-vertical]="oneColumn">
+        <sme-property-grid-item label="Simple Property" value="value"></sme-property-grid-item>
+        <sme-property-grid-item label="Link Property" value="Go to http:\\www.bing.com" link="http:\\www.bing.com"></sme-property-grid-item>
+        <sme-property-grid-item label="Tooltip Property" value="Check the icon above for a tooltip" tooltip="This is a simple tooltip"></sme-property-grid-item>
+        <sme-property-grid-item label="Action Property" value="Click here to take an internal action" [action]="propertyAction"></sme-property-grid-item>
+        <sme-property-grid-item label="Simple Property" value="value"></sme-property-grid-item>
+        <sme-property-grid-item label="Link Property" value="Go to http:\\www.bing.com" link="http:\\www.bing.com"></sme-property-grid-item>
+        <sme-property-grid-item label="Tooltip Property" value="Check the icon above for a tooltip" tooltip="This is a simple tooltip"></sme-property-grid-item>
+        <sme-property-grid-item label="Action Property" value="Click here to take an internal action" [action]="propertyAction"></sme-property-grid-item>
+        <sme-property-grid-item label="Simple Property" value="value"></sme-property-grid-item>
+        <sme-property-grid-item label="Link Property" value="Go to http:\\www.bing.com" link="http:\\www.bing.com"></sme-property-grid-item>
+        <sme-property-grid-item label="Tooltip Property" value="Check the icon above for a tooltip" tooltip="This is a simple tooltip"></sme-property-grid-item>
+        <sme-property-grid-item label="Action Property" value="Click here to take an internal action" [action]="propertyAction"></sme-property-grid-item>
+    </sme-property-grid>
+
+</div>

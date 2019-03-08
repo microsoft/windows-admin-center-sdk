@@ -1,0 +1,106 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+  <h2>Dropdown Component</h2>
+  <section>
+    <p>
+      The Dropdown Component requires two descendant elements with the following classes:
+    </p>
+    <ul>
+      <li>.sme-dropdown-toggle</li>
+      <li>.sme-dropdown-content</li>
+    </ul>
+  </section>
+  <h3> Component Inputs </h3>
+  <section>
+    <p>This Component does not have any inputs</p>
+  </section>
+  <h3> Component Outputs </h3>
+  <table>
+    <thead>
+      <th>Parameter Name</th>
+      <th>Description</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>toggled</td>
+        <td>Emits true when the dropdown is opened and false when it is closed.</td>
+        <td>False</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Example 1: Simple Dropdown Menu</h3>
+  <section>
+
+    <div class="sme-documentation-example">
+      <sme-dropdown>
+        <button role="button" class="sme-dropdown-toggle">
+          <span>Menu</span>
+          <span class="sme-icon sme-icon-chevronDown"></span>
+        </button>
+        <ul role="menu" class="sme-dropdown-content">
+          <li>
+            <a>Item 1</a>
+          </li>
+          <li>
+            <a>Item 2</a>
+          </li>
+        </ul>
+      </sme-dropdown>
+    </div>
+
+    <h3>CODE</h3>
+      <code>&lt;sme-dropdown&gt;
+    &lt;button role="button" class="sme-dropdown-toggle"&gt;
+        &lt;span &gt;Menu&lt;/span&gt;
+        &lt;span class="sme-icon sme-icon-chevronDown"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul role="menu" class="sme-dropdown-content"&gt;
+        &lt;li&gt;
+            &lt;a&gt;Item 1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a&gt;Item 2&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/sme-dropdown&gt;</code>
+  </section>
+
+
+  <h3>Example 2: Advanced Dropdown Content</h3>
+  <section>
+    <div class="sme-documentation-example">
+      <sme-dropdown>
+        <button role="button" class="sme-dropdown-toggle">
+          <span>Dropdown</span>
+          <span class="sme-icon sme-icon-chevronDown"></span>
+        </button>
+        <div role="menu" class="sme-dropdown-content" style="width:300px">
+          <sme-data-table class="sme-dropdown-interaction-enabled" [items]="data">
+            <sme-data-table-column field="name" header="Name" [sortable]="true">
+            </sme-data-table-column>
+            <sme-data-table-column field="value" header="value" [sortable]="true">
+            </sme-data-table-column>
+          </sme-data-table>
+        </div>
+      </sme-dropdown>
+    </div>
+
+    <h3>CODE</h3>
+    <code>&lt;sme-dropdown&gt;
+    &lt;button role="button" class="sme-dropdown-toggle"&gt;
+        &lt;span&gt;Dropdown&lt;/span&gt;
+        &lt;span class="sme-icon sme-icon-chevronDown"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul role="menu" class="sme-dropdown-content" style="width:300px"&gt;
+        &lt;sme-data-table class="sme-dropdown-interaction-enabled" [items]="data"&gt;
+            &lt;sme-data-table-column field="name" header="Name" [sortable]="true"&gt;
+            &lt;/sme-data-table-column&gt;
+            &lt;sme-data-table-column field="value" header=" value" [sortable]="true"&gt;
+            &lt;/sme-data-table-column&gt;
+        &lt;/sme-data-table&gt;
+    &lt;/div&gt;
+&lt;/sme-dropdown&gt;</code>
+  </section>
+
+</div>
