@@ -1,0 +1,181 @@
+{
+    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/dist/core/manifest/module-schema.json#",
+    "name": "microsoft.guidedpaneexample",
+    "displayName": "resources:strings:displayName",
+    "description": "resources:strings:description",
+    "target": "/modules/microsoft.guidedpaneexample",
+    "icon": "sme-icon:icon-win-powerShell",
+    "keywords": [
+        "resources:strings:keyword-example"
+    ],
+    "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "guidedpaneexample",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:icon-win-powerShell",
+          "path": "",
+          "requirements": [
+                {
+                  "solutionIds": [
+                    "msft.sme.server-manager!servers",
+                    "msft.sme.server-manager!windowsClients",
+                    "msft.sme.developer-tools!main"
+                  ],
+                  "connectionTypes": [
+                    "msft.sme.connection-type.server",
+                    "msft.sme.connection-type.windows-client"
+                  ]
+                }
+              ]
+        }
+    ],
+    "resources": [
+        {
+            "locale": "default",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "cs",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "de",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "es",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "fr",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "hu",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "it",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "ja",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "ko",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "nl",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "pl",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "pt-BR",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "pt-PT",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "ru",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "sv",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "tr",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "zh-Hans",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "zh-Hant",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        }
+    ]
+}
