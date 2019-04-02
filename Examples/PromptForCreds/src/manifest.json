@@ -1,0 +1,46 @@
+{
+  "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
+  "name": "microsoft.credstest",
+  "displayName": "resources:strings:displayName",
+  "description": "resources:strings:description",
+  "target": "/modules/microsoft.credstest",
+  "icon": "sme-icon:icon-win-powerShell",
+  "keywords": [
+    "resources:strings:keywords"
+  ],
+  "entryPoints": [
+    {
+      "entryPointType": "tool",
+      "name": "main",
+      "urlName": "credstest",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "icon": "sme-icon:icon-win-powerShell",
+      "path": "",
+      "requirements": [
+        {
+          "solutionIds": [
+            "msft.sme.server-manager!servers",
+            "msft.sme.server-manager!windowsClients",
+            "msft.sme.developer-tools!main"
+          ],
+          "connectionTypes": [
+            "msft.sme.connection-type.server",
+            "msft.sme.connection-type.windows-client"
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "locale": "default",
+      "strings": {
+        "displayName": "CredsTest",
+        "description": "{!product-description}",
+        "keywords": "SME"
+      }
+    }
+  ],
+  "powerShellModuleName": "microsoft.credstest"
+}

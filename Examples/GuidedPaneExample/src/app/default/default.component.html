@@ -1,0 +1,18 @@
+<div class="tool-container sme-arrange-stack-v">
+  <sme-guided-panel #panel firstPaneId="root">
+      <sme-guided-pane #pane paneId="root">
+          <div>root content</div>
+          <button (click)="panel.activate('pane1')">next</button>
+      </sme-guided-pane>
+      <sme-guided-pane #pane paneId="pane1">
+          <div>I am pane 1</div>
+          <button (click)="panel.activate('root')">previous</button>
+          <button (click)="panel.activate('pane2')">next</button>
+      </sme-guided-pane>
+      <sme-guided-pane #pane paneId="pane2">
+          <div>I am pane 2</div>
+          <button (click)="panel.activate('pane1')">previous</button>
+          <button (click)="panel.activate('root')">restart</button>
+      </sme-guided-pane>
+  </sme-guided-panel>
+</div>

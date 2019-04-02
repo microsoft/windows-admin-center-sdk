@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "Manifest_displayName": "GuidedPaneExample",
+    "Manifest_description": "{!product-description}",
+    "Manifest_category": "SME",
+
+    "//": "GuidedPaneExample",
+    "GuidedPaneExample_title": "GuidedPaneExample",
+
+    "//": "about",
+    "GuidedPaneExample_about": "{!product-about}",
+    "GuidedPaneExample_aboutDescription": "{!product-about-description}"
+}

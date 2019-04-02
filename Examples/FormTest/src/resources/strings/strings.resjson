@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "Manifest_displayName": "FormTest",
+    "Manifest_description": "{!product-description}",
+    "Manifest_category": "SME",
+
+    "//": "FormTest",
+    "FormTest_title": "FormTest",
+
+    "//": "about",
+    "FormTest_about": "{!product-about}",
+    "FormTest_aboutDescription": "{!product-about-description}"
+}

@@ -1,0 +1,181 @@
+{
+    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/dist/core/manifest/module-schema.json#",
+    "name": "microsoft.formtest",
+    "displayName": "resources:strings:displayName",
+    "description": "resources:strings:description",
+    "target": "/modules/microsoft.formtest",
+    "icon": "sme-icon:icon-win-powerShell",
+    "keywords": [
+        "resources:strings:keyword-example"
+    ],
+    "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "formtest",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:icon-win-powerShell",
+          "path": "",
+          "requirements": [
+                {
+                  "solutionIds": [
+                    "msft.sme.server-manager!servers",
+                    "msft.sme.server-manager!windowsClients",
+                    "msft.sme.developer-tools!main"
+                  ],
+                  "connectionTypes": [
+                    "msft.sme.connection-type.server",
+                    "msft.sme.connection-type.windows-client"
+                  ]
+                }
+              ]
+        }
+    ],
+    "resources": [
+        {
+            "locale": "default",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "cs",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "de",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "es",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "fr",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "hu",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "it",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "ja",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "ko",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "nl",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "pl",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "pt-BR",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "pt-PT",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "ru",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "sv",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "tr",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "zh-Hans",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        },
+        {
+            "locale": "zh-Hant",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FormTest"
+            }
+        }
+    ]
+}

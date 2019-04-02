@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "Manifest_displayName": "FQDNName",
+    "Manifest_description": "{!product-description}",
+    "Manifest_category": "SME",
+
+    "//": "FQDNName",
+    "FQDNName_title": "FQDNName",
+
+    "//": "about",
+    "FQDNName_about": "{!product-about}",
+    "FQDNName_aboutDescription": "{!product-about-description}"
+}
