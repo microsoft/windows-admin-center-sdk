@@ -15,7 +15,7 @@
 /**
 * The Versioned representation of the Hello Extension Settings
 */
-export class HelloExtensionSettings extends VersionedObject {{'{'}}
+export class ExtensionProfileSettings extends VersionedObject {{'{'}}
   
   /**
    * Getter for the latest version of the user profile. 
@@ -75,8 +75,9 @@ export class HelloExtensionSettings extends VersionedObject {{'{'}}
     // get my extensions settings 
     appContextService.userProfileManager
       // get the settings into the type for the versionedObject extension we defined earlier
-      .getExtensionSettings(HelloExtensionSettings)
-      .take(1)
+      .getExtensionSettings(ExtensionProfileSettings)
+      .pipe(
+      take(1))
       .flatMap(
         settings => {{'{'}}
             // change settings              
