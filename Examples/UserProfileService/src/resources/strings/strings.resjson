@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "MicrosoftUserProfileService_Manifest_displayName": "UserProfileService",
+    "MicrosoftUserProfileService_Manifest_description": "{!product-description}",
+    "MicrosoftUserProfileService_Manifest_keywords": "SME",
+
+    "//": "UserProfileService",
+    "MicrosoftUserProfileService_title": "UserProfileService",
+
+    "//": "about",
+    "MicrosoftUserProfileService_about": "{!product-about}",
+    "MicrosoftUserProfileService_aboutDescription": "{!product-about-description}"
+}
