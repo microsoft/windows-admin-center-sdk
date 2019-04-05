@@ -1,0 +1,12 @@
+<h3>Character Name</h3>
+<form [formGroup]="form">
+  <div class="form-controls">
+    <div class="form-group">
+      <div class="form-input">
+        <label for="name">{{ nameLabel }}</label>
+        <div class="required-clue">* Required</div>
+        <input type="text" class="form-control" id="name" formControlName="name" [(ngModel)]="model.name">
+      </div>
+    </div>
+  </div>
+</form>

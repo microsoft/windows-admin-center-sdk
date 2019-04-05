@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
 export class SearchExampleComponent {
     public search: string;
     public search2: string;
+    public search3: string;
     public searchedString: string;
     public searchedString2: string;
+    public searchedString3: string;
     public deliberatelySearchedString: string;
     public deliberatelySearchedString2: string;
+    public deliberatelySearchedString3: string;
 
     public onSearch(s: string) {
         this.searchedString = s;
@@ -20,11 +23,19 @@ export class SearchExampleComponent {
         this.searchedString2 = s;
     }
 
+    public onSearch3(s: string) {
+        this.searchedString3 = s;
+    }
+
     public onDeliberateSearch(s: string) {
         this.deliberatelySearchedString = s;
     }
 
     public onDeliberateSearch2(s: string) {
         this.deliberatelySearchedString2 = s;
+    }
+
+    public onDeliberateSearch3(s: string) {
+        this.deliberatelySearchedString3 = s;
     }
 }

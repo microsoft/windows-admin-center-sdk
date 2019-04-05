@@ -70,7 +70,7 @@ import { SplitViewModule } from '@msft-sme/angular';
 import { TooltipModule } from '@msft-sme/angular';
 import { WizardModule } from '@msft-sme/angular';
 import { ClampModule } from '@msft-sme/angular';
-import { MarkdownModule } from 'packages/angular/angular';
+import { MarkdownModule } from '@msft-sme/angular';
 import { BreadcrumbExampleComponent } from './breadcrumb/breadcrumb-example.component';
 import { DetailsExampleComponent } from './details/details-example.component';
 import { DoughnutChartExampleComponent } from './doughnut-chart/doughnut-chart-example.component';

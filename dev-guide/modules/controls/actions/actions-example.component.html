@@ -1,4 +1,4 @@
-<div class="sme-layout-absolute sme-position-inset-none">
+<div class="sme-layout-absolute sme-position-vertical-none sme-position-horizontal-md">
   <h3>Defined actions from component</h3>
   <sme-action-bar [actions]="actions" (executed)="onExecuted($event)"></sme-action-bar>
 
@@ -24,6 +24,11 @@
   <h3>Defined actions from html</h3>
   <sme-action-bar (executed)="onExecuted($event)">
     <sme-action-button #action [text]="'start enabled'" [enabled]="enableToggle" (execute)="enableToggle = !enableToggle"></sme-action-button>
+    <sme-action-dropdown #action [text]="'I am a dropdown'">
+      <sme-action-button #action [text]="'start enabled'" [enabled]="enableToggle" (execute)="enableToggle = !enableToggle"></sme-action-button>
+      <sme-action-button #action [text]="'starts disabled'" [enabled]="!enableToggle" (execute)="enableToggle = !enableToggle"></sme-action-button>
+      <sme-action-button #action *ngFor="let inline of inlineItems; let i = index" [text]="inline" (execute)="removeInline(i)"></sme-action-button>
+    </sme-action-dropdown>
     <sme-action-button #action [text]="'starts disabled'" [enabled]="!enableToggle" (execute)="enableToggle = !enableToggle"></sme-action-button>
     <sme-action-button #action *ngFor="let inline of inlineItems; let i = index" [text]="inline" (execute)="removeInline(i)"></sme-action-button>
   </sme-action-bar>
@@ -48,5 +53,14 @@
     <sme-action-button #action [text]="'Clear'" [iconClass]="'sme-icon sme-icon-clear'"></sme-action-button>
     <sme-action-button #action [text]="'Schedule'" [iconClass]="'sme-icon sme-icon-dateTime2'"></sme-action-button>
     <sme-action-button #action [text]="'Flag'" [iconClass]="'sme-icon sme-icon-flag'"></sme-action-button>
+    <sme-action-dropdown #action [text]="'I am a dropdown'" [iconClass]="'sme-icon sme-icon-server'">
+      <sme-action-button #action [text]="'Add'" [iconClass]="'sme-icon sme-icon-add'"></sme-action-button>
+      <sme-action-button #action [text]="'Remove'" [iconClass]="'sme-icon sme-icon-remove'"></sme-action-button>
+      <sme-action-button #action [text]="'Edit'" [iconClass]="'sme-icon sme-icon-edit'"></sme-action-button>
+      <sme-action-button #action [text]="'Attach'" [iconClass]="'sme-icon sme-icon-attach'"></sme-action-button>
+      <sme-action-button #action [text]="'Clear'" [iconClass]="'sme-icon sme-icon-clear'"></sme-action-button>
+      <sme-action-button #action [text]="'Schedule'" [iconClass]="'sme-icon sme-icon-dateTime2'"></sme-action-button>
+      <sme-action-button #action [text]="'Flag'" [iconClass]="'sme-icon sme-icon-flag'"></sme-action-button>
+    </sme-action-dropdown>
   </sme-action-bar>
 </div>

@@ -32,4 +32,14 @@
       </div>
     </div>
   </section>
+
+  <h2>Status Colors</h2>
+  <section>
+    <p>These are special color classes used for color fonts to indicate specific status types. The text should always be acompanied with an
+      appropriete icon. Usually the alert role should be used in some way.</p>
+    <p *ngFor="let status of statusClasses">
+      <span class="sme-icon {{status.icon}} {{status.color}} sme-margin-right-xs"></span>
+      <span>{{status.color}}</span>
+    </p>
+  </section>
 </div>

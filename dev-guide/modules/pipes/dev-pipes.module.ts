@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SmeFormsModule } from '@msft-sme/angular';
 import { PivotModule } from '@msft-sme/angular';
+import { TooltipModule } from '@msft-sme/angular';
 import {
     BooleanConverterPipeModule,
     ByteUnitConverterPipeModule,
@@ -41,7 +42,8 @@ import { YesNoConverterExampleComponent } from './yesno-converter/yesno-converte
         FormatPipeModule,
         YesNoConverterPipeModule,
         SmeFormsModule,
-        PivotModule
+        PivotModule,
+        TooltipModule
     ],
     providers: []
 })

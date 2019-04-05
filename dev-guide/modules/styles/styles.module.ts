@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActionsModule } from '@msft-sme/angular';
 import { LoadingWheelModule } from '@msft-sme/angular';
 import { ToolHeaderModule } from '@msft-sme/angular';
+import { TooltipModule } from '@msft-sme/angular';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { AnimationComponent } from './animation/animation.component';
 import { BehaviorsComponent } from './behaviors/behaviors.component';
@@ -47,7 +48,8 @@ import { TypographyComponent } from './typography/typography.component';
         LoadingWheelModule,
         ActionsModule,
         ToolHeaderModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TooltipModule
     ],
     providers: []
 })

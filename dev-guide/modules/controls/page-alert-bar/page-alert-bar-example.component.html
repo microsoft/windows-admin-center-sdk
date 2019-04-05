@@ -1,4 +1,5 @@
-<sme-page-alert-bar [alert]="criticalAlert"></sme-page-alert-bar>
-<sme-page-alert-bar [alert]="errorAlert"></sme-page-alert-bar>
-<sme-page-alert-bar [alert]="warningAlert"></sme-page-alert-bar>
-<sme-page-alert-bar [alert]="informationalAlert"></sme-page-alert-bar>
+<div class="sme-layout-absolute sme-position-vertical-none sme-position-horizontal-md sme-documentation">
+  <div *ngFor="let alert of alerts" class="sme-margin-bottom-xxs">
+    <sme-page-alert-bar [alert]="alert"></sme-page-alert-bar>
+  </div>
+</div>

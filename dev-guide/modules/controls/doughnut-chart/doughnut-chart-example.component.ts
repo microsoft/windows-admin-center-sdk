@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import {
-    CapacityDoughnutChartComponent, CapacityDoughnutChartData
+    CapacityDoughnutChartComponent, CapacityDoughnutChartData, LegendEntryData
 } from '@msft-sme/angular';
 import { DoughnutChartData } from '@msft-sme/angular';
 import { AppContextService } from '@msft-sme/angular';
@@ -16,8 +16,10 @@ export class DoughnutChartExampleComponent implements AfterViewInit {
     @ViewChild('capacityChart3') public chart3: CapacityDoughnutChartComponent;
     @ViewChild('capacityChart4') public chart4: CapacityDoughnutChartComponent;
     @ViewChild('capacityChart5') public chart5: CapacityDoughnutChartComponent;
+    @ViewChild('capacityChart6') public chart6: CapacityDoughnutChartComponent;
     public doughnutChartData: DoughnutChartData[] = [];
     public capacityChartData: CapacityDoughnutChartData[] = [];
+    public customLegendData: LegendEntryData[] =  [];
 
     public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
         return 'sme-doughnut-chart';
@@ -45,27 +47,55 @@ export class DoughnutChartExampleComponent implements AfterViewInit {
             label: 'Non-VM',
             value: 16
         });
+
+        this.setCustomLegendData();
+    }
+
+
+    private setCustomLegendData(): void {
+        this.customLegendData = [
+            {
+                displayValue: this.capacityChartData[0].value,
+                label: 'VM',
+                action: () => console.log('clicked vm')
+            },
+            {
+                displayValue: this.capacityChartData[1].value,
+                label: 'Non-VM',
+                action: () => console.log('clicked non-vm')
+            },
+            {
+                color: '#123456',
+                displayValue: this.capacityChartData[0].value + this.capacityChartData[1].value,
+                label: 'VM + Non-VM',
+                action: () => console.log('clicked vm + non-vm')
+            }
+        ];
     }
 
     public ngAfterViewInit(): void {
         // show yellow threshold
         setTimeout(() => {
             this.capacityChartData[0].value = 72;
+            this.setCustomLegendData();
             this.chart1.refresh();
             this.chart2.refresh();
             this.chart3.refresh();
             this.chart4.refresh();
             this.chart5.refresh();
+            this.chart6.refresh();
         },         5000);
 
         // show green threshold
         setTimeout(() => {
             this.capacityChartData[0].value = 53;
+            this.setCustomLegendData();
             this.chart1.refresh();
             this.chart2.refresh();
             this.chart3.refresh();
             this.chart4.refresh();
             this.chart5.refresh();
+            this.chart6.refresh();
         },         10000);
     }
 }

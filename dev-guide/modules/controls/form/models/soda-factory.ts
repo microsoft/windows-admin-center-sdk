@@ -9,9 +9,14 @@ export function generateSodaFactory() {
             label: 'Password',
             value: '',
             // tslint:disable-next-line
-            description: 'This SodaBuilder is password protected, You cannot make soda without the password. Hint: The password is "password".',
+            description: 'This SodaBuilder is password protected, You cannot make soda without the password.\n##_Hint: The password is "password"._',
             notMatch: 'The password is incorrect. Hint: try "password" instead.',
             required: 'You must enter a password'
+        },
+        confirm: {
+            label: 'Confirm Password',
+            value: '',
+            required: 'You must confirm the password'
         },
         recipeType: {
             value: 'upload',
@@ -24,7 +29,22 @@ export function generateSodaFactory() {
         upload: {
             value: null,
             label: 'Choose A Recipe',
-            description: 'Only ".recipe" files are allowed.'
+            description: 'Only ".recipe" files are allowed.',
+            breadcrumbs: [
+                {
+                    label: 'item 1',
+                    emphasized: true,
+                    action: event => alert('item 1')
+                },
+                {
+                    label: 'item 2',
+                    action: event => alert('item 2')
+                },
+                {
+                    label: 'item 3',
+                    emphasized: true
+                }
+            ]
         },
         name: {
             label: 'Name',
@@ -135,8 +155,13 @@ export function generateSodaFactory() {
                 { label: 'Grape', value: 'grape' }
             ]
         },
+        list: {
+            label: 'Sous-chefs List',
+            value: ['John Doe', 'Jane Doe']
+        },
         inlineRadio: {
             value: 'optionA',
+            innerValues: ['', '', ''],
             label: 'Inline Radio Group:',
             options: [
                 { label: 'Option A', value: 'optionA' },

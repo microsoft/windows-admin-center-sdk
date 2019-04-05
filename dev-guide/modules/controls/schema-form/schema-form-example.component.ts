@@ -485,6 +485,9 @@ export class SchemaFormExampleComponent {
                 value: 'dynamicOptionCCC'
             }
         ],
+        sampleOptionDisableCheckHandler: (fieldData, formData) => {
+            return fieldData.option === 'bbb' ? 'dynamicOptionAAA' : '';
+        },
         sampleValidate: (event: CheckValidationEventArgs) => {
             const alerts: ValidationAlerts = {};
             if (event.formControl.value !== 'hello') {
@@ -514,7 +517,7 @@ export class SchemaFormExampleComponent {
     }
 
     public onFormActionExecuted(action: string, data: any): void {
-        alert('Action:' + action + '  data:' + JSON.stringify(data));
+        // alert('Action:' + action + '  data:' + JSON.stringify(data));
     }
 
     public getDataJsonText(tabIndex: number): string {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SmeFormsModule } from '@msft-sme/angular';
 import { PivotModule } from '@msft-sme/angular';
+import { BreadcrumbModule } from '@msft-sme/angular';
 import { FormControlsComponent } from './form-controls.component';
 import { routing } from './form-controls.routing';
 import { FormFieldsExampleComponent } from './form-fields/form-fields-example.component';
@@ -26,7 +27,8 @@ import { ValidationAlertExampleComponent } from './validation-alert/validation-a
         FormsModule,
         ReactiveFormsModule,
         SmeFormsModule,
-        PivotModule
+        PivotModule,
+        BreadcrumbModule
     ]
 })
 export class FormControlsModule { }
