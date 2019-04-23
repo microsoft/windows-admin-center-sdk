@@ -1,0 +1,13 @@
+{
+    "//": "manifest section",
+    "contosoFQDN_Manifest_displayName": "FQDN",
+    "contosoFQDN_Manifest_description": "{!product-description}",
+    "contosoFQDN_Manifest_keywords": "SME",
+
+    "//": "FQDN",
+    "contosoFQDN_title": "FQDN",
+
+    "//": "about",
+    "contosoFQDN_about": "{!product-about}",
+    "contosoFQDN_aboutDescription": "{!product-about-description}"
+}

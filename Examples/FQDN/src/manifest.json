@@ -1,0 +1,46 @@
+{
+  "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
+  "name": "contoso.fqdn",
+  "displayName": "resources:strings:displayName",
+  "description": "resources:strings:description",
+  "target": "/modules/contoso.fqdn",
+  "icon": "sme-icon:sme-icon-powerShell",
+  "keywords": [
+    "resources:strings:keywords"
+  ],
+  "entryPoints": [
+    {
+      "entryPointType": "tool",
+      "name": "main",
+      "urlName": "fqdn",
+      "displayName": "resources:strings:displayName",
+      "description": "resources:strings:description",
+      "icon": "sme-icon:sme-icon-powerShell",
+      "path": "",
+      "requirements": [
+        {
+          "solutionIds": [
+            "msft.sme.server-manager!servers",
+            "msft.sme.server-manager!windowsClients",
+            "msft.sme.developer-tools!main"
+          ],
+          "connectionTypes": [
+            "msft.sme.connection-type.server",
+            "msft.sme.connection-type.windows-client"
+          ]
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "locale": "default",
+      "strings": {
+        "displayName": "FQDN",
+        "description": "{!product-description}",
+        "keywords": "SME"
+      }
+    }
+  ],
+  "powerShellModuleName": "contoso.fqdn"
+}
