@@ -30,16 +30,13 @@
     },
     "exclude": [
       "inlineSrc/environment",
-      "inlineSrc/test-util",
       "inlineSrc/main.ts",
       "inlineSrc/public_api.ts",
       "inlineSrc/test.ts",
       "src",
-      "e2e",
       "bundle",
-      "tools",
       "index.d.ts",
-      "**/*.test.ts",
-      "**/*.spec.ts"
+      "**/*.spec.ts",
+      "gulpfile.ts"
     ]
   }

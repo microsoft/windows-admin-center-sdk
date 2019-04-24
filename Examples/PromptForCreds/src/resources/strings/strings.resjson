@@ -1,13 +1,13 @@
 {
     "//": "manifest section",
-    "MicrosoftCredsTest_Manifest_displayName": "CredsTest",
-    "MicrosoftCredsTest_Manifest_description": "{!product-description}",
-    "MicrosoftCredsTest_Manifest_keywords": "SME",
+    "contosoPromptForCreds_Manifest_displayName": "PromptForCreds",
+    "contosoPromptForCreds_Manifest_description": "{!product-description}",
+    "contosoPromptForCreds_Manifest_keywords": "SME",
 
-    "//": "CredsTest",
-    "MicrosoftCredsTest_title": "CredsTest",
+    "//": "PromptForCreds",
+    "contosoPromptForCreds_title": "PromptForCreds",
 
     "//": "about",
-    "MicrosoftCredsTest_about": "{!product-about}",
-    "MicrosoftCredsTest_aboutDescription": "{!product-about-description}"
+    "contosoPromptForCreds_about": "{!product-about}",
+    "contosoPromptForCreds_aboutDescription": "{!product-about-description}"
 }

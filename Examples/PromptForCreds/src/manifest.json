@@ -1,10 +1,10 @@
 {
   "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
-  "name": "microsoft.credstest",
+  "name": "contoso.promptforcreds",
   "displayName": "resources:strings:displayName",
   "description": "resources:strings:description",
-  "target": "/modules/microsoft.credstest",
-  "icon": "sme-icon:icon-win-powerShell",
+  "target": "/modules/contoso.promptforcreds",
+  "icon": "sme-icon:sme-icon-powerShell",
   "keywords": [
     "resources:strings:keywords"
   ],
@@ -12,10 +12,10 @@
     {
       "entryPointType": "tool",
       "name": "main",
-      "urlName": "credstest",
+      "urlName": "promptforcreds",
       "displayName": "resources:strings:displayName",
       "description": "resources:strings:description",
-      "icon": "sme-icon:icon-win-powerShell",
+      "icon": "sme-icon:sme-icon-powerShell",
       "path": "",
       "requirements": [
         {
@@ -36,11 +36,11 @@
     {
       "locale": "default",
       "strings": {
-        "displayName": "CredsTest",
+        "displayName": "PromptForCreds",
         "description": "{!product-description}",
         "keywords": "SME"
       }
     }
   ],
-  "powerShellModuleName": "microsoft.credstest"
+  "powerShellModuleName": "contoso.promptforcreds"
 }
