@@ -10,7 +10,7 @@ export class DefaultComponent implements OnInit {
 
   public title = '';
 
-  constructor(private appContextService: AppContextService) { 
+  constructor(private appContextService: AppContextService) {
     //
   }
 

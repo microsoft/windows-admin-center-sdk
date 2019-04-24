@@ -1,13 +1,13 @@
 {
     "//": "manifest section",
-    "Manifest_displayName": "FQDNName",
-    "Manifest_description": "{!product-description}",
-    "Manifest_category": "SME",
+    "ContosoFQDNName_Manifest_displayName": "FQDNName",
+    "ContosoFQDNName_Manifest_description": "{!product-description}",
+    "ContosoFQDNName_Manifest_keywords": "SME",
 
     "//": "FQDNName",
-    "FQDNName_title": "FQDNName",
+    "ContosoFQDNName_title": "FQDNName",
 
     "//": "about",
-    "FQDNName_about": "{!product-about}",
-    "FQDNName_aboutDescription": "{!product-about-description}"
+    "ContosoFQDNName_about": "{!product-about}",
+    "ContosoFQDNName_aboutDescription": "{!product-about-description}"
 }
