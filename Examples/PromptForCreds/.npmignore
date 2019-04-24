@@ -1,7 +1,3 @@
-#
-# THIS FILE WAS GENERATED FROM msft-sme-build. DO NOT MODIFY. To change this file, make the appropriate changes in build
-#
-
 #excluding everything by default
 **/*
 
@@ -22,7 +18,3 @@ dist/**/*.test.helper.d.ts
 #include index
 !index.js
 !index.d.ts
-
-#include e2e
-!e2e
-!e2e/**/*
