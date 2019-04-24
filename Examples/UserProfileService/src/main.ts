@@ -17,7 +17,7 @@ if (environment.production) {
 // initialize SME module environment with localization settings.
 CoreEnvironment.initialize(
     {
-        name: 'microsoft.userprofileservice',
+        name: 'contoso.userprofileservice',
         powerShellModuleName: PowerShellScripts.module,
         isProduction: environment.production,
         shellOrigin: '*'
