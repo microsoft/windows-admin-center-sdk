@@ -8,4 +8,4 @@
  * @description
  * Entry point for all public APIs of this project.
  */
-export * from './dist/main';
+export * from './dist/app/main';

@@ -8,6 +8,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { CoreEnvironment } from '@microsoft/windows-admin-center-sdk/core';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { PowerShellScripts } from './generated/powershell-scripts';
 
 if (environment.production) {
     enableProdMode();
@@ -16,7 +17,8 @@ if (environment.production) {
 // initialize SME module environment with localization settings.
 CoreEnvironment.initialize(
     {
-        name: 'microsoft.formtest',
+        name: 'contoso.formtest',
+        powerShellModuleName: PowerShellScripts.module,
         isProduction: environment.production,
         shellOrigin: '*'
     },

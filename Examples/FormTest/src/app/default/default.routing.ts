@@ -10,7 +10,7 @@ const routes: Routes = [
         // if the component has child components that need to be routed to, include them in the children array.
         children: [
             {
-                path: '', 
+                path: '',
                 redirectTo: 'base',
                 pathMatch: 'full'
             }
