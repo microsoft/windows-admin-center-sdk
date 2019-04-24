@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppContextService, AuthorizationService, NavigationService } from '@microsoft/windows-admin-center-sdk/angular';
-import { ContextMenu } from 'primeng/primeng';
-import { Observable } from 'rxjs';
 
 @Component({
     selector: 'sme-root',
