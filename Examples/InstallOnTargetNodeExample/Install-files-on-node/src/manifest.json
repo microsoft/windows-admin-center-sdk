@@ -4,7 +4,7 @@
   "displayName": "resources:strings:displayName",
   "description": "resources:strings:description",
   "target": "/modules/contoso.install-files-on-node",
-  "icon": "sme-icon:icon-win-powerShell",
+  "icon": "sme-icon:sme-icon-powerShell",
   "keywords": [
     "resources:strings:keywords"
   ],
@@ -15,7 +15,7 @@
       "urlName": "install-files-on-node",
       "displayName": "resources:strings:displayName",
       "description": "resources:strings:description",
-      "icon": "sme-icon:icon-win-powerShell",
+      "icon": "sme-icon:sme-icon-powerShell",
       "path": "",
       "requirements": [
         {
@@ -36,163 +36,11 @@
     {
       "locale": "default",
       "strings": {
-        "keywords": "example",
+        "displayName": "Installfilesonnode",
         "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "cs-CZ",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "de-DE",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "en-US",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "es-ES",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "fr-FR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "hu-HU",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "it-IT",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "ja-JP",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "ko-KR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "nl-NL",
-      "strings": {
-        "keyword-example": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "pl-PL",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "pl-PL",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "pt-BR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "pt-PT",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "ru-RU",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "sv-SE",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "tr-TR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "zh-CN",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
-      }
-    },
-    {
-      "locale": "zh-TW",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "Install-files-on-node"
+        "keywords": "SME"
       }
     }
   ],
-  "powerShellModuleName": "{!company-name}.{!module-name}"
+  "powerShellModuleName": "contoso.install-files-on-node"
 }

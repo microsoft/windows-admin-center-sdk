@@ -5,9 +5,7 @@
     "types": []
   },
   "exclude": [
-    "test-util/**/*",
     "test.ts",
-    "**/*.spec.ts",
-    "**/*.test.ts"
+    "**/*.spec.ts"
   ]
 }
