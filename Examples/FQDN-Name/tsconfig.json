@@ -1,26 +1,21 @@
 {
-  "__MERGE_NOTICE__": "THIS FILE WAS MERGED FROM msft-sme-build. some properties in this file may be overridden if changed.",
-  "__WHY_TWO_TSCONFIGS__": "There are 2 tsconfigs in this project. one is for ngc and visual studio at the root of the project. The other is for ng build and ng serve.",
-  "angularCompilerOptions": {
-    "skipTemplateCodegen": true
-  },
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "",
-    "declaration": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "inlineSourceMap": true,
-    "lib": [
-      "es6",
-      "dom"
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "module": "es6",
-    "moduleResolution": "node",
-    "outDir": "./dist",
-    "sourceRoot": "./src",
-    "target": "es5"
-  },
-  "include": [
-    "src/**/*.ts"
-  ]
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  }
 }

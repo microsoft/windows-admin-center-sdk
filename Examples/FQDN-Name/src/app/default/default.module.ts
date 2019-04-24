@@ -6,7 +6,7 @@ import { Routing } from './default.routing';
 
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     Routing
   ],
   declarations: [DefaultComponent]

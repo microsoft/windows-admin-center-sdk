@@ -1,0 +1,197 @@
+{
+    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
+    "name": "contoso-inc.fqdn-name",
+    "displayName": "resources:strings:displayName",
+    "description": "resources:strings:description",
+    "target": "/modules/contoso-inc.fqdn-name",
+    "icon": "sme-icon:icon-win-powerShell",
+    "keywords": [
+        "resources:strings:keywords"
+    ],
+    "entryPoints": [
+        {
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "fqdn-name",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:icon-win-powerShell",
+          "path": "",
+          "requirements": [
+                {
+                  "solutionIds": [
+                    "msft.sme.server-manager!servers",
+                    "msft.sme.server-manager!windowsClients",
+                    "msft.sme.developer-tools!main"
+                  ],
+                  "connectionTypes": [
+                    "msft.sme.connection-type.server",
+                    "msft.sme.connection-type.windows-client"
+                  ]
+                }
+              ]
+        }
+    ],
+    "resources": [
+        {
+            "locale": "default",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "cs-CZ",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "de-DE",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "en-US",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "es-ES",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "fr-FR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "hu-HU",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "it-IT",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "ja-JP",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "ko-KR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "nl-NL",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "pl-PL",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "pl-PL",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "pt-BR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "pt-PT",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "ru-RU",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "sv-SE",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "tr-TR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "zh-CN",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        },
+        {
+            "locale": "zh-TW",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "FQDN-Name"
+            }
+        }
+    ]
+}

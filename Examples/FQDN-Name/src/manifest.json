@@ -1,10 +1,10 @@
 {
     "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
-    "name": "contoso-inc.fqdn-name",
+    "name": "contoso.fqdn-name",
     "displayName": "resources:strings:displayName",
     "description": "resources:strings:description",
-    "target": "/modules/contoso-inc.fqdn-name",
-    "icon": "sme-icon:icon-win-powerShell",
+    "target": "/modules/contoso.fqdn-name",
+    "icon": "sme-icon:sme-icon-powerShell",
     "keywords": [
         "resources:strings:keywords"
     ],
@@ -15,7 +15,7 @@
           "urlName": "fqdn-name",
           "displayName": "resources:strings:displayName",
           "description": "resources:strings:description",
-          "icon": "sme-icon:icon-win-powerShell",
+          "icon": "sme-icon:sme-icon-powerShell",
           "path": "",
           "requirements": [
                 {
