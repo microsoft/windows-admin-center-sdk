@@ -1,13 +1,13 @@
 {
     "//": "manifest section",
-    "Manifest_displayName": "FormTest",
-    "Manifest_description": "{!product-description}",
-    "Manifest_category": "SME",
+    "ContosoFormTest_Manifest_displayName": "FormTest",
+    "ContosoFormTest_Manifest_description": "{!product-description}",
+    "ContosoFormTest_Manifest_keywords": "SME",
 
     "//": "FormTest",
-    "FormTest_title": "FormTest",
+    "ContosoFormTest_title": "FormTest",
 
     "//": "about",
-    "FormTest_about": "{!product-about}",
-    "FormTest_aboutDescription": "{!product-about-description}"
+    "ContosoFormTest_about": "{!product-about}",
+    "ContosoFormTest_aboutDescription": "{!product-about-description}"
 }
