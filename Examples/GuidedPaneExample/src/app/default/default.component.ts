@@ -13,7 +13,7 @@ export class DefaultComponent implements OnInit {
     return 'default';
 }
 
-  constructor() { 
+  constructor() {
     //
   }
 
