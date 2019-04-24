@@ -45,8 +45,8 @@ export class DefaultComponent implements OnInit {
 
   }
 
-  private saveSettings() {
-    // Note that 'trySave(<Function>)' is also an option for saving. 
+  public saveSettings() {
+    // Note that 'trySave(<Function>)' is also an option for saving.
     // It will execute a save and rollback an changes made in <Function>. this is usefull for reverting settings after a save fails.
     // using the 'save' method below will not rollback changes.
     this.settings.save()
