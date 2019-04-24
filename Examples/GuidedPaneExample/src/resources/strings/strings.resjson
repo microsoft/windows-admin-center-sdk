@@ -1,13 +1,13 @@
 {
     "//": "manifest section",
-    "Manifest_displayName": "GuidedPaneExample",
-    "Manifest_description": "{!product-description}",
-    "Manifest_category": "SME",
+    "ContosoGuidedPaneExample_Manifest_displayName": "GuidedPaneExample",
+    "ContosoGuidedPaneExample_Manifest_description": "{!product-description}",
+    "ContosoGuidedPaneExample_Manifest_keywords": "SME",
 
     "//": "GuidedPaneExample",
-    "GuidedPaneExample_title": "GuidedPaneExample",
+    "ContosoGuidedPaneExample_title": "GuidedPaneExample",
 
     "//": "about",
-    "GuidedPaneExample_about": "{!product-about}",
-    "GuidedPaneExample_aboutDescription": "{!product-about-description}"
+    "ContosoGuidedPaneExample_about": "{!product-about}",
+    "ContosoGuidedPaneExample_aboutDescription": "{!product-about-description}"
 }

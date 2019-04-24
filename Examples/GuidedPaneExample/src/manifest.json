@@ -1,12 +1,12 @@
 {
-    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/dist/core/manifest/module-schema.json#",
-    "name": "microsoft.guidedpaneexample",
+    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
+    "name": "contoso.guidedpaneexample",
     "displayName": "resources:strings:displayName",
     "description": "resources:strings:description",
-    "target": "/modules/microsoft.guidedpaneexample",
-    "icon": "sme-icon:icon-win-powerShell",
+    "target": "/modules/contoso.guidedpaneexample",
+    "icon": "sme-icon:sme-icon-powerShell",
     "keywords": [
-        "resources:strings:keyword-example"
+        "resources:strings:keywords"
     ],
     "entryPoints": [
         {
@@ -15,7 +15,7 @@
           "urlName": "guidedpaneexample",
           "displayName": "resources:strings:displayName",
           "description": "resources:strings:description",
-          "icon": "sme-icon:icon-win-powerShell",
+          "icon": "sme-icon:sme-icon-powerShell",
           "path": "",
           "requirements": [
                 {
@@ -36,13 +36,85 @@
         {
             "locale": "default",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "cs",
+            "locale": "cs-CZ",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "de-DE",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "en-US",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "es-ES",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "fr-FR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "hu-HU",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "it-IT",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "ja-JP",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "ko-KR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "GuidedPaneExample"
+            }
+        },
+        {
+            "locale": "nl-NL",
             "strings": {
                 "keyword-example": "example",
                 "description": "{!product-description}",
@@ -50,73 +122,17 @@
             }
         },
         {
-            "locale": "de",
+            "locale": "pl-PL",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "es",
+            "locale": "pl-PL",
             "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "fr",
-            "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "hu",
-            "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "it",
-            "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "ja",
-            "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "ko",
-            "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "nl",
-            "strings": {
-                "keyword-example": "example",
-                "description": "{!product-description}",
-                "displayName": "GuidedPaneExample"
-            }
-        },
-        {
-            "locale": "pl",
-            "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
@@ -124,7 +140,7 @@
         {
             "locale": "pt-BR",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
@@ -132,47 +148,47 @@
         {
             "locale": "pt-PT",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "ru",
+            "locale": "ru-RU",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "sv",
+            "locale": "sv-SE",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "tr",
+            "locale": "tr-TR",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "zh-Hans",
+            "locale": "zh-CN",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
         },
         {
-            "locale": "zh-Hant",
+            "locale": "zh-TW",
             "strings": {
-                "keyword-example": "example",
+                "keywords": "example",
                 "description": "{!product-description}",
                 "displayName": "GuidedPaneExample"
             }
