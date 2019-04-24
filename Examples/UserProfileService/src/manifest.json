@@ -1,198 +1,197 @@
 {
-  "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
-  "name": "microsoft.userprofileservice",
-  "displayName": "resources:strings:displayName",
-  "description": "resources:strings:description",
-  "target": "/modules/microsoft.userprofileservice",
-  "icon": "sme-icon:sme-icon-powerShell",
-  "keywords": [
-    "resources:strings:keywords"
-  ],
-  "entryPoints": [
-    {
-      "entryPointType": "tool",
-      "name": "main",
-      "urlName": "userprofileservice",
-      "displayName": "resources:strings:displayName",
-      "description": "resources:strings:description",
-      "icon": "sme-icon:sme-icon-powerShell",
-      "path": "",
-      "requirements": [
+    "$schema": "../node_modules/@microsoft/windows-admin-center-sdk/core/manifest/module-schema.json#",
+    "name": "contoso.userprofileservice",
+    "displayName": "resources:strings:displayName",
+    "description": "resources:strings:description",
+    "target": "/modules/contoso.userprofileservice",
+    "icon": "sme-icon:sme-icon-powerShell",
+    "keywords": [
+        "resources:strings:keywords"
+    ],
+    "entryPoints": [
         {
-          "solutionIds": [
-            "msft.sme.server-manager!servers",
-            "msft.sme.server-manager!windowsClients",
-            "msft.sme.developer-tools!main"
-          ],
-          "connectionTypes": [
-            "msft.sme.connection-type.server",
-            "msft.sme.connection-type.windows-client"
-          ]
+          "entryPointType": "tool",
+          "name": "main",
+          "urlName": "userprofileservice",
+          "displayName": "resources:strings:displayName",
+          "description": "resources:strings:description",
+          "icon": "sme-icon:sme-icon-powerShell",
+          "path": "",
+          "requirements": [
+                {
+                  "solutionIds": [
+                    "msft.sme.server-manager!servers",
+                    "msft.sme.server-manager!windowsClients",
+                    "msft.sme.developer-tools!main"
+                  ],
+                  "connectionTypes": [
+                    "msft.sme.connection-type.server",
+                    "msft.sme.connection-type.windows-client"
+                  ]
+                }
+              ]
         }
-      ]
-    }
-  ],
-  "resources": [
-    {
-      "locale": "default",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "cs-CZ",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "de-DE",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "en-US",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "es-ES",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "fr-FR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "hu-HU",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "it-IT",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "ja-JP",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "ko-KR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "nl-NL",
-      "strings": {
-        "keyword-example": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "pl-PL",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "pl-PL",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "pt-BR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "pt-PT",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "ru-RU",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "sv-SE",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "tr-TR",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "zh-CN",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    },
-    {
-      "locale": "zh-TW",
-      "strings": {
-        "keywords": "example",
-        "description": "{!product-description}",
-        "displayName": "UserProfileService"
-      }
-    }
-  ],
-  "powerShellModuleName": "{!company-name}.{!module-name}"
+    ],
+    "resources": [
+        {
+            "locale": "default",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "cs-CZ",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "de-DE",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "en-US",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "es-ES",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "fr-FR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "hu-HU",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "it-IT",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "ja-JP",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "ko-KR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "nl-NL",
+            "strings": {
+                "keyword-example": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "pl-PL",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "pl-PL",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "pt-BR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "pt-PT",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "ru-RU",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "sv-SE",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "tr-TR",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "zh-CN",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        },
+        {
+            "locale": "zh-TW",
+            "strings": {
+                "keywords": "example",
+                "description": "{!product-description}",
+                "displayName": "UserProfileService"
+            }
+        }
+    ]
 }

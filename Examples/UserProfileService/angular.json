@@ -76,17 +76,35 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "node_modules/@microsoft/windows-admin-center-sdk/styles/css/main.css"
             ],
             "scripts": [],
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/manifests.json"
             ]
+          },
+          "configurations": {
+              "production": {
+                  "fileReplacements": [
+                      {
+                          "replace": "src/environments/environment.ts",
+                          "with": "src/environments/environment.prod.ts"
+                      }
+                  ],
+                  "sourceMap": false
+              },
+              "debug": {
+                  "sourceMap": true,
+                  "browsers": "Chrome",
+                  "watch": true
+              }
           }
         },
         "lint": {

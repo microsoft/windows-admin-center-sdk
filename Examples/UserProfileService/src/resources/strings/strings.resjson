@@ -1,13 +1,13 @@
 {
     "//": "manifest section",
-    "MicrosoftUserProfileService_Manifest_displayName": "UserProfileService",
-    "MicrosoftUserProfileService_Manifest_description": "{!product-description}",
-    "MicrosoftUserProfileService_Manifest_keywords": "SME",
+    "ContosoUserProfileService_Manifest_displayName": "UserProfileService",
+    "ContosoUserProfileService_Manifest_description": "{!product-description}",
+    "ContosoUserProfileService_Manifest_keywords": "SME",
 
     "//": "UserProfileService",
-    "MicrosoftUserProfileService_title": "UserProfileService",
+    "ContosoUserProfileService_title": "UserProfileService",
 
     "//": "about",
-    "MicrosoftUserProfileService_about": "{!product-about}",
-    "MicrosoftUserProfileService_aboutDescription": "{!product-about-description}"
+    "ContosoUserProfileService_about": "{!product-about}",
+    "ContosoUserProfileService_aboutDescription": "{!product-about-description}"
 }
