@@ -5,22 +5,14 @@
   <br>
 
   <p>This is a stacked capacity bar chart using legend control. Both chart and legend are using the default capacity color scheme - up two two color bars</p>
-  <sme-stacked-horizontal-bar-chart [bars]="bars2" [total]="capacityStackedBarChartTotal"></sme-stacked-horizontal-bar-chart>
-  <div class="sme-position-flex-auto sme-arrange-stack-h">
-    <sme-legend class="sme-position-flex-auto" [legendData]="legendData" [total]="capacityStackedBarChartTotal"></sme-legend>
-    <sme-legend [legendData]="legendTotalData"></sme-legend>
-  </div>
+  <sme-stacked-horizontal-bar-chart [bars]="bars2" [total]="capacityStackedBarChartTotal" [legendData]="legendData" [legendTotalData]="legendTotalData"></sme-stacked-horizontal-bar-chart>
 
   <p>This is the same bar chart and legend as above, but using user-specified color schemes</p>
-  <sme-stacked-horizontal-bar-chart [bars]="bars2" [normalColorScheme]="normalColorScheme" [warningColorScheme]="warningColorScheme" [criticalColorScheme]="criticalColorScheme" [total]="capacityStackedBarChartTotal"></sme-stacked-horizontal-bar-chart>
+  <sme-stacked-horizontal-bar-chart [bars]="bars2" [normalColorScheme]="normalColorScheme" [warningColorScheme]="warningColorScheme" [criticalColorScheme]="criticalColorScheme" [total]="capacityStackedBarChartTotal" [legendData]="legendData" [legendTotalData]="legendTotalData"></sme-stacked-horizontal-bar-chart>
 
-  <div class="sme-position-flex-auto sme-arrange-stack-h">
-    <sme-legend class="sme-position-flex-auto" [normalColorScheme]="normalColorScheme" [warningColorScheme]="warningColorScheme" [criticalColorScheme]="criticalColorScheme" [legendData]="legendData" [total]="capacityStackedBarChartTotal"></sme-legend>
-    <sme-legend [legendData]="legendTotalData"></sme-legend>
-  </div>
 
   <p>This is a stacked capacity bar chart using its own legend control, with a chart title and total legend data. The legend color indicators are also hidden in high contrast mode.</p>
-  <sme-stacked-horizontal-bar-chart [bars]="bars3" [total]="capacityStackedBarChartTotal3" [legendData]="legendData3" [legendTotalValue]="capacityStackedBarChartTotal3" chartTitle="Bar chart with title and legend"></sme-stacked-horizontal-bar-chart>
+  <sme-stacked-horizontal-bar-chart [bars]="bars3"  description="this is a description for a screen reader" [total]="capacityStackedBarChartTotal3" [legendData]="legendData3" [legendTotalValue]="capacityStackedBarChartTotal3" chartTitle="Bar chart with title and legend"></sme-stacked-horizontal-bar-chart>
 
   <br>
   <p>Click this button to redraw the charts above.</p>

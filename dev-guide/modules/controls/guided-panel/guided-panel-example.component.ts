@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-guided-panel-example',
+    selector: 'sme-dev-guide-controls-guided-panel',
     templateUrl: './guided-panel-example.component.html'
 })
-export class GuidedPanelExampleComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-guided-panel';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Guided Panel Component'
+})
+export class GuidedPanelExampleComponent {}

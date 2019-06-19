@@ -17,6 +17,7 @@
           <ng-template>
             <sme-form-field type="text" formControlName="sodaName" [label]="model.name.label" [required]="true"></sme-form-field>
             <sme-form-field type="text" formControlName="details" [label]="model.details.label" [multiline]="true"></sme-form-field>
+            <sme-form-field type="list" formControlName="list" [label]="model.list.label" [required]="true"></sme-form-field>
             <sme-form-field type="orderedlist" formControlName="orderedList" [label]="model.orderedList.label" [required]="true">
               <sme-option *ngFor="let option of model.orderedList.options" [value]="option.value" [label]="option.label"></sme-option>
             </sme-form-field>

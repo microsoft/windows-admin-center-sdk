@@ -7,13 +7,13 @@
       <li>dark</li>
     </ul>
     <p>These themes are automatically applied base on the users settings to the body element in each module.</p>
-    <p>Theming in SME is more extensive than just changing color. It can include color, font, icons, spacing and more.</p>
+    <p>Theme in SME is more extensive than just changing color. It can include color, font, icons, spacing and more.</p>
   </section>
 
   <h2>Theme Classes</h2>
   <section>
     <p>The class for the current theme is always applied to the 'body' element for you. However there are some cases where a specific theme
-      need to be applied. When nessecary you can use the following classes:
+      need to be applied. When necessary you can use the following classes:
     </p>
     <table>
       <thead>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <td>.sme-theme-dark</td>
-          <td>Applies the light theme</td>
+          <td>Applies the dark theme</td>
         </tr>
       </tbody>
     </table>
@@ -38,7 +38,7 @@
   <h2>Custom Themed Components</h2>
   <section>
     <p>There are several ways to apply css to your components based on the current theme. You must account for the target theme and nested
-      theming structures. Examples are done for the dark theme.</p>
+      theme structures. Examples are done for the dark theme.</p>
 
     <h3>CSS</h3>
     <p>In CSS, simply prepend the theme to the selector </p>
@@ -69,7 +69,8 @@
 }</code>
 
     <h3>Typescript</h3>
-    <p>you can also programatically detect the theme using this code</p>
+    <p>you can also programmatically detect the theme using this code</p>
     <code> const theme = MsftSme.self().Resources.theme; // theme will be either "dark" or "light"</code>
   </section>
 </div>
+  

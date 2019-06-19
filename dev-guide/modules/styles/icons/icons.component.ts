@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-icons',
+    selector: 'sme-dev-guide-styles-icons',
     templateUrl: './icons.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Icons'
 })
 export class IconsComponent {
 
@@ -18,7 +20,11 @@ export class IconsComponent {
         allAppsMirrored: 'EA40',
         asterisk: 'EA38',
         attach: 'E723',
+        azureBackup: 'F86E',
+        azureFileSync: 'F870',
         azureLogo: 'EB6A',
+        azureMonitorAlerts: 'F808',
+        azureSecurityCenter: 'F86F',
         back: 'E72B',
         backMirrored: 'F0D2',
         backToWindow: 'E73F',
@@ -52,12 +58,16 @@ export class IconsComponent {
         cluster: 'F202',
         code: 'E943',
         collapseContentSingle: 'F166',
+        companyDirectory: 'EF0D',
+        companyDirectoryMirrored: 'EF2B',
         completed: 'E930',
+        completedSolid: 'EC61',
         connect: 'E703',
         contact: 'E77B',
         container: 'EEAB',
         copy: 'E8C8',
         cPU: 'EEA1',
+        criticalErrorSolid: 'F5C9',
         ctrlAltDlt: 'EDB6',
         customList: 'EEBE',
         customListMirrored: 'EEBF',
@@ -67,13 +77,16 @@ export class IconsComponent {
         delete: 'E74D',
         developerTools: 'EC7A',
         developerToolsRemove: 'F3EA',
+        dHCPTool: 'F868',
         dietPlanNotebook: 'EAC8',
         disconnectDrive: 'E8CD',
+        dNSTool: 'F867',
         down: 'E74B',
         download: 'E896',
         edit: 'E70F',
         editMirrored: 'EB7E',
         embed: 'ECCE',
+        enhancePop: 'E78F',
         eraseTool: 'E75C',
         error: 'E783',
         errorBadge: 'EA39',
@@ -94,6 +107,8 @@ export class IconsComponent {
         fullScreen: 'E740',
         gateway: 'ED23',
         globalNavButton: 'E700',
+        globe: 'E774',
+        group: 'E902',
         groupedList: 'EF74',
         hardDrive: 'EDA2',
         hardDriveGroup: 'F18F',
@@ -105,6 +120,7 @@ export class IconsComponent {
         hostCluster: 'EEA2',
         hourGlass: 'EA03',
         info: 'E946',
+        infoSolid: 'F167',
         lEDLight: 'E781',
         lEDLightOff: 'F388',
         link: 'E71B',
@@ -129,6 +145,7 @@ export class IconsComponent {
         openFile: 'E8E5',
         openFolderHorizontal: 'ED25',
         openInNewWindow: 'E8A7',
+        organizationalUnitFolder: 'F874',
         paste: 'E77F',
         pause: 'E769',
         pC1: 'E977',
@@ -148,7 +165,7 @@ export class IconsComponent {
         refresh: 'E72C',
         registrayEditor: 'F1FF',
         remote: 'E8AF',
-        remoteApp: 'F621',
+        remoteApplication: 'F621',
         remove: 'E738',
         removeHardDisk: 'F389',
         ringer: 'EA8F',
@@ -178,6 +195,7 @@ export class IconsComponent {
         statusCircleQuestionMark: 'F142',
         statusCircleRing: 'F138',
         statusCircleSync: 'F143',
+        statusErrorFull: 'EB90',
         statusTriangleExclamation: 'F13B',
         statusTriangleInner: 'F13A',
         statusTriangleOuter: 'F139',
@@ -188,12 +206,15 @@ export class IconsComponent {
         storageReplica: 'F42D',
         switch: 'E8AB',
         sync: 'E895',
+        syncStatusSolid: 'F752',
         takeHardDiskOffline: 'F4AC',
         toolbox: 'ECED',
         tripleColumn: 'F1D5',
         undo: 'E7A7',
         unfavorite: 'E8D9',
         unknown: 'E9CE',
+        unknownMirroredSolid: 'F2E2',
+        unknownSolid: 'F2E1',
         unlock: 'E785',
         unpin: 'E77A',
         unzipFolder: 'F3FD',
@@ -209,14 +230,11 @@ export class IconsComponent {
         virtualNIC: 'F38C',
         virtualSwitch: 'F38B',
         warning: 'E7BA',
+        warningSolid: 'F736',
         windowsAdminCenterAppLogo: 'F80F',
         windowsAdminCenterIIS: 'F6A7',
         windowsUpdate: 'F0C5'
     };
 
     public iconKeys = Object.keys(this.iconCharacters);
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Icons';
-    }
 }

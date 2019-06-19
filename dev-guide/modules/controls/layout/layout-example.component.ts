@@ -1,9 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { LayoutComponent } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-layout-example',
+    selector: 'sme-dev-guide-controls-layout',
     templateUrl: './layout-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Layout Component'
 })
 export class LayoutExampleComponent {
     @ViewChild(LayoutComponent)

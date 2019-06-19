@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-behaviors',
+    selector: 'sme-dev-guide-styles-behaviors',
     templateUrl: './behaviors.component.html'
 })
-export class BehaviorsComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Behaviors';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Behaviors'
+})
+export class BehaviorsComponent { }

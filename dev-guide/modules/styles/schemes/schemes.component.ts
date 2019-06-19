@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-schemes',
+    selector: 'sme-dev-guide-styles-schemes',
     templateUrl: './schemes.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Schemes'
 })
 export class SchemesComponent {
 
     public selectedItem = 1;
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Schemes';
-    }
 }

@@ -1,0 +1,17 @@
+<div class="sme-margin-inset-sm sme-documentation">
+  <h1 class="sme-position-flex-none">Connection Manager</h1>
+  <p>The connection manager retrieves and stores settings specifically for the connection being accessed with the extension:</p>
+  <div [smeMarkdown]="connectionCode"></div>
+  <h2>Versioned Object</h2>
+  <p>
+      Versioning your data store is a very important part of maintaining forward/backward compatibility. For this reason, using the Connection Manager requires you to extend the VersionedObject class for saving and retrieving your data. Here is an example
+      of this in code:
+  </p>
+  <div [smeMarkdown]="versionedCode"></div>
+  <h2>Common Settings</h2>
+  <p>
+      There are also common connection settings that are analagous to the connection's extension settings, using <code>getCommonConnectionSettings()</code>, which has an optional input of a <code>Connection</code> object, but by default retrieves settings for the active connection. 
+      These common settings are only read/write for specific properties.  There are no such properties as of yet, but new common properties will be added in the future.
+  </p>
+</div>
+  

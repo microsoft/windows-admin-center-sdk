@@ -1,16 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SmeFormsModule } from '@msft-sme/angular';
+import { RouterModule, Routes } from '@angular/router';
 import { PivotModule } from '@msft-sme/angular';
+import { BreadcrumbModule } from '@msft-sme/angular';
+import { TooltipModule } from '@msft-sme/angular';
+import { SmeFormsModule } from '@msft-sme/angular';
 import { FormControlsComponent } from './form-controls.component';
-import { routing } from './form-controls.routing';
 import { FormFieldsExampleComponent } from './form-fields/form-fields-example.component';
 import { SearchExampleComponent } from './search/search-example.component';
 import { SodaFactoryReactiveExampleComponent } from './soda-factory-reactive/soda-factory-reactive-example.component';
 import { SodaFactoryExampleComponent } from './soda-factory/soda-factory-example.component';
 import { ValidationAlertExampleComponent } from './validation-alert/validation-alert-example.component';
 
+const FormControlsRoutes: Routes = [
+    {
+        path: '',
+        component: FormControlsComponent,
+        children: [
+            { path: 'templateDriven', component: SodaFactoryExampleComponent },
+            { path: 'reactive', component: SodaFactoryReactiveExampleComponent },
+            { path: 'fieldsApi', component: FormFieldsExampleComponent },
+            { path: 'search', component: SearchExampleComponent },
+            { path: 'validation', component: ValidationAlertExampleComponent },
+            { path: '**', redirectTo: 'templateDriven' }
+        ]
+    }
+];
 @NgModule({
     declarations: [
         FormControlsComponent,
@@ -21,12 +37,14 @@ import { ValidationAlertExampleComponent } from './validation-alert/validation-a
         SearchExampleComponent
     ],
     imports: [
-        routing,
         CommonModule,
+        TooltipModule,
+        PivotModule,
+        BreadcrumbModule,
         FormsModule,
         ReactiveFormsModule,
         SmeFormsModule,
-        PivotModule
+        RouterModule.forChild(FormControlsRoutes)
     ]
 })
 export class FormControlsModule { }

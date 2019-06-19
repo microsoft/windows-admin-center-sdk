@@ -1,0 +1,27 @@
+<div class="sme-margin-inset-sm">
+  <div class="sme-documentation">
+    <h1 class="sme-position-flex-none">Settings Manager</h1>
+    <p>
+      This component provides a short overview / example on how to save and retrieve specific settings for your extension. The values of the form below were restored from settings for this extension.
+    </p>
+  </div>
+  <sme-pivot class="sme-position-flex-auto">
+    <sme-pivot-tab label="User Profile" route="/tools/shell-services/settings/userProfile"></sme-pivot-tab>
+    <sme-pivot-tab label="Application Settings" route="/tools/shell-services/settings/applicationSettings"></sme-pivot-tab>
+    <sme-pivot-tab label="Admin Settings" route="/tools/shell-services/settings/adminSettings"></sme-pivot-tab>
+  </sme-pivot>
+  <div class="sme-documentation">
+    <h2>Versioned Object</h2>
+    <p>
+        Versioning your data store is a very important part of maintaining forward/backward compatibility. For this reason, using the Settings Manager requires you to extend the VersionedObject class for saving and retrieving your data. Here is an example
+        of this in code:
+    </p>
+    <div [smeMarkdown]="versionedCode"></div>
+    <h2>Common Settings</h2>
+    <p>
+        There are also common settings shared throughout the application with functions analagous to extensions settings including <code>getCommonUserSettings()</code>, <code>getCommonApplicationSettings()</code>, and <code>getCommonAdminSettings()</code>.
+        Common settings are only read/write for specific properties.  Currently, we only support the <code>banners</code> property in the common user settings, but more common properties will be added in the future.
+    </p>
+  </div>   
+</div>
+  

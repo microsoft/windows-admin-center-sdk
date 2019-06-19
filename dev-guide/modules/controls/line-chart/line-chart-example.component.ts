@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
 import {
     LineChartComponent, LineChartData, LineChartType
 } from '@msft-sme/angular';
 import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 import { Cim } from '@msft-sme/core/data/cim';
 import { QueryCache } from '@msft-sme/core/data/query-cache';
 import { ChartData, ChartPoint } from 'chart.js';
@@ -11,8 +11,11 @@ import { interval, Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-    selector: 'sme-ng2-controls-line-chart-example',
+    selector: 'sme-dev-guide-controls-line-chart',
     templateUrl: './line-chart-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Line Chart Component'
 })
 export class LineChartExampleComponent implements AfterViewInit, OnDestroy {
     @ViewChild('linechart1') public chart1: LineChartComponent;
@@ -41,10 +44,6 @@ export class LineChartExampleComponent implements AfterViewInit, OnDestroy {
     public tooltipFormatters = [this.dummyFormatter1, this.dummyFormatter2];
 
     private tick = 0;
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-line-chart';
-    }
 
     constructor(private appContextService: AppContextService) {
         this.chartData = <ChartData>{

@@ -1,7 +1,9 @@
 <div class="sme-layout-content-zone-padded">
-    <div>
-        <label>boolean-converter input</label>
-        <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
+    <div class="sme-checkbox">
+        <label>
+            <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
+          <span>boolean-converter input</span>
+        </label>
     </div>
     <div>
         <span>Default Output:</span>

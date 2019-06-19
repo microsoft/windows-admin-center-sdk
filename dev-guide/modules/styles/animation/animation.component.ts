@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-animation',
+    selector: 'sme-dev-guide-styles-animation',
     templateUrl: './animation.component.html'
 })
+@NavigationTitle({
+    getTitle: () => 'Animation'
+})
 export class AnimationComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Animation';
-    }
 
     public toggleAnimation(event: MouseEvent, ...animations: string[]) {
         const target = (event.currentTarget as HTMLElement).children.item(0);

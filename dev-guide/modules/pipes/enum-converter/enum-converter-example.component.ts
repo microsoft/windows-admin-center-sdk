@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { EnumConverterPipe } from '@msft-sme/angular';
+import { EnumConverterPipe, NavigationTitle } from '@msft-sme/angular';
 import { Color, ColorEnum } from './color';
 
 @Component({
-    selector: 'sme-ng2-controls-enum-converter-example',
+    selector: 'sme-dev-guide-pipes-enum-converter-example',
     templateUrl: './enum-converter-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'smeEnumConverter'
 })
 export class EnumConverterExampleComponent {
     public selectedColor = Color.Red;
@@ -79,7 +82,7 @@ export module ColorEnum {
      */
     function getEnumStrings(): Map<Color, string> {
         if (!enumStrings) {
-            let strings = MsftSme.getStrings<Strings>().MsftSmeShell.App.DevGuide.Pipes.EnumLocalizer.Color;
+            let strings = MsftSme.getStrings<Strings>().MsftSmeShell.DevGuide.Pipes.EnumLocalizer.Color;
             enumStrings = new Map<Color, string>([
                 [Color.Red, strings.Red],
                 [Color.Blue, strings.Blue],
@@ -124,10 +127,6 @@ export module ColorEnum {
     }
 }`
     };
-
-    public static navigationTitle(): string {
-        return 'smeEnumConverter';
-    }
 
     constructor() {
         // Ideally, this should happen once at the root of your app.

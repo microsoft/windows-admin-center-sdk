@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-dropdown-example',
+    selector: 'sme-dev-guide-controls-dropdown',
     templateUrl: './dropdown-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Dropdown Component'
 })
 export class DropdownExampleComponent {
 
@@ -14,8 +16,4 @@ export class DropdownExampleComponent {
         {name: 'Item 3', value: 3},
         {name: 'Item 4', value: 4}
     ];
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Dropdown Component';
-    }
 }

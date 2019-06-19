@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-progress',
+    selector: 'sme-dev-guide-styles-progress',
     templateUrl: './progress.component.html'
 })
-export class ProgressComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Progress';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Progress'
+})
+export class ProgressComponent { }

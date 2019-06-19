@@ -1,0 +1,91 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+    <h1>Experiments and IsProduction</h1>
+    <section>
+        <p>There are 2 ways to toggle a features availability in Windows Admin Center.</p>
+    </section>
+    <h2>IsProduction Flag</h2>
+    <section>
+        <p>The IsProduction flag indicates if the Windows Admin Center environment was initialized in production mode or not. In angular implementations, this is usually the inverse of "IsDevMode". You can get this flag using:</p>
+        <code>MsftSme.self().Init.isProduction</code>
+    </section>
+
+    <h2>Experiments</h2>
+    <section>
+        <p>Experiments are meant to be available in the production environment to any user that knows the experiments key. Each key is a custom string identifier that the user appends to the extension name that owns the experiment followed by a ".".</p>
+        <p><b>For example:</b></p>
+        <section>
+            <p>My experiment key is "<i>key</i>" and my extension name is "<i>myCompany.extension</i>" The user will need to use the key "<i>myCompany.extension.key</i>" to enable features hidden behind this key.</p>
+        </section>
+        <p>Some keys are global in nature and provided my the shell. These keys use the extension name: "<i>msft.sme.shell</i>"</p>
+        <p>The user can configure extension keys under the application settings in Windows Admin Center</p>
+
+        <h3>Using Experiment Keys</h3>
+        <p>You can check if an experiment is enabled using the following MsftSme method:</p>
+        <code>function isExperimentEnabled(key: string, shellExperiment?: boolean): boolean;</code>
+        <p>By default, this function will search for your key in your extensions own namespace. However is the "shellExperiment" argument is provided as <i>true</i>, then the shells namespace will be searched.</p>
+
+        <h3>Keeping Track of Experiment Keys</h3>
+        <section>
+            <p> It is <b>strongly</b> recommended that you define your experiment keys in a single well known constant and reference them from there. For example, we might have a file called constants.ts that looks something like this:</p>
+            <code>export class Constants {{'{'}}
+    /**
+     * Experiment keys for this extension
+     */
+    public static readonly experimentKeys = {{'{'}}
+        /**
+         * Key for making the product cool
+         */
+        coolKey: 'coolKey',
+        
+        /**
+         * Key for making the product cooler
+         */
+        coolerKey: 'coolerKey',
+        
+        /**
+         * Key for making the product as cool as it can be
+         */
+        coolestKey: 'coolestKey'
+    }
+}
+
+            </code>
+        </section>
+    </section>
+
+    <h2>Using flags</h2>
+    <section>
+        <p>Code that is littered with feature flags can become unruly and hard to maintain. Usage of these flags should be short lived. Keep in mind that the purpose is to eventually remove that flag, or remove the feature.</p>
+        <p>There are 2 primary ways that you can use the flags. Here are some examples using the key: "<i>key</i>" from my own extension</p>
+        <h3>In Code:</h3>
+        <section>
+            <p> This example would enter the if statement only if the feature is enabled, regardless of production mode </p>
+            <code>if(isExperimentEnabled('key')) {{'{'}} /* Do feature specific logic*/ }</code>
+            <p> This example would enter the if statement only if the not in production mode </p>
+            <code>if(!MsftSme.self().Init.isProduction) {{'{'}} /* Do dev mode specific logic*/ }</code>
+        </section>
+        <h3>Route Guards</h3>
+        <section>
+            <p>It can also be useful to block entire sections of your extension off based on a flag. To do this 2 route guards are provided: </p>
+            <p><b>Dev Guard</b></p>
+            <P>The dev guard will block routes and redirect when the IsProduction flag is false. the entry in your angular routing table will look something like this:</P>
+            <code>{{'{'}}
+    path: 'dev',
+    canActivate: [DevGuardService],
+    data: {{'{'}}redirectTo: '/'},
+    loadChildren: '...'
+},</code>
+            <p><b>Experiment Guard</b></p>
+            <P>The experiment guard will block routes and redirect when an experiment or set of experiments is enabled. the entry in your angular routing table will look something like this:</P>
+            <code>{{'{'}}
+    path: 'experiment',
+    canActivate: [ExperimentGuardService],
+    data: {{'{'}}redirectTo: '/', experiments: ['key']},
+    loadChildren: '...'
+},</code>
+            <p>you can also provide a "shellExperiments" property to the data parameter of a route guarded by the ExperimentGuardService. It follows the same format as "experiments"</p>
+        </section>
+        <P>Note that in both cases, we provided the guard with a data parameter that told the guard where to redirect. In the experiment guard, we also provided the experiment keys</P>
+    </section>
+
+</div>

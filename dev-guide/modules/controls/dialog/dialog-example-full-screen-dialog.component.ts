@@ -32,7 +32,7 @@ export interface ExampleFullScreenDialogResult extends DialogResult {
     selector: 'sme-dialog-example-full-screen-dialog',
     templateUrl: './dialog-example-full-screen-dialog.component.html'
 })
-export class ConfirmationDialogComponent extends BaseDialogComponent<ExampleFullScreenDialogOptions, ExampleFullScreenDialogResult> {
+export class FullScreenExampleDialogComponent extends BaseDialogComponent<ExampleFullScreenDialogOptions, ExampleFullScreenDialogResult> {
     public title: string;
 
     public label: string;

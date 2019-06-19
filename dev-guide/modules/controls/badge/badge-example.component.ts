@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-badge-example',
+    selector: 'sme-dev-guide-controls-badge',
     templateUrl: './badge-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Badge Component'
 })
 export class BadgeExampleComponent {
     public checkbox = false;
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-badge';
-    }
 }

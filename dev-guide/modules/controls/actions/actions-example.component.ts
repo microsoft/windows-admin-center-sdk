@@ -1,17 +1,22 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { ActionBarComponent } from '@msft-sme/angular';
 import { ActionItemErrorEventArgs, ActionItemExecutedEventArgs } from '@msft-sme/angular';
 import { ActionButton, ActionButtonAsync } from '@msft-sme/angular';
 import { ActionItem } from '@msft-sme/angular';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
+import { ActionBarComponent } from '@msft-sme/angular';
+import { ActionButtonAsyncExecuteArgs } from '@msft-sme/angular';
 import { LogLevel } from '@msft-sme/core/diagnostics/log-level';
 import { Logging } from '@msft-sme/core/diagnostics/logging';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { ModelDrivenAction1, ModelDrivenAction2, ModelDrivenAction3, ModelDrivenActionWithError, MyModel } from './model-driven-action';
 
 @Component({
-    selector: 'sme-ng2-controls-actions-example',
+    selector: 'sme-dev-guide-controls-action-bar',
     templateUrl: './actions-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Action Bar Component'
 })
 export class ActionsExampleComponent {
     @ViewChild('custom')
@@ -39,21 +44,18 @@ export class ActionsExampleComponent {
         hidden3: true
     };
 
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-action-bar';
-    }
-
     constructor(private changeDetector: ChangeDetectorRef) {
         for (let i = 0; i < 2; i++) {
             const b1 = new ActionButton();
+            const b2 = new ActionButton();
             const toggle = () => {
                 b1.enabled = !b1.enabled;
+                b2.toggled = b1.enabled;
                 b1.text = `Enabled: ${b1.enabled}`;
                 b1.iconClass = `sme-icon sme-icon-${b1.enabled ? 'lEDLight' : 'lEDLightOff'}`;
             };
             toggle();
             b1.execute = () => alert(`You clicked button #${(i * 3) + 1}`);
-            const b2 = new ActionButton();
             b2.text = `Toggle Button #${(i * 3) + 1}`;
             b2.iconClass = 'sme-icon sme-icon-back';
             b2.execute = toggle;
@@ -71,6 +73,11 @@ export class ActionsExampleComponent {
         bAdd.execute = () => this.inlineItems.push(this.inlineExampleText);
         this.actions.push(bAdd);
     }
+
+    public asyncAction(event: ActionButtonAsyncExecuteArgs): void {
+        event.execute = of(event.target).pipe(delay(2000));
+    }
+
 
     public removeInline(index: number) {
         this.inlineItems.splice(index, 1);

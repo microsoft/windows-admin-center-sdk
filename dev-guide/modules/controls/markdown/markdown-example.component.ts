@@ -1,11 +1,12 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
-import { LoremIpsum } from 'src/app/dev-guide/lorem-ipsum/lorem-ipsum.component';
+import { Component } from '@angular/core';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-markdown-example',
+    selector: 'sme-dev-guide-controls-markdown',
     templateUrl: './markdown-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Markdown Component'
 })
 export class MarkdownExampleComponent {
     // For a complete markdown example see: https://daringfireball.net/projects/markdown/syntax.text
@@ -46,10 +47,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.`;
     // tslint:enable:max-line-length
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'smeMarkdown';
-    }
 
     constructor() {
     }

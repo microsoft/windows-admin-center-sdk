@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import {
-    HorizontalBar
-} from '@msft-sme/angular';
-import {
-    LegendEntryData
-} from '@msft-sme/angular';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
+import { HorizontalBar } from '@msft-sme/angular';
+import { LegendEntryData } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-horizontal-bar-chart-example',
+    selector: 'sme-dev-guide-controls-horizontal-bar-chart',
     templateUrl: './horizontal-bar-chart-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Horizontal Bar Chart Component'
 })
 export class HorizontalBarChartExampleComponent implements OnInit {
 
@@ -28,10 +26,6 @@ export class HorizontalBarChartExampleComponent implements OnInit {
     public legendData: LegendEntryData[];
     public legendData3: LegendEntryData[];
     public legendTotalData: LegendEntryData[];
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-horizontal-bar-chart';
-    }
 
     public getRandomDataForStackedCapacityChart(): void {
         const firstBarWidth = Math.ceil(Math.random() * 5);
@@ -121,7 +115,7 @@ export class HorizontalBarChartExampleComponent implements OnInit {
     }
 
     private getBarChartLegendData(bars2: HorizontalBar[]): LegendEntryData[] {
-        return   [
+        return [
             {
                 displayValue: bars2[0].value,
                 label: 'Dataset 1'
@@ -144,7 +138,7 @@ export class HorizontalBarChartExampleComponent implements OnInit {
     }
 
     private getChartTotalLegendData(bars3: HorizontalBar[]): LegendEntryData[] {
-        return   [
+        return [
             {
                 displayValue: bars3[0].value,
                 label: 'Dataset 1'
