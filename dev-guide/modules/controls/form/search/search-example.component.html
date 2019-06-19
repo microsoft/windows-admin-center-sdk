@@ -14,6 +14,19 @@
     </div>
 
     <div class="sme-documentation-example">
+      <h3>Standard search box emphasized search button</h3>
+      <br>
+
+      <form>
+        <sme-form-field type="search" name="searchBox3" [description]="'test'" label="Search box #3" [(ngModel)]="search3" (search)="onSearch3($event)"
+                        (deliberateSearch)="onDeliberateSearch3($event)" [emphasizeSearchButton]="true"></sme-form-field>
+      </form>
+      <br>
+      <p>Searched for: {{searchedString3}}</p>
+      <p>Deliberately Searched for: {{deliberatelySearchedString3}}</p>
+    </div>
+
+    <div class="sme-documentation-example">
       <h3>Search box with a label, description, and required attribute</h3>
       <br>
 
@@ -24,6 +37,24 @@
       <br>
       <p>Searched for: {{searchedString2}}</p>
       <p>Deliberately Searched for: {{deliberatelySearchedString2}}</p>
+    </div>
+
+    <div class="sme-documentation-example">
+        <h3>Search box inside combobox</h3>
+      <form [formGroup]="searchableComboboxFormGroup">
+        <sme-form-field type="combobox" formControlName="single1" [label]="comboBoxData.label1" [multiple]="false" [required]="false" placeholder="combobox1">
+          <sme-option *ngFor="let option of comboBoxData.options" [value]="option.value" [label]="option.label"></sme-option>
+        </sme-form-field>
+        <sme-form-field type="combobox" formControlName="single2" [label]="comboBoxData.label2" [multiple]="false" [required]="false" [searchable]="true" placeholder="combobox2">
+          <sme-option *ngFor="let option of comboBoxData.options" [value]="option.value" [label]="option.label"></sme-option>
+        </sme-form-field>
+        <sme-form-field type="combobox" formControlName="multiple1" [label]="comboBoxData.label3" [multiple]="true" [required]="false" placeholder="combobox3">
+          <sme-option *ngFor="let option of comboBoxData.options" [value]="option.value" [label]="option.label"></sme-option>
+        </sme-form-field>
+        <sme-form-field type="combobox" formControlName="multiple2" [label]="comboBoxData.label4" [multiple]="true" [required]="false" [searchable]="true" placeholder="combobox4">
+          <sme-option *ngFor="let option of comboBoxData.options" [value]="option.value" [label]="option.label"></sme-option>
+        </sme-form-field>
+      </form>
     </div>
   </section>
 </div>

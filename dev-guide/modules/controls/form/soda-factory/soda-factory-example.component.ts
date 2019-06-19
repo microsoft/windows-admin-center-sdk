@@ -81,6 +81,13 @@ export class SodaFactoryExampleComponent {
                     severity: ValidationAlertSeverity.Error
                 };
             }
+        } else if (name === 'confirm') {
+            const value = event.formControl.value;
+            if (MsftSme.isNullOrUndefined(value) || value === '') {
+                alerts['required'] = {
+                    message: this.model.password.required
+                };
+            }
         }
 
         MsftSme.deepAssign(event.alerts, alerts);

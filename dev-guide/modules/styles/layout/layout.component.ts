@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-layout',
+    selector: 'sme-dev-guide-styles-layout',
     templateUrl: './layout.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Layout'
 })
 export class LayoutComponent {
 
@@ -21,8 +23,4 @@ export class LayoutComponent {
         'spread-v',
         'spread-h'
     ];
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Layout';
-    }
 }

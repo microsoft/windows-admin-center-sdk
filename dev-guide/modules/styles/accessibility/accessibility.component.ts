@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-accessibility',
+    selector: 'sme-dev-guide-styles-accessibility',
     templateUrl: './accessibility.component.html'
 })
-export class AccessibilityComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Accessibility';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Accessibility'
+})
+export class AccessibilityComponent { }

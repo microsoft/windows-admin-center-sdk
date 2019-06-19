@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-shadows',
+    selector: 'sme-dev-guide-styles-shadows',
     templateUrl: './shadows.component.html'
 })
-export class ShadowsComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Shadows';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Shadows'
+})
+export class ShadowsComponent { }

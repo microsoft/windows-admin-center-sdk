@@ -7,7 +7,7 @@ import { ValidationAlertSeverity } from '@msft-sme/angular';
 })
 export class ValidationAlertExampleComponent {
     public model: any;
-
+    public showBackground = false;
     private test = `This is a error alert with a [link to bing](https://www.bing.com)
 and multiple paragraphs of text
 
@@ -38,5 +38,9 @@ and some code
                 }
             }
         };
+    }
+
+    public ToggleBackground(): void {
+        this.showBackground = !this.showBackground;
     }
 }

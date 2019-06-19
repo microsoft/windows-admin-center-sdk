@@ -1,13 +1,32 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { StatusIconType } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-icons-example',
+    selector: 'sme-dev-guide-controls-layered-icon',
     templateUrl: './layered-icons-example.component.html'
 })
+@NavigationTitle({
+    getTitle: () => 'Layered Icon Component'
+})
 export class LayeredIconsExampleComponent {
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-layered-icon';
-    }
+
+    public statuses = [
+        StatusIconType.Critical,
+        StatusIconType.Error,
+        StatusIconType.Warning,
+        StatusIconType.Progress,
+        StatusIconType.Info,
+        StatusIconType.Success,
+        StatusIconType.Unknown
+    ];
+
+    public iconSizes = [
+        '16px',
+        '20px',
+        '24px',
+        '32px',
+        '48px',
+        '64px'
+    ];
 }

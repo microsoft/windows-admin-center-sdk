@@ -2,11 +2,11 @@
   <h1>Colors</h1>
   <section>
     <p>
-      <span>In general,</span>
-      <a class="sme-link" routerLink="/dev/styles/schemes">Schemes</a>
-      <span>should be used instead of these color utilities.</span>
+      <span>In general, </span>
+      <a class="sme-link" routerLink="/tools/styles/schemes">Schemes</a>
+      <span> should be used instead of these color utilities.</span>
     </p>
-    <p>Hover over a color to get the classes accosiated with it</p>
+    <p>Hover over a color to get the classes associated with it.</p>
   </section>
   <h2>Named Colors</h2>
   <section>
@@ -31,5 +31,15 @@
         <div *ngFor="let mix of mixes" class="sme-square-md" [ngClass]="'sme-background-color-' + color + '-dark-' + mix" [title]="getColorClasses(color+ '-dark', mix)"></div>
       </div>
     </div>
+  </section>
+
+  <h2>Status Colors</h2>
+  <section>
+      <p>These are special color classes used for color fonts to indicate specific status types. The text should always be accompanied with an
+          appropriate icon. Usually the alert role should be used in some way.</p>
+    <p *ngFor="let status of statusClasses">
+      <span class="sme-icon {{status.icon}} {{status.color}} sme-margin-right-xs"></span>
+      <span>{{status.color}}</span>
+    </p>
   </section>
 </div>

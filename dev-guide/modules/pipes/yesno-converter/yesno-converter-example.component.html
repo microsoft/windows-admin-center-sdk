@@ -1,10 +1,12 @@
 <div class="sme-layout-content-zone-padded">
-    <div>
-        <label>yesno-converter input</label>
-        <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
-    </div>
-    <div>
-        <span>IsChecked Output:</span>
-        <span style="font-weight: bold">{{ checked | smeBooleanToYesNoConverter }}</span>
-    </div>
+  <div class="sme-checkbox">
+    <label>
+      <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
+      <span>yesno-converter input</span>
+    </label>
+  </div>
+  <div>
+    <span>IsChecked Output:</span>
+    <span style="font-weight: bold">{{ checked | smeBooleanToYesNoConverter }}</span>
+  </div>
 </div>

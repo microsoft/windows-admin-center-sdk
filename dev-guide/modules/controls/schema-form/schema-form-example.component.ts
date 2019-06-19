@@ -1,19 +1,26 @@
 // tslint:disable:max-line-length
 // tslint:disable:object-literal-key-quotes
 // tslint:disable:quotemark
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Component } from '@angular/core';
 import {
+    CheckAsyncValidationEventArgs,
     CheckValidationEventArgs,
     DataSchema,
-    SchemaArrayProperty, SchemaFormComponent, SchemaObjectProperty, SchemaPrimitiveType,
+    SchemaArrayProperty, SchemaObjectProperty, SchemaPrimitiveType,
     SchemaUtilities,
     ValidationAlerts, ValidationAlertSeverity
 } from '@msft-sme/angular';
-import { Observable } from 'rxjs';
+import { NavigationTitle } from '@msft-sme/angular';
+import { of } from 'rxjs';
+import { delay, map } from 'rxjs/operators';
+
+
 @Component({
-    selector: 'sme-ng2-controls-form-v2-example',
+    selector: 'sme-dev-guide-controls-schema-form',
     templateUrl: './schema-form-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Schema Form Component'
 })
 export class SchemaFormExampleComponent {
     public sodaFormSchema: DataSchema = {
@@ -22,7 +29,7 @@ export class SchemaFormExampleComponent {
                 type: SchemaPrimitiveType.String,
                 format: 'textbox',
                 name: 'model',
-                label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Model.Title',
+                label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Model.Title',
                 required: true,
                 options: {
                     multipleline: false
@@ -32,9 +39,9 @@ export class SchemaFormExampleComponent {
                 type: SchemaPrimitiveType.String,
                 format: 'password',
                 name: 'password',
-                label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Password.Title',
+                label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Password.Title',
                 required: true,
-                description: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Password.Description',
+                description: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Password.Description',
                 customValidation: 'formData.validatePassword',
                 options: {
                 }
@@ -43,7 +50,7 @@ export class SchemaFormExampleComponent {
                 type: SchemaPrimitiveType.Array,
                 format: 'simple-list',
                 name: 'retailStores',
-                label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.RetailStores.Title',
+                label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.RetailStores.Title',
                 required: false,
                 options: {
                 },
@@ -79,16 +86,16 @@ export class SchemaFormExampleComponent {
                 type: SchemaPrimitiveType.Object,
                 format: 'radio-group',
                 name: 'recipe',
-                label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Title',
+                label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Title',
                 required: false,
                 options: {
                     items: [
                         {
-                            label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Upload.Title',
+                            label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Upload.Title',
                             value: 'upload'
                         },
                         {
-                            label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Create.Title',
+                            label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Create.Title',
                             value: 'create'
                         }
                     ]
@@ -121,7 +128,7 @@ export class SchemaFormExampleComponent {
                                 type: SchemaPrimitiveType.Object,
                                 format: 'default',
                                 name: 'upload',
-                                label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Upload.Title',
+                                label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Upload.Title',
                                 required: false,
                                 options: {
                                     hideHeader: true,
@@ -136,7 +143,7 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.File,
                                         format: 'default',
                                         name: 'file',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Upload.File.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Upload.File.Title',
                                         required: true,
                                         options: {
                                             multiple: true,
@@ -167,7 +174,7 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.String,
                                         format: 'textbox',
                                         name: 'name',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Name.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Name.Title',
                                         required: true,
                                         options: {
                                             multipleline: false
@@ -177,7 +184,7 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.String,
                                         format: 'textbox',
                                         name: 'description',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Description.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Description.Title',
                                         required: false,
                                         options: {
                                             multipleline: true
@@ -187,28 +194,28 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.Object,
                                         format: 'checklist',
                                         name: 'flavorMix',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.Title',
                                         required: true,
                                         options: {
                                             items: [
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.Cola',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.Cola',
                                                     value: 'cola'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.Pepper',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.Pepper',
                                                     value: 'pepper'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.Orange',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.Orange',
                                                     value: 'orange'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.LemonLime',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.LemonLime',
                                                     value: 'lemonLime'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.Title',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.Title',
                                                     value: 'rootBeer'
                                                 }
                                             ]
@@ -262,21 +269,21 @@ export class SchemaFormExampleComponent {
                                                                 type: SchemaPrimitiveType.Object,
                                                                 format: 'radio-group',
                                                                 name: 'rootBeerVariant',
-                                                                label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Title',
+                                                                label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Title',
                                                                 required: false,
                                                                 options: {
                                                                     items: [
                                                                         {
                                                                             value: 'regular',
-                                                                            label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Regular'
+                                                                            label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Regular'
                                                                         },
                                                                         {
                                                                             value: 'birch',
-                                                                            label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Birch'
+                                                                            label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Birch'
                                                                         },
                                                                         {
                                                                             value: 'sarsaparilla',
-                                                                            label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Sarsaparilla'
+                                                                            label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.FlavorMix.RootBeer.RootBeerVariant.Sarsaparilla'
                                                                         }
                                                                     ]
                                                                 },
@@ -323,7 +330,7 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.Number,
                                         format: 'slider',
                                         name: 'carbonationLevel',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.CarbonationLevel.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.CarbonationLevel.Title',
                                         required: false,
                                         options: {
                                             min: 0,
@@ -340,9 +347,9 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.Array,
                                         format: 'tags',
                                         name: 'tags',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Tags.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Tags.Title',
                                         required: false,
-                                        description: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.Tags.Description',
+                                        description: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.Tags.Description',
                                         options: {
                                             suggestions: [
                                                 'sweet',
@@ -363,24 +370,24 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.String,
                                         format: 'combobox',
                                         name: 'size',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ServingSize.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ServingSize.Title',
                                         required: false,
                                         options: {
                                             items: [
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ServingSize.Can',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ServingSize.Can',
                                                     value: 'can'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ServingSize.Bottle',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ServingSize.Bottle',
                                                     value: 'smBottle'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ServingSize.MdBottle',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ServingSize.MdBottle',
                                                     value: 'mdBottle'
                                                 },
                                                 {
-                                                    label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ServingSize.LgBottle',
+                                                    label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ServingSize.LgBottle',
                                                     value: 'lgBottle'
                                                 }
                                             ]
@@ -390,9 +397,9 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.Number,
                                         format: 'textbox',
                                         name: 'extraSugar',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ExtraSugar.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ExtraSugar.Title',
                                         required: false,
-                                        description: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ExtraSugar.Description',
+                                        description: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ExtraSugar.Description',
                                         options: {
                                             min: 0,
                                             max: 100,
@@ -405,7 +412,7 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.Boolean,
                                         format: 'checkbox',
                                         name: 'isDiet',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.ProduceDietSoda.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.ProduceDietSoda.Title',
                                         required: false,
                                         options: {
                                         }
@@ -414,9 +421,9 @@ export class SchemaFormExampleComponent {
                                         type: SchemaPrimitiveType.Boolean,
                                         format: 'toggle-switch',
                                         name: 'emergencyProduction',
-                                        label: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.EmergencyProduction.Title',
+                                        label: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.EmergencyProduction.Title',
                                         required: false,
-                                        description: 'resources:strings:MsftSmeShell.App.DevGuide.SchemaFormExample.Recipe.EmergencyProduction.Description',
+                                        description: 'resources:strings:MsftSmeShell.DevGuide.SchemaFormExample.Recipe.EmergencyProduction.Description',
                                         options: {
                                         }
                                     }
@@ -485,6 +492,12 @@ export class SchemaFormExampleComponent {
                 value: 'dynamicOptionCCC'
             }
         ],
+        sampleOptionDisableCheckHandler: (fieldData, formData) => {
+            return fieldData.option === 'bbb' ? 'dynamicOptionAAA' : '';
+        },
+        sampleBusyCondition: () => {
+            return true;
+        },
         sampleValidate: (event: CheckValidationEventArgs) => {
             const alerts: ValidationAlerts = {};
             if (event.formControl.value !== 'hello') {
@@ -495,6 +508,27 @@ export class SchemaFormExampleComponent {
                 };
             }
             MsftSme.deepAssign(event.alerts, alerts);
+        },
+        sampleAsyncValidateForText: (event: CheckAsyncValidationEventArgs) => {
+            const value = event.formControl.value;
+            event.alerts.push(
+                of(null).pipe(
+                    delay(3000),
+                    map(() => {
+                        const alerts: ValidationAlerts = {};
+
+                        if (this.playgroundData['testProperty'] === 'fail') {
+                            alerts['sampleAlert'] = {
+                                valid: false,
+                                message: 'Failed',
+                                severity: ValidationAlertSeverity.Error
+                            };
+                        }
+
+                        return alerts;
+                    })
+                )
+            );
         }
     };
 
@@ -514,7 +548,7 @@ export class SchemaFormExampleComponent {
     }
 
     public onFormActionExecuted(action: string, data: any): void {
-        alert('Action:' + action + '  data:' + JSON.stringify(data));
+        // alert('Action:' + action + '  data:' + JSON.stringify(data));
     }
 
     public getDataJsonText(tabIndex: number): string {

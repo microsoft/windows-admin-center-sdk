@@ -1,31 +1,33 @@
-<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
-  <h1>Pivot</h1>
-  <p>
-    <span>This page is about the <code>sme-pivot</code> control. For styles and general information about pivots, please see </span>
-    <a class="sme-link" routerLink="/dev/styles/pivot">Pivot Styles</a>
-  </p>
-  <p>
-    There are 2 types of tabs that can be used in conjunction with <code>sme-pivot</code>:
-  </p>
-  <ul>
-    <li>Static</li>
-    <li>Routed</li>
-  </ul>
-  <p>
-    Tabs are defined in the content area of the <code>sme-pivot</code> using the <code>sme-pivot-tab</code> tags.
-  </p>
-  <p>
-    When <code>sme-pivot-tab</code> has an <code>ng-template</code> for its content, it is considered a <b>static</b> tab. Otherwise, if
-    the <code>[route]</code> attribute is provided the tab is considered a <b>routed</b> tab
-  </p>
-  <p>
-    The <code>sme-pivot</code> component must be used in conjunction with styles that define heighth. Such as absolute positioning, fixed
-    height, or flex box sizing. This is to allow the content of the tabs to take up the remaining space left by the
-    header.
-  </p>
+<div class="sme-layout-absolute sme-position-vertical-none sme-position-horizontal-md">
+  <div class="sme-documentation">
+      <h1>Pivot</h1>
+      <p>
+        <span>This page is about the <code>sme-pivot</code> control. For styles and general information about pivots, please see </span>
+        <a class="sme-link" routerLink="/tools/styles/pivot">Pivot Styles</a>
+      </p>
+      <p>
+        There are 2 types of tabs that can be used in conjunction with <code>sme-pivot</code>:
+      </p>
+      <ul>
+        <li>Static</li>
+        <li>Routed</li>
+      </ul>
+      <p>
+        Tabs are defined in the content area of the <code>sme-pivot</code> using the <code>sme-pivot-tab</code> tags.
+      </p>
+      <p>
+        When <code>sme-pivot-tab</code> has an <code>ng-template</code> for its content, it is considered a <b>static</b> tab. Otherwise, if
+        the <code>[route]</code> attribute is provided the tab is considered a <b>routed</b> tab
+      </p>
+      <p>
+        The <code>sme-pivot</code> component must be used in conjunction with styles that define height. Such as absolute positioning, fixed
+        height, or flex box sizing. This is to allow the content of the tabs to take up the remaining space left by the
+        header.
+      </p>
+  </div>
 
   <h2>Static Example</h2>
-  <div class="sme-documentation-example">
+  <div class="sme-documentation-example sme-margin-bottom-sm">
     <sme-pivot [selection]="ex1Tab1" style="height:200px;">
       <sme-pivot-tab #ex1Tab1 label="Lorem Ipsum">
         <ng-template>
@@ -41,29 +43,30 @@
       </sme-pivot-tab>
     </sme-pivot>
   </div>
-  <h3>Code</h3>
-  <code>&lt;sme-pivot [selection]="ex1Tab1" style="height:200px;"&gt;
-    &lt;sme-pivot-tab #ex1Tab1 label="Lorem Ipsum"&gt;
-        &lt;ng-template&gt;
-            &lt;sme-lorem-ipsum&gt;&lt;/sme-lorem-ipsum&gt;
-        &lt;/ng-template&gt;
-    &lt;/sme-pivot-tab&gt;
-    &lt;sme-pivot-tab label="Tab 2"&gt;
-        &lt;ng-template&gt;
-            &lt;div class="sme-layout-absolute sme-position-inset-none sme-documentation"&gt;
-                &lt;p&gt;This is an example of a static tab content&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/ng-template&gt;
-    &lt;/sme-pivot-tab&gt;
-&lt;/sme-pivot&gt;
-    </code>
-
+  <div class="sme-documentation sme-margin-bottom-sm">
+      <h3>Code</h3>
+      <code>&lt;sme-pivot [selection]="ex1Tab1" style="height:200px;"&gt;
+        &lt;sme-pivot-tab #ex1Tab1 label="Lorem Ipsum"&gt;
+            &lt;ng-template&gt;
+                &lt;sme-lorem-ipsum&gt;&lt;/sme-lorem-ipsum&gt;
+            &lt;/ng-template&gt;
+        &lt;/sme-pivot-tab&gt;
+        &lt;sme-pivot-tab label="Tab 2"&gt;
+            &lt;ng-template&gt;
+                &lt;div class="sme-layout-absolute sme-position-inset-none sme-documentation"&gt;
+                    &lt;p&gt;This is an example of a static tab content&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/ng-template&gt;
+        &lt;/sme-pivot-tab&gt;
+    &lt;/sme-pivot&gt;
+        </code>
+  </div>
 
   <h2>Routed Example</h2>
   <div class="sme-documentation-example">
-    <sme-pivot style="height:200px;">
-      <sme-pivot-tab label="Lorem Ipsum 1" route="/dev/controls/pivot/lorem-ipsum1"></sme-pivot-tab>
-      <sme-pivot-tab label="Lorem Ipsum 2" route="/dev/controls/pivot/lorem-ipsum2"></sme-pivot-tab>
+    <sme-pivot>
+      <sme-pivot-tab label="Lorem Ipsum 1" route="/tools/controls/pivot/lorem-ipsum1"></sme-pivot-tab>
+      <sme-pivot-tab label="Lorem Ipsum 2" route="/tools/controls/pivot/lorem-ipsum2"></sme-pivot-tab>
     </sme-pivot>
   </div>
 

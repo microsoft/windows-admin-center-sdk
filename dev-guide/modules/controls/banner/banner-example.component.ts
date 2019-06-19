@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { BannerItem } from '@msft-sme/angular';
+import { AppContextService, BannerItem } from '@msft-sme/angular';
 import { DialogService } from '@msft-sme/angular';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-banner-example',
+    selector: 'sme-dev-guide-controls-banner',
     templateUrl: './banner-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Banner Component'
 })
 export class BannerExampleComponent implements OnInit {
     public bannerItems: BannerItem[] = [];
 
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-banner';
-    }
-
-    constructor(public dialogService: DialogService) {}
+    constructor(public appContextService: AppContextService) {}
 
     public ngOnInit() {
         const firstBanner: BannerItem = {
@@ -39,14 +37,10 @@ export class BannerExampleComponent implements OnInit {
     }
 
     public onSetupClick(): void {
-        const subject = this.dialogService.show('message-dialog', {
+        this.appContextService.frame.showDialogMessage({
             buttonText: 'Close',
             message: 'Set up this service!',
             title: 'Set up now title'
-        });
-
-        subject.subscribe((result) => {
-            //
-        });
+        }).subscribe();
     }
 }

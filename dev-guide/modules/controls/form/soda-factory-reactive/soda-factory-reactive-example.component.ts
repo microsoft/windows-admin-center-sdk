@@ -38,6 +38,7 @@ export class SodaFactoryReactiveExampleComponent implements OnInit {
             isDiet: new FormControl(this.model.isDiet.value),
             dietSweetener: new FormControl(this.model.dietSweetener.value),
             emergencyProduction: new FormControl(this.model.emergencyProduction.value),
+            list: new FormControl(this.model.list.value),
             orderedList: new FormControl(this.model.orderedList.value),
             inlineRadio: new FormControl(this.model.inlineRadio.value),
             quotes: new FormControl(this.model.quotes.value)

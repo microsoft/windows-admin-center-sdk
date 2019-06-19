@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
-import { Strings } from '../../../../../generated/strings';
+import { NavigationTitle } from '@msft-sme/angular';
+import { Strings } from '../../../../generated/strings';
 
 @Component({
-    selector: 'sme-ng2-controls-master-view-example',
+    selector: 'sme-dev-guide-controls-master-view',
     templateUrl: './master-view-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Master View Component'
 })
 export class MasterViewExampleComponent {
     public strings: Strings;
@@ -25,10 +27,6 @@ export class MasterViewExampleComponent {
     public selection = null;
 
     public masterView: any = { searchable: false, header: null };
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-master-view';
-    }
 
     constructor() {
         this.strings = MsftSme.getStrings();

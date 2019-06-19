@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-themes',
+    selector: 'sme-dev-guide-styles-themes',
     templateUrl: './themes.component.html'
 })
-export class ThemesComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Themes';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Themes'
+})
+export class ThemesComponent { }

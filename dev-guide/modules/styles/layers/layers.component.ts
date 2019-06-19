@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-layers',
+    selector: 'sme-dev-guide-styles-layers',
     templateUrl: './layers.component.html'
 })
-export class LayersComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Layers';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Layers'
+})
+export class LayersComponent { }

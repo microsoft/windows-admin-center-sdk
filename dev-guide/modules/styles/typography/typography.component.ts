@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-typography',
+    selector: 'sme-dev-guide-styles-typography',
     templateUrl: './typography.component.html'
 })
-export class TypographyComponent {
-
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Typography';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Typography'
+})
+export class TypographyComponent { }

@@ -1,8 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-resizer-example',
+    selector: 'sme-dev-guide-controls-resizer',
     templateUrl: './resizer-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Resizer Component'
 })
 export class ResizerExampleComponent implements OnInit {
     public tabIndex = 1;

@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-pivot-example',
+    selector: 'sme-dev-guide-controls-pivot',
     templateUrl: './pivot-example.component.html'
 })
-export class PivotExampleComponent {
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'sme-pivot';
-    }
-}
+@NavigationTitle({
+    getTitle: () => 'Pivot Component'
+})
+export class PivotExampleComponent {}

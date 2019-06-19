@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { PropertyGridItemComponent } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-controls-property-grid-example',
+    selector: 'sme-dev-guide-controls-property-grid',
     templateUrl: './property-grid-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Property Grid Component'
 })
 export class PropertyGridExampleComponent {
 
     public propertyAction: MsftSme.Action1<PropertyGridItemComponent>;
     public oneColumn = false;
-
-    public static navigationTitle(): string {
-        return 'Property Grid Component';
-    }
 
     constructor() {
         this.propertyAction = (item: PropertyGridItemComponent) => {

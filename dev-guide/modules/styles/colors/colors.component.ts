@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
-import { AppContextService } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
-    selector: 'sme-ng2-colors',
+    selector: 'sme-dev-guide-styles-colors',
     templateUrl: './colors.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Colors'
 })
 export class ColorsComponent {
 
@@ -18,9 +20,17 @@ export class ColorsComponent {
     public baseColors = ['white', 'black', 'blue', 'purple', 'magenta', 'red', 'orange', 'yellow', 'green', 'teal', 'dark-blue'];
     public mixes = [90, 80, 70, 60, 50, 40, 30, 20, 15, 10, 5];
 
-    public static navigationTitle(appContextService: AppContextService, snapshot: ActivatedRouteSnapshot): string {
-        return 'Colors';
-    }
+    public statusClasses = [
+        { color: 'sme-color-critical', icon: 'sme-icon-statusErrorFull' },
+        { color: 'sme-color-error', icon: 'sme-icon-criticalErrorSolid' },
+        { color: 'sme-color-warning', icon: 'sme-icon-warningSolid' },
+        { color: 'sme-color-important', icon: 'sme-icon-playPause' },
+        { color: 'sme-color-progress', icon: 'sme-icon-syncStatusSolid' },
+        { color: 'sme-color-info', icon: 'sme-icon-infoSolid' },
+        { color: 'sme-color-success', icon: 'sme-icon-completedSolid' },
+        { color: 'sme-color-neutral', icon: 'sme-icon-unknownSolid' },
+        { color: 'sme-color-upsell', icon: 'sme-icon-heart' }
+    ];
 
     public getColorName(color: string) {
         return color.charAt(0).toUpperCase() + color.slice(1);

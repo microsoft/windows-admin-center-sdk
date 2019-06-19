@@ -1,4 +1,4 @@
-import { Strings } from '../../../../../generated/strings';
+import { Strings } from '../../../../generated/strings';
 
 /**
  * The Color Enumeration
@@ -46,7 +46,7 @@ export module ColorEnum {
      */
     function getEnumStrings(): Map<Color, string> {
         if (!enumStrings) {
-            const strings = MsftSme.getStrings<Strings>().MsftSmeShell.App.DevGuide.Pipes.EnumLocalizer.Color;
+            const strings = MsftSme.getStrings<Strings>().MsftSmeShell.DevGuide.Pipes.EnumLocalizer.Color;
             enumStrings = new Map<Color, string>([
                 [Color.Red, strings.Red],
                 [Color.Blue, strings.Blue],

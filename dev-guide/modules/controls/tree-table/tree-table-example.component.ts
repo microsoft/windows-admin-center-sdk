@@ -1,12 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
 import { TreeNodeDataItem } from '@msft-sme/angular';
 import { TreeTableComponent } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 import { TestData } from './testData';
 
 @Component({
-    selector: 'sme-ng2-controls-tree-table-example',
+    selector: 'sme-dev-guide-controls-tree-table',
     styleUrls: ['./tree-table-example.component.css'],
     templateUrl: './tree-table-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Tree Table Component'
 })
 export class TreeTableExampleComponent {
     @ViewChild('simpleTreeTable')

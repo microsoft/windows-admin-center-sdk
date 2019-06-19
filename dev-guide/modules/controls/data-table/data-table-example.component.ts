@@ -1,12 +1,23 @@
 import { Component, ViewChild } from '@angular/core';
-import { DataTableCustomSortEvent, DataTableLazyLoadEvent } from '@msft-sme/angular';
+import {
+    CheckValidationEventArgs, DataTableCustomSortEvent, DataTableLazyLoadEvent, EditableDataChangeSet,
+    ValidationAlerts, ValidationAlertSeverity
+} from '@msft-sme/angular';
 import { DataTableComponent } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
+import {
+    QueryData, QueryDataItemPresetGenerator,
+    QueryDataItemValueType, QueryDataOperand
+} from '@msft-sme/angular';
 import { TestData } from './testData';
 
 @Component({
-    selector: 'sme-ng2-controls-data-table-example',
+    selector: 'sme-dev-guide-controls-data-table',
     styleUrls: ['./data-table-example.component.css'],
     templateUrl: './data-table-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Data Table Component'
 })
 export class DataTableExampleComponent {
     public searchString = '';
@@ -28,6 +39,9 @@ export class DataTableExampleComponent {
 
     public sampleData1: any[];
     public selectedData1: any;
+
+    public editableDataChangeset: EditableDataChangeSet;
+
     public sampleData2: any[];
     public selectedData2: any[];
     public sampleData3: any[];
@@ -35,14 +49,61 @@ export class DataTableExampleComponent {
     public sampleData4: any[] = [];
     public selectedData4: any[];
     public sampleData5: any[] = [];
+    public sampleEditableData: any[] = [];
     public groupColumnField = 'City';
     public groupSortMode = '0';
     public selectedData5: any[];
     public dataSource: any[];
+    public dataSource2: any[];
     public virtualCount: number;
     public virtualDataSource: any[];
+    public indexToSelect: number;
+    public presetQueryEditor: QueryData = {
+        contents: []
+    };
+    public queryEditorItemPresetGenerator = new QueryDataItemPresetGenerator();
+
+    public editableNewDataItem = {
+        objectField: {
+            text: '',
+            number: ''
+        }
+    };
+
+    public selectByIndex(): void {
+        this.selectedData1 = this.sampleEditableData[this.indexToSelect];
+    }
 
     constructor() {
+        const item1column = this.queryEditorItemPresetGenerator
+            .columnGenerator('String Field 5 (Custom Sort: put all items with \'2\' at one side', 'field5');
+        const item1value = this.queryEditorItemPresetGenerator
+            .valueGenerator('field 5 1');
+        const item1 = this.queryEditorItemPresetGenerator
+            .itemGenerator(item1column, QueryDataOperand.Eq, item1value, null, true);
+
+        const item2column = this.queryEditorItemPresetGenerator
+            .columnGenerator('Object Field Number', 'objectField.number');
+        const item2value = this.queryEditorItemPresetGenerator
+            .valueGenerator('15123412342341234');
+        const item2 = this.queryEditorItemPresetGenerator
+            .itemGenerator(item2column, QueryDataOperand.Lt, item2value, null, null, 'sme-icon sme-icon-heart');
+
+        const item3column = this.queryEditorItemPresetGenerator
+            .columnGenerator('String Field1', 'field1');
+        const item3value = this.queryEditorItemPresetGenerator
+            .valueGenerator('Field 1 1', QueryDataItemValueType.SingleDropdown);
+        const item3 = this.queryEditorItemPresetGenerator
+            .itemGenerator(item3column, QueryDataOperand.Eq, item3value, true, null, 'sme-icon sme-icon-heart');
+
+        const item4column = this.queryEditorItemPresetGenerator
+            .columnGenerator('Object Field Text', 'objectField.text', true);
+        const item4value = this.queryEditorItemPresetGenerator
+            .valueGenerator(['Object Field 1', 'Object Field 9'], QueryDataItemValueType.MultiSelectDropdown);
+        const item4 = this.queryEditorItemPresetGenerator
+            .itemGenerator(item4column, QueryDataOperand.Eq, item4value, true, null, 'sme-icon sme-icon-contact');
+
+        this.presetQueryEditor.contents.push(item1, item2, item3, item4);
         setTimeout(
             () => {
                 let newData = [];
@@ -83,6 +144,9 @@ export class DataTableExampleComponent {
                 }
                 this.sampleData2 = newData;
                 this.dataSource = this.sampleData1;
+                this.dataSource2 = MsftSme.deepAssign(this.dataSource.filter((item, index) => {
+                    return index <= 30;
+                }));
 
                 newData = [];
                 for (let i = 0; i < 5000; i++) {
@@ -127,6 +191,30 @@ export class DataTableExampleComponent {
                 event.finishLoadingData(items);
             },
             500);
+    }
+
+    public onChangesetUpdated(changeSet: EditableDataChangeSet) {
+        this.editableDataChangeset = changeSet;
+    }
+
+    public getDataJsonText(): string {
+        return JSON.stringify(this.sampleEditableData, null, 4);
+    }
+
+    public getDataJsonTextForAddedData(): string {
+        return this.editableDataChangeset && this.editableDataChangeset.addedItems.map(item => item.stringField1).join(', ');
+    }
+
+    public getDataJsonTextForUpdatedData(): string {
+        return this.editableDataChangeset && this.editableDataChangeset.updatedItems.map(item => item.stringField1).join(', ');
+    }
+
+    public getDataJsonTextForDeletedData(): string {
+        return this.editableDataChangeset && this.editableDataChangeset.deletedItems.map(item => item.stringField1).join(', ');
+    }
+
+    public onNewEditableRowAdded(data) {
+        data.objectField.text = 'Readonly Text ' + (this.sampleEditableData.length + 1);
     }
 
     public useSample1(): void {
@@ -297,6 +385,71 @@ export class DataTableExampleComponent {
 
     public getGroupItemIdentityFunction(data: any): string {
         return data.ContactName;
+    }
+
+    public useEmptyData() {
+        this.sampleEditableData = [];
+    }
+
+    public useSampleEditableData() {
+        const sampleData = [];
+
+        for (let i = 0; i < 5; i++) {
+            sampleData.push({
+                stringField1: 'String Field ' + i,
+                stringField2: 'String Field' + i,
+                checkboxField: i % 2 === 0,
+                numberField: i * 100,
+                passwordField: 'Password ' + i,
+                sliderField: i,
+                objectField: { text: 'Object Text ' + i, number: i },
+                comboboxField: 'Value 1',
+                toggleField: i % 2 === 1,
+            });
+        }
+
+        this.sampleEditableData = sampleData;
+    }
+
+    public sampleValidate1(event: CheckValidationEventArgs) {
+        const alerts: ValidationAlerts = {};
+        if (parseInt(event.formControl.value, 0) < 100) {
+            alerts['notValid'] = {
+                valid: false,
+                message: '"Number Field" is not greater than 100...',
+                severity: ValidationAlertSeverity.Error
+            };
+        }
+        MsftSme.deepAssign(event.alerts, alerts);
+    }
+
+    public sampleValidate2(rowData: any, event: CheckValidationEventArgs) {
+        const alerts: ValidationAlerts = {};
+        if (parseInt(event.formControl.value, 0) < parseInt(rowData.numberField, 0)) {
+            alerts['notValid'] = {
+                valid: false,
+                message: '"Object Field Number" is not greater than "Number Field"\'s value...',
+                severity: ValidationAlertSeverity.Error
+            };
+        }
+        MsftSme.deepAssign(event.alerts, alerts);
+    }
+
+    public sampleValidate3(rowData: any, event: CheckValidationEventArgs) {
+        const alerts: ValidationAlerts = {};
+
+        for (let i = 0; i < this.sampleEditableData.length; i++) {
+            if (this.sampleEditableData[i] !== rowData
+                && this.sampleEditableData[i].stringField1 === rowData.stringField1) {
+                alerts['duplicated'] = {
+                    valid: false,
+                    message: '"String Field 1" value is duplicated with other "String Field 1" values...',
+                    severity: ValidationAlertSeverity.Error
+                };
+                break;
+            }
+        }
+        MsftSme.deepAssign(event.alerts, alerts);
     }
 
     private doDataStreamingReverse(count: number): void {

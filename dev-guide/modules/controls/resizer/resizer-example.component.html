@@ -1,187 +1,193 @@
 <div class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
-    <section class="sme-position-flex-none">
-        <h2>Resizer Component</h2>
-    </section>
-    <sme-pivot [selection]="ex1Tab1" class="sme-position-flex-auto">
-        <sme-pivot-tab #ex1Tab1 label="Top">
-            <ng-template>
-                <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="top">
-                    <sme-split-view-pane>
-                        <sme-details title="My Details Title" [(isExpanded)]="sv.isExpanded">
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                        </sme-details>
-                    </sme-split-view-pane>
+  <section class="sme-position-flex-none">
+    <h2>Resizer Component</h2>
+  </section>
+  <sme-pivot [selection]="ex1Tab1" class="sme-position-flex-auto">
+    <sme-pivot-tab #ex1Tab1 label="Top">
+      <ng-template>
+        <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="top">
+          <sme-split-view-pane>
+            <sme-details header="My Details Title" [(isExpanded)]="sv.isExpanded">
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+            </sme-details>
+          </sme-split-view-pane>
 
-                    <sme-split-view-content>
-                        <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection" (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
-                            <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
-                                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
-                                <div class="sme-select">
-                                    <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
+          <sme-split-view-content>
+            <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection"
+                             (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
+              <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
+                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
+                <div class="sme-select">
+                  <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
                     <option *ngFor="let option of groupByOptions" [value]="option.field">{{option.displayName}}</option>
                   </select>
-                                </div>
-                            </div>
+                </div>
+              </div>
 
-                            <sme-form-field #search type="search" [(ngModel)]="filter1"></sme-form-field>
+              <sme-form-field #search type="search" [(ngModel)]="filter1"></sme-form-field>
 
-                            <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
-                                <sme-data-table-column field="name" header="Name" sortable="true">
-                                </sme-data-table-column>
-                                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
-                                </sme-data-table-column>
-                            </sme-data-table>
-                        </sme-master-view>
-                    </sme-split-view-content>
-                </sme-split-view>
-            </ng-template>
-        </sme-pivot-tab>
-        <sme-pivot-tab label="Bottom">
-            <ng-template>
-                <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="bottom">
-                    <sme-split-view-pane>
-                        <sme-details title="My Details Title" [(isExpanded)]="sv.isExpanded">
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                            <div>this is the content</div>
-                        </sme-details>
-                    </sme-split-view-pane>
+              <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
+                <sme-data-table-column field="name" header="Name" sortable="true">
+                </sme-data-table-column>
+                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
+                </sme-data-table-column>
+              </sme-data-table>
+            </sme-master-view>
+          </sme-split-view-content>
+        </sme-split-view>
+      </ng-template>
+    </sme-pivot-tab>
+    <sme-pivot-tab label="Bottom">
+      <ng-template>
+        <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="bottom">
+          <sme-split-view-pane>
+            <sme-details header="My Details Title" [(isExpanded)]="sv.isExpanded">
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+              <div>this is the content</div>
+            </sme-details>
+          </sme-split-view-pane>
 
-                    <sme-split-view-content>
-                        <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection" (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
-                            <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
-                                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
-                                <div class="sme-select">
-                                    <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
+          <sme-split-view-content>
+            <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection"
+                             (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
+              <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
+                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
+                <div class="sme-select">
+                  <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
                     <option *ngFor="let option of groupByOptions" [value]="option.field">{{option.displayName}}</option>
                   </select>
-                                </div>
-                            </div>
+                </div>
+              </div>
 
-                            <sme-form-field #search type="search" [(ngModel)]="filter2"></sme-form-field>
+              <sme-form-field #search type="search" [(ngModel)]="filter2"></sme-form-field>
 
-                            <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
-                                <sme-data-table-column field="name" header="Name" sortable="true">
-                                </sme-data-table-column>
-                                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
-                                </sme-data-table-column>
-                            </sme-data-table>
-                        </sme-master-view>
-                    </sme-split-view-content>
-                </sme-split-view>
-            </ng-template>
-        </sme-pivot-tab>
-        <sme-pivot-tab label="Left">
-            <ng-template>
-                <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="left">
-                    <sme-split-view-pane>
-                        <div class="sme-position-flex-none sme-arrange-stack-h title">
-                            <span class="sme-position-flex-auto text">Pane</span>
-                            <button class="split-view-toggle sme-button-trigger sme-button-auto-width sme-position-flex-none" (click)="sv.togglePane()">
+              <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
+                <sme-data-table-column field="name" header="Name" sortable="true">
+                </sme-data-table-column>
+                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
+                </sme-data-table-column>
+              </sme-data-table>
+            </sme-master-view>
+          </sme-split-view-content>
+        </sme-split-view>
+      </ng-template>
+    </sme-pivot-tab>
+    <sme-pivot-tab label="Left">
+      <ng-template>
+        <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="left">
+          <sme-split-view-pane>
+            <div class="sme-position-flex-none sme-arrange-stack-h title">
+              <span class="sme-position-flex-auto text">Pane</span>
+              <button class="split-view-toggle sme-button-trigger sme-button-auto-width sme-position-flex-none" (click)="sv.togglePane()">
                 <span class="sme-icon" [ngClass]="{ 'sme-icon-chevronLeft': sv.isExpanded, 'sme-icon-chevronRight': !sv.isExpanded }"></span>
               </button>
-                        </div>
-                        <ul class="sme-position-flex-auto sme-arrange-overflow-hide-x sme-arrange-overflow-auto-y sme-padding-bottom-sm sme-list" [ngClass]="{'sme-width-xxl':!sv.isExpanded}">
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                        </ul>
-                    </sme-split-view-pane>
+            </div>
+            <ul class="sme-position-flex-auto sme-arrange-overflow-hide-x sme-arrange-overflow-auto-y sme-padding-bottom-sm sme-list"
+                [ngClass]="{'sme-width-xxl':!sv.isExpanded}">
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+            </ul>
+          </sme-split-view-pane>
 
-                    <sme-split-view-content>
-                        <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection" (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
-                            <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
-                                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
-                                <div class="sme-select">
-                                    <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
+          <sme-split-view-content>
+            <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection"
+                             (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
+              <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
+                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
+                <div class="sme-select">
+                  <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
                     <option *ngFor="let option of groupByOptions" [value]="option.field">{{option.displayName}}</option>
                   </select>
-                                </div>
-                            </div>
+                </div>
+              </div>
 
-                            <sme-form-field #search type="search" [(ngModel)]="filter3"></sme-form-field>
+              <sme-form-field #search type="search" [(ngModel)]="filter3"></sme-form-field>
 
-                            <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
-                                <sme-data-table-column field="name" header="Name" sortable="true">
-                                </sme-data-table-column>
-                                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
-                                </sme-data-table-column>
-                            </sme-data-table>
-                        </sme-master-view>
-                    </sme-split-view-content>
-                </sme-split-view>
-            </ng-template>
-        </sme-pivot-tab>
-        <sme-pivot-tab label="Right">
-            <ng-template>
-                <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="right">
-                    <sme-split-view-pane>
-                        <div class="sme-position-flex-none sme-arrange-stack-h title">
-                            <button class="split-view-toggle sme-button-trigger sme-button-auto-width sme-position-flex-none" (click)="sv.togglePane()">
+              <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
+                <sme-data-table-column field="name" header="Name" sortable="true">
+                </sme-data-table-column>
+                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
+                </sme-data-table-column>
+              </sme-data-table>
+            </sme-master-view>
+          </sme-split-view-content>
+        </sme-split-view>
+      </ng-template>
+    </sme-pivot-tab>
+    <sme-pivot-tab label="Right">
+      <ng-template>
+        <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv orientation="right">
+          <sme-split-view-pane>
+            <div class="sme-position-flex-none sme-arrange-stack-h title">
+              <button class="split-view-toggle sme-button-trigger sme-button-auto-width sme-position-flex-none" (click)="sv.togglePane()">
                 <span class="sme-icon" [ngClass]="{ 'sme-icon-chevronLeft': !sv.isExpanded, 'sme-icon-chevronRight': sv.isExpanded }"></span>
               </button>
-                            <span class="sme-position-flex-auto text">Pane</span>
-                        </div>
-                        <ul class="sme-position-flex-auto sme-arrange-overflow-hide-x sme-arrange-overflow-auto-y sme-padding-bottom-sm sme-list" [ngClass]="{'sme-width-xxl':!sv.isExpanded}">
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                            <li>Pane Content</li>
-                        </ul>
-                    </sme-split-view-pane>
+              <span class="sme-position-flex-auto text">Pane</span>
+            </div>
+            <ul class="sme-position-flex-auto sme-arrange-overflow-hide-x sme-arrange-overflow-auto-y sme-padding-bottom-sm sme-list"
+                [ngClass]="{'sme-width-xxl':!sv.isExpanded}">
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+              <li>Pane Content</li>
+            </ul>
+          </sme-split-view-pane>
 
-                    <sme-split-view-content>
-                        <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection" (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
-                            <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
-                                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
-                                <div class="sme-select">
-                                    <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
+          <sme-split-view-content>
+            <sme-master-view #masterView header="Master View Example" [total]="smeDataTable.renderedItems.length" [selection]="selection"
+                             (clearSelection)="smeDataTable.clearSelection()" (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)">
+              <div class="sme-master-view-custom-filter sme-arrange-stack-h sme-layout-action-bar-item">
+                <span class="sme-scheme-secondary-text sme-arrange-ws-nowrap" for="groupBy"> Group by:</span>
+                <div class="sme-select">
+                  <select id="groupBy" required [(ngModel)]="groupField" name="groupBy" #groupBy="ngModel" (ngModelChange)="onDropdownChange($event)">
                     <option *ngFor="let option of groupByOptions" [value]="option.field">{{option.displayName}}</option>
                   </select>
-                                </div>
-                            </div>
+                </div>
+              </div>
 
-                            <sme-form-field #search type="search4" [(ngModel)]="filter"></sme-form-field>
+              <sme-form-field #search type="search4" [(ngModel)]="filter"></sme-form-field>
 
-                            <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
-                                <sme-data-table-column field="name" header="Name" sortable="true">
-                                </sme-data-table-column>
-                                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
-                                </sme-data-table-column>
-                            </sme-data-table>
-                        </sme-master-view>
-                    </sme-split-view-content>
-                </sme-split-view>
-            </ng-template>
-        </sme-pivot-tab>
-    </sme-pivot>
+              <sme-data-table #smeDataTable [items]="testDataList" [(selection)]="selection" [globalFilter]="search">
+                <sme-data-table-column field="name" header="Name" sortable="true">
+                </sme-data-table-column>
+                <sme-data-table-column field="displayName" header="Display Name" sortable="true" [searchable]="false">
+                </sme-data-table-column>
+              </sme-data-table>
+            </sme-master-view>
+          </sme-split-view-content>
+        </sme-split-view>
+      </ng-template>
+    </sme-pivot-tab>
+  </sme-pivot>
 </div>

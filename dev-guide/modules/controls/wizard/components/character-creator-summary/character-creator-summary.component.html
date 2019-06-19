@@ -1,0 +1,12 @@
+<h3>Summary</h3>
+<ul>
+  <li>
+    <b>Character Name:</b> {{ model.name }}
+  </li>
+  <li>
+    <b>Job:</b> {{ jobMap[model.job.getValue()] }}
+  </li>
+  <li *ngIf="model.job.getValue() === 3">
+    <b>Spell:</b> {{ spellMap[model.spell] }}
+  </li>
+</ul>
