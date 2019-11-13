@@ -1,0 +1,7 @@
+<div>
+  <h3 class="sme-padding-bottom-lg">Simple Form Field with Validation</h3>
+  <form [formGroup]="form">
+    <sme-form-field type="text" formControlName="name" [required]="true" [label]="nameLabel"></sme-form-field>
+    <sme-validation-alert *ngIf="!valid" [alert]="alert"></sme-validation-alert>
+  </form>
+</div>

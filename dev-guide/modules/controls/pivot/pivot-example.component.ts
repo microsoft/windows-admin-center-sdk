@@ -8,4 +8,6 @@ import { NavigationTitle } from '@msft-sme/angular';
 @NavigationTitle({
     getTitle: () => 'Pivot Component'
 })
-export class PivotExampleComponent {}
+export class PivotExampleComponent {
+    public tab2Disabled = false;
+}

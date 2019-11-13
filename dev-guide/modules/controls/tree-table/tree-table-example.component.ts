@@ -19,8 +19,27 @@ export class TreeTableExampleComponent {
     @ViewChild('complexTreeTable')
     private complexTreeTable: TreeTableComponent;
 
+    @ViewChild('multipleSelectionTreeTable')
+    private multipleSelectionTreeTable: TreeTableComponent;
+
     @ViewChild('lazyLoadingNodeTreeTable')
     private lazyLoadingNodeTreeTable: TreeTableComponent;
+
+    public get focusIndex() {
+        if (this.multipleSelectionTreeTable) {
+            return this.multipleSelectionTreeTable.getActiveFocusedItemIndex();
+        } else {
+            return 'Loading';
+        }
+    }
+
+    public get renderedIndex() {
+        if (this.multipleSelectionTreeTable) {
+            return this.multipleSelectionTreeTable.getActiveRenderedItemIndex();
+        } else {
+            return 'Loading';
+        }
+    }
 
     public sampleData1: TreeNodeDataItem[];
 
@@ -38,7 +57,6 @@ export class TreeTableExampleComponent {
     public lazyLoadingSampleData: TreeNodeDataItem[];
 
     constructor() {
-        this.sampleData1 = [JSON.parse(JSON.stringify(TestData))];
         this.sampleData1 = [JSON.parse(JSON.stringify(TestData))];
 
         this.lazyLoadingSampleData = [JSON.parse(JSON.stringify(TestData))];

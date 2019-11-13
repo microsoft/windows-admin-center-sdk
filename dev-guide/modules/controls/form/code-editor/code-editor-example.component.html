@@ -1,0 +1,21 @@
+<div class="sme-layout-absolute sme-position-inset-none sme-documentation">
+
+  <h2>Code Editor</h2>
+  <div class="sme-documentation-example sme-margin-bottom-xxl">
+    <form #formCtrl="ngForm">
+
+      <sme-form-field type="code" name="powershell" orientation="vertical" [(ngModel)]="powershell" label="PowerShell Code"
+                      language="powershell">
+      </sme-form-field>
+      <sme-form-field type="code" name="html" [(ngModel)]="html" label="HTML Code" language="html" orientation="vertical">
+      </sme-form-field>
+      <sme-form-field type="code" name="typescript" [(ngModel)]="typescript" label="TypeScript Code" language="typescript"
+                      orientation="vertical">
+      </sme-form-field>
+      <sme-form-field type="code" name="css" orientation="vertical" [(ngModel)]="css" label="CSS Code" language="css">
+      </sme-form-field>
+      <sme-form-field type="code" name="markdown" orientation="vertical" [(ngModel)]="markdown" label="Markdown Code" language="markdown">
+      </sme-form-field>
+    </form>
+  </div>
+</div>

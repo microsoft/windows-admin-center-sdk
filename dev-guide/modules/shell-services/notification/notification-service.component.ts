@@ -91,8 +91,8 @@ export class NotificationServiceExampleComponent {
 
     private sendWorkItemRequest(shouldSucceed: boolean, targetMachine: string): Observable<WorkItemResult> {
         const script = shouldSucceed ?
-            PowerShellScripts.Start_LongRunningTaskSuccessExample
-            : PowerShellScripts.Start_LongRunningTaskFailureExample;
+            PowerShellScripts.Notifications.Start_LongRunningTaskSuccessExample
+            : PowerShellScripts.Notifications.Start_LongRunningTaskFailureExample;
         const command = PowerShell.createCommand(script);
 
         const workItem: WorkItemSubmitRequest = {

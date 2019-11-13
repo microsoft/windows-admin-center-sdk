@@ -1,11 +1,11 @@
 <sme-confirmation-dialog id="confirmation-dialog-chain"></sme-confirmation-dialog>
 <sme-dialog-example-full-screen-dialog id="full-screen-dialog-chain"></sme-dialog-example-full-screen-dialog>
-<sme-dialog #dialog dialogMode="pane">
+<sme-dialog #dialog dialogMode="pane" [ariaLabel]="title" ariaDescription="This is some description">
   <sme-dialog-header>
-    <h3 id="sme-dialog-title">{{ title }}</h3>
+    <h3>{{ title }}</h3>
   </sme-dialog-header>
   <sme-dialog-content>
-    <p id="sme-dialog-desc">{{ label }}</p>
+    <p>{{ label }}</p>
     <button type="button" (click)="onClickFullScreenDialog()">{{ openButtonText }}</button>
   </sme-dialog-content>
   <sme-dialog-footer class="sme-layout-float-right">

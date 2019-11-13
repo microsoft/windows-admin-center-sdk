@@ -7,7 +7,9 @@
                 <section class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
                     <h3 class="sme-position-flex-none">Simple Tree</h3>
                     <div class="sme-layout-relative sme-position-flex-auto">
-                        <sme-tree-table #simpleTreeTable [items]="sampleData1" [(selection)]="selectedData1" class="sme-layout-absolute sme-position-inset-none" [showHeader]="false" [showGrid]="false" [showLeftMargin]="false" [rememberTreeNodeToggle]="true" [rememberSelection]="true"
+                        <sme-tree-table #simpleTreeTable [items]="sampleData1" [(selection)]="selectedData1"
+                            class="sme-layout-absolute sme-position-inset-none" [showHeader]="false" [showGrid]="false"
+                            [showLeftMargin]="false" [rememberTreeNodeToggle]="true" [rememberSelection]="true"
                             [getItemIdentityFunction]="getSampleDataItemIdentity">
                             <sme-tree-table-column field="label" header="Name" sortable="true" width="40%">
                                 <ng-template let-data>
@@ -18,8 +20,9 @@
                         </sme-tree-table>
                     </div>
                     <div class="sme-position-flex-none">
-                        <button (click)="scrollSelectedDataIntoView()">Scroll selected data into view</button> Selected Item: <span class="selectionText">{{selectedData1 && selectedData1.data.label}}</span>
                         <button (click)="refreshSampleData1()">Refresh Data</button>
+                        <button (click)="scrollSelectedDataIntoView()">Scroll selected data into view</button>
+                        Selected Item: <span class="selectionText">{{selectedData1 && selectedData1.data.label}}</span>
                     </div>
                 </section>
             </ng-template>
@@ -35,16 +38,21 @@
                         <button (click)="refreshSampleData1()">Refresh Data</button>
                     </div>
                     <div class="sme-layout-relative sme-position-flex-auto">
-                        <sme-tree-table #complexTreeTable [items]="sampleData1" [(selection)]="selectedData1" class="sme-layout-absolute sme-position-inset-none" [rememberTreeNodeToggle]="true" [rememberSelection]="true" [getItemIdentityFunction]="getSampleDataItemIdentity">
+                        <sme-tree-table #complexTreeTable [items]="sampleData1" [(selection)]="selectedData1"
+                            class="sme-layout-absolute sme-position-inset-none" [rememberTreeNodeToggle]="true"
+                            [rememberSelection]="true" [getItemIdentityFunction]="getSampleDataItemIdentity">
                             <sme-tree-table-column field="label" header="Name" sortable="true" width="40%">
                                 <ng-template let-data>
                                     <span [class.sme-icon-folder]="data.type==='folder'" class="sme-icon"></span>
                                     <strong>{{data.label}}</strong>
                                 </ng-template>
                             </sme-tree-table-column>
-                            <sme-tree-table-column field="ext" header="Extension" sortable="true"></sme-tree-table-column>
-                            <sme-tree-table-column field="createDateTime" header="Creation Date Time" sortable="true"></sme-tree-table-column>
-                            <sme-tree-table-column field="modificationDateTime" header="Modification Date Time" sortable="true"></sme-tree-table-column>
+                            <sme-tree-table-column field="ext" header="Extension" sortable="true">
+                            </sme-tree-table-column>
+                            <sme-tree-table-column field="createDateTime" header="Creation Date Time" sortable="true">
+                            </sme-tree-table-column>
+                            <sme-tree-table-column field="modificationDateTime" header="Modification Date Time"
+                                sortable="true"></sme-tree-table-column>
                         </sme-tree-table>
                     </div>
                     <div class="sme-position-flex-none">
@@ -61,23 +69,33 @@
                         <button (click)="refreshSampleData1()">Refresh Data</button>
                     </div>
                     <div class="sme-layout-relative sme-position-flex-auto">
-                        <sme-tree-table [items]="sampleData1" [(selection)]="selectedData2" class="sme-layout-absolute sme-position-inset-none" selectionMode="multiple" [rememberTreeNodeToggle]="true" [rememberSelection]="true" [getItemIdentityFunction]="getSampleDataItemIdentity">
-                            <sme-tree-table-column field="label" header="Name" sortable="true" width="40%"></sme-tree-table-column>
-                            <sme-tree-table-column field="ext" header="Extension" sortable="true"></sme-tree-table-column>
-                            <sme-tree-table-column field="createDateTime" header="Creation Date Time" sortable="true"></sme-tree-table-column>
-                            <sme-tree-table-column field="modificationDateTime" header="Modification Date Time" sortable="true"></sme-tree-table-column>
+                        <sme-tree-table #multipleSelectionTreeTable [items]="sampleData1" [(selection)]="selectedData2"
+                            class="sme-layout-absolute sme-position-inset-none" selectionMode="multiple"
+                            [rememberTreeNodeToggle]="true" [rememberSelection]="true"
+                            [getItemIdentityFunction]="getSampleDataItemIdentity">
+                            <sme-tree-table-column field="label" header="Name" sortable="true" width="40%">
+                            </sme-tree-table-column>
+                            <sme-tree-table-column field="ext" header="Extension" sortable="true">
+                            </sme-tree-table-column>
+                            <sme-tree-table-column field="createDateTime" header="Creation Date Time" sortable="true">
+                            </sme-tree-table-column>
+                            <sme-tree-table-column field="modificationDateTime" header="Modification Date Time"
+                                sortable="true"></sme-tree-table-column>
                         </sme-tree-table>
                     </div>
                     <div class="sme-position-flex-none">
                         <span>Selected Items: </span>
-                        <span class="selectionCount">
+                        <span class="selectionCount sme-margin-right-xs">
                             <span *ngIf="selectedData2 && selectedData2.length<10">
                                 <span *ngFor="let item of selectedData2">{{item.data.label}} </span>
-                        </span>
-                        <span *ngIf="selectedData2 && selectedData2.length>=10">
+                            </span>
+                            <span *ngIf="selectedData2 && selectedData2.length>=10">
                                 {{selectedData2.length}} items
                             </span>
                         </span>
+
+                        <span class="sme-margin-right-xs">Focus Index: {{focusIndex}}</span>
+                        <span>Rendered Index: {{renderedIndex}}</span>
                         <button class="clearSelection" (click)="clearSelection()">Clear Selection</button>
                     </div>
                 </section>
@@ -88,8 +106,12 @@
                 <section class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
                     <h3 class="sme-position-flex-none">Lazy load tree nodes</h3>
                     <div class="sme-layout-relative sme-position-flex-auto">
-                        <sme-tree-table #lazyLoadingNodeTreeTable [items]="lazyLoadingSampleData" [(selection)]="selectedData1" class="sme-layout-absolute sme-position-inset-none" [showHeader]="false" [showGrid]="false" [showLeftMargin]="false" [rememberTreeNodeToggle]="true"
-                            [rememberSelection]="true" [getItemIdentityFunction]="getSampleDataItemIdentity" (onNodeExpand)="onLazyLoadingNodeExpanded($event.node)">
+                        <sme-tree-table #lazyLoadingNodeTreeTable [items]="lazyLoadingSampleData"
+                            [(selection)]="selectedData1" class="sme-layout-absolute sme-position-inset-none"
+                            [showHeader]="false" [showGrid]="false" [showLeftMargin]="false"
+                            [rememberTreeNodeToggle]="true" [rememberSelection]="true"
+                            [getItemIdentityFunction]="getSampleDataItemIdentity"
+                            (onNodeExpand)="onLazyLoadingNodeExpanded($event.node)">
                             <sme-tree-table-column field="label" header="Name" sortable="true" width="40%">
                                 <ng-template let-data>
                                     <span [class.sme-icon-folder]="data.type==='folder'" class="sme-icon"></span>
@@ -99,7 +121,8 @@
                         </sme-tree-table>
                     </div>
                     <div class="sme-position-flex-none">
-                        <button (click)="scrollSelectedDataIntoView()">Scroll selected data into view</button> Selected Item: <span class="selectionText">{{selectedData1 && selectedData1.data.label}}</span>
+                        <button (click)="scrollSelectedDataIntoView()">Scroll selected data into view</button> Selected
+                        Item: <span class="selectionText">{{selectedData1 && selectedData1.data.label}}</span>
                         <button (click)="refreshSampleData1()">Refresh Data</button>
                     </div>
                 </section>

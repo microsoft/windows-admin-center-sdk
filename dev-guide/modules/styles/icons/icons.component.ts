@@ -34,6 +34,8 @@ export class IconsComponent {
         bootOrderMirrored: 'F430',
         bulletedList: 'E8FD',
         bulletedListMirrored: 'EA42',
+        calendar: 'E787',
+        calendarMirrored: 'ED28',
         cancel: 'E711',
         certificateManager: 'F1F8',
         chat: 'E901',
@@ -179,6 +181,7 @@ export class IconsComponent {
         serverProcesses: 'F1FE',
         settings: 'E713',
         share: 'E72D',
+        shield: 'EA18',
         shop: 'E719',
         softwareDefinedDataCenter: 'F205',
         sort: 'E8CB',
@@ -233,6 +236,7 @@ export class IconsComponent {
         warningSolid: 'F736',
         windowsAdminCenterAppLogo: 'F80F',
         windowsAdminCenterIIS: 'F6A7',
+        windowsSandboxAppMono: 'F8FF',
         windowsUpdate: 'F0C5'
     };
 

@@ -1,3 +1,6 @@
+import { DateRange } from '@msft-sme/core/base/date/date-range';
+
+const now = Date.now();
 export function generateSodaFactory() {
     const sodaFactory = {
         model: {
@@ -9,7 +12,7 @@ export function generateSodaFactory() {
             label: 'Password',
             value: '',
             // tslint:disable-next-line
-            description: 'This SodaBuilder is password protected, You cannot make soda without the password.\n##_Hint: The password is "password"._',
+            description: 'This SodaBuilder is password protected, You cannot make soda without the password.Hint: The password is "password".',
             notMatch: 'The password is incorrect. Hint: try "password" instead.',
             required: 'You must enter a password'
         },
@@ -17,6 +20,12 @@ export function generateSodaFactory() {
             label: 'Confirm Password',
             value: '',
             required: 'You must confirm the password'
+        },
+        recipeTypeInline: {
+            value: true,
+            label: 'Use inline radio style for "Recipe"',
+            // tslint:disable-next-line
+            description: 'Turn this on if you want to set "displayMode" to "inline" on the "Recipe" field.',
         },
         recipeType: {
             value: 'upload',
@@ -183,8 +192,10 @@ export function generateSodaFactory() {
                     quote: `Ain't nothing like this Sarsaparilla!`
                 }
             ],
-            heading: 'Customer {0}',
+            heading: 'Customer',
+            customHeading: 'Special Customer',
             label: 'Customer Quotes',
+            addButtonText: 'New customer',
             newValue: {
                 customerName: '',
                 location: '',
@@ -195,7 +206,23 @@ export function generateSodaFactory() {
                 location: { label: 'Location' },
                 quote: { label: 'Quote' }
             }
-        }
+        },
+        timestamp: {
+            label: 'Timestamp',
+            value: '2019-06-25T06:18:10',
+            description: '<The timestamp description>'
+        },
+        dateTimeRange: {
+            label: ['Date Time Range', 'Date Time Range', 'Date Time Range'],
+            value: [new DateRange(now - (60 * 60000), now), new DateRange(now - (60 * 60000), now), new DateRange(now - (60 * 60000), now)],
+            options: [
+                { value: new DateRange(now - 60000, now), label: 'Last Minute' },
+                { value: new DateRange(now - (60 * 60000), now), label: 'Last Hour' },
+                { value: new DateRange(now - (24 * 60 * 60000), now), label: 'Last Day' },
+                { value: new DateRange(now - (7 * 24 * 60 * 60000), now), label: 'Last Week' }
+            ],
+            description: '<The dateTimeRange description>'
+        },
     };
     for (let i = 0; i < 1000; i++) {
         sodaFactory.flavorMix.largeOptionsList.push({

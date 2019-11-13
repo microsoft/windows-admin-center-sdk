@@ -1,0 +1,19 @@
+<div class="sme-margin-inset-sm sme-documentation">
+    <h1 class="sme-position-flex-none">Secure Extension Data Service</h1>
+    <p>The secure extension data service allows tool extensions to securely send data to plugins.  This is useful for extensions that need to pass sensitive data, but any string less than 245 bytes can be sent to plugins via this service.  There are 3 steps involved:</p>
+    <h2>Encrypting data as secure tokens</h2>
+    <p>
+        A tool extension can store up to 10 keys with the service.  The tokens where the encrypted data is stored in expire when the session ends, and it will not permanently store any data. The data must be in a <code>string</code> format, so it may be useful to JSON serialize data from the tool and deserialize in the plugin.
+    </p>
+    <div [smeMarkdown]="storeCode"></div>
+    <h2>Adding the secure data token to a request</h2>
+    <p>
+        To send the encrypted data to a plugin, developers will need to obtain a new <code>AjaxRequest</code>, or optionally provide an existing one, in which case the appropriate headers will be added. After that, just call the desired plugin's endpoint with the request. 
+    </p>
+    <div [smeMarkdown]="retrieveCode"></div>
+    <h2>Decrypting data in plugin</h2>
+    <p>
+        In the plugin's desired endpoint's code, just call <code>this.GetSecureExtensionData(request)</code> from <code>Microsoft.ManagementExperience.FeatureInterface</code> to retrieve your data.  
+    </p>
+    <div [smeMarkdown]="pluginCode"></div>
+</div>

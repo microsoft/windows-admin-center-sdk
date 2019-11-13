@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { ValidationAlertSeverity } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
     selector: 'sme-ng2-control-validation-alert-example',
     templateUrl: './validation-alert-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'sme-alert'
 })
 export class ValidationAlertExampleComponent {
     public model: any;

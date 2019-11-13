@@ -1,0 +1,47 @@
+<header class="sme-layout-tool-header">
+  <h3>Workflow</h3>
+  <div class="sme-padding-left-md sme-passing-bottom-sm" style="width:600px;">
+    <p>Workflow starts a long running processing from the browser and the browser maintains the state of it. All
+      instances of workflow is persisted on the browser and it allows to restore them if user revisits the same view.
+    </p>
+    <br />
+    <p>This example has the most information of base feature, and there is another sample on unit tests at core/workflow such as persistent-workflow.spec.ts,
+      persistent-workflow-step-one.spec.ts, persistent-workflow-step-two.spec.ts, persistent-workflow-step-three.spec.ts.
+    </p>
+    <br />
+    <p>To try this example, after input a target computer name in below textbox, click actions and see notifications. You can refresh the browser during
+      the operations and click restore to restore the workflows.</p>
+    <br />
+  </div>
+</header>
+<div class="sme-padding-left-md sme-position-relative sme-position-inset-none sme-arrange-stack-v">
+  <sme-form-field class="sme-padding-left-md sme-padding-bottom-md sme-position-flex-auto" type="text"
+    [(ngModel)]="nodeName" label="Enter a target computer name for the workflow actions" orientation="vertical">
+  </sme-form-field>
+  <sme-action-bar>
+    <sme-action-button *ngIf="snapshots.length > 0" #action text="Restore" [enabled]="snapshots && snapshots.length > 0"
+      iconClass="sme-icon sme-icon-add" (execute)="restore()">
+    </sme-action-button>
+    <sme-action-button #action text="Start (10 sec)" [enabled]="!!nodeName" iconClass="sme-icon sme-icon-add"
+      (execute)="start(10)">
+    </sme-action-button>
+    <sme-action-button #action text="Start (30 sec)" [enabled]="!!nodeName" iconClass="sme-icon sme-icon-add"
+      (execute)="start(30)">
+    </sme-action-button>
+    <sme-action-button #action text="Start (60 sec)" [enabled]="!!nodeName" iconClass="sme-icon sme-icon-add"
+      (execute)="start(60)">
+    </sme-action-button>
+    <sme-action-button #action text="Start (120 sec)" [enabled]="!!nodeName" iconClass="sme-icon sme-icon-add"
+      (execute)="start(120)">
+    </sme-action-button>
+    <sme-action-button #action text="Refresh" [enabled]="!!nodeName" iconClass="sme-icon sme-icon-refresh"
+      (execute)="refresh()">
+    </sme-action-button>
+  </sme-action-bar>
+  <div class="sme-padding-top-md sme-padding-left-md">
+    <label>Workflows sitting on the storage:</label>
+    <sme-property-grid class="sme-margin-top-md">
+      <sme-property-grid-item label="Count:" value="{{snapshots.length}}"></sme-property-grid-item>
+    </sme-property-grid>
+  </div>
+</div>

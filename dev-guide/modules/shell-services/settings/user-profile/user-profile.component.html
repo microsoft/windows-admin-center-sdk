@@ -5,6 +5,7 @@
         <sme-form-field type="checkbox" name="example-checkbox" [(ngModel)]="settings.booleanExample" [label]="'Boolean Example'"></sme-form-field>
         <div class="sme-margin-top-xs">
             <button type="submit" (click)="saveSettings()">Save Settings</button>
+            <button type="submit" (click)="clearProperty('booleanExample')">Clear Property</button>
         </div>
     </form>
     <div [smeMarkdown]="userCode"></div>

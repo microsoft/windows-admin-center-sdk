@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppContextService, BannerItem } from '@msft-sme/angular';
-import { DialogService } from '@msft-sme/angular';
 import { NavigationTitle } from '@msft-sme/angular';
 
 @Component({
@@ -21,7 +20,8 @@ export class BannerExampleComponent implements OnInit {
             id: 'msft.sme.firstBanner',
             serviceName: 'First Banner Example',
             title: 'First Banner Title',
-            externalLink: 'http://www.bing.com'
+            externalLink: 'http://www.bing.com',
+            actionText: 'Update now'
         };
         firstBanner.setUpFunction = () => { this.onSetupClick(); };
 

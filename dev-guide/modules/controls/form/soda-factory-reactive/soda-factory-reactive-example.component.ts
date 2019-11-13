@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import {
-    CheckValidationEventArgs
+    AskForItemHeaderArgs, AskForRemoveEvalFuncArgs, CheckValidationEventArgs
 } from '@msft-sme/angular';
 import {
     ValidationAlerts, ValidationAlertSeverity
 } from '@msft-sme/angular';
+import { NavigationTitle } from '@msft-sme/angular';
 import { generateSodaFactory } from '../models/soda-factory';
 
 @Component({
     selector: 'sme-ng2-control-input-soda-factory-reactive-example',
     templateUrl: './soda-factory-reactive-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Reactive'
 })
 export class SodaFactoryReactiveExampleComponent implements OnInit {
     public sodaFactory: FormGroup;
@@ -131,5 +135,25 @@ export class SodaFactoryReactiveExampleComponent implements OnInit {
         }
 
         MsftSme.deepAssign(event.alerts, alerts);
+    }
+
+    public customItemHeader(event: AskForItemHeaderArgs) {
+        event.headerEvalFunc = (item: any, index: number) => {
+            if (index % 2 === 1) {
+                return `${this.model.quotes.customHeading} ${index}`;
+            } else {
+                return `${this.model.quotes.heading} ${index}`;
+            }
+        };
+    }
+
+    public customShowRemoveEval(event: AskForRemoveEvalFuncArgs) {
+        event.removeEvalFunc = (item: any, index: number) => {
+            if (index % 2 === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        };
     }
 }
