@@ -23,6 +23,10 @@ const PivotExampleRoutes: Routes = [
                 component: LoremIpsum2Component
             },
             {
+                path: 'lorem-ipsum3',
+                component: LoremIpsum1Component
+            },
+            {
                 path: '**',
                 redirectTo: 'lorem-ipsum1'
             }

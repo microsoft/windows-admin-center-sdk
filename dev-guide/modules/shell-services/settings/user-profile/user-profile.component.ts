@@ -76,4 +76,23 @@ appContextService.settingsManager
             });
 
     }
+
+    public clearProperty(key: string) {
+        if (this.settings.clearProperty(key)) {
+            this.appContextService.notification.alert(
+                null,
+                NotificationState.Success,
+                `The user profile have been updated to ${JSON.stringify(this.settings.toJson())}\n
+                The property ${key} has been removed.`,
+                'User Profile Saved'
+            );
+        } else {
+            this.appContextService.notification.alert(
+                null,
+                NotificationState.Error,
+                `Failed to clear property ${key}`,
+                'User Profile Failed'
+            );
+        }
+    }
  }

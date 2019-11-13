@@ -2,12 +2,20 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { SmeFormsModule, TooltipModule, WizardModule } from '@msft-sme/angular';
-import { CharacterCreatorJobFormComponent } from './components/character-creator-job-form/character-creator-job-form.component';
-import { CharacterCreatorNameFormComponent } from './components/character-creator-name-form/character-creator-name-form.component';
-import { CharacterCreatorSpellFormComponent } from './components/character-creator-spell-form/character-creator-spell-form.component';
-import { CharacterCreatorSummaryComponent } from './components/character-creator-summary/character-creator-summary.component';
+import { PageAlertBarModule, SmeFormsModule, TooltipModule, WizardModule } from '@msft-sme/angular';
+
+import { FinishComponent } from './components/finish/finish.component';
+import { SimpleCheckboxComponent } from './components/simple-checkbox/simple-checkbox.component';
+import {
+    SimpleDropdownWithValidationComponent,
+} from './components/simple-dropdown-with-validation/simple-dropdown-with-validation.component';
+import { SimpleDropdownComponent } from './components/simple-dropdown/simple-dropdown.component';
+import { SimpleSkipLogicComponent } from './components/simple-skip-logic/simple-skip-logic.component';
+import { SimpleStaticTextComponent } from './components/simple-static-text/simple-static-text.component';
+import { SimpleTextInputComponent } from './components/simple-text-input/simple-text-input.component';
+import { SimpleTextUsingModelComponent } from './components/simple-text-using-model/simple-text-using-model.component';
 import { WizardExampleComponent } from './wizard-example.component';
+
 
 const WizardExampleRoutes: Routes = [
     {
@@ -22,10 +30,14 @@ const WizardExampleRoutes: Routes = [
 @NgModule({
     declarations: [
         WizardExampleComponent,
-        CharacterCreatorJobFormComponent,
-        CharacterCreatorNameFormComponent,
-        CharacterCreatorSpellFormComponent,
-        CharacterCreatorSummaryComponent
+        SimpleTextInputComponent,
+        SimpleDropdownComponent,
+        SimpleDropdownWithValidationComponent,
+        SimpleTextUsingModelComponent,
+        SimpleStaticTextComponent,
+        SimpleCheckboxComponent,
+        SimpleSkipLogicComponent,
+        FinishComponent
     ],
     imports: [
         CommonModule,
@@ -34,13 +46,18 @@ const WizardExampleRoutes: Routes = [
         SmeFormsModule,
         TooltipModule,
         WizardModule,
+        PageAlertBarModule,
         RouterModule.forChild(WizardExampleRoutes)
     ],
     entryComponents: [
-        CharacterCreatorNameFormComponent,
-        CharacterCreatorJobFormComponent,
-        CharacterCreatorSpellFormComponent,
-        CharacterCreatorSummaryComponent
+        SimpleTextInputComponent,
+        SimpleDropdownComponent,
+        SimpleDropdownWithValidationComponent,
+        SimpleTextUsingModelComponent,
+        SimpleStaticTextComponent,
+        SimpleCheckboxComponent,
+        SimpleSkipLogicComponent,
+        FinishComponent
     ]
 })
 export class WizardExampleModule { }

@@ -1,9 +1,9 @@
-<sme-dialog #dialog dialogMode="fullscreen" fullScreenLeftDistance="20%">
+<sme-dialog #dialog dialogMode="fullscreen" fullScreenLeftDistance="20%" [ariaLabel]="title" [ariaDescription]="label">
   <sme-dialog-header>
-    <h3 id="sme-dialog-title">{{ title }}</h3>
+    <h3>{{ title }}</h3>
   </sme-dialog-header>
   <sme-dialog-content>
-    <p id="sme-dialog-desc">{{ label }}</p>
+    <p>{{ label }}</p>
     <sme-loading-wheel></sme-loading-wheel>
   </sme-dialog-content>
   <sme-dialog-footer class="sme-layout-float-right">

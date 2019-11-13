@@ -1,0 +1,27 @@
+<!-- <button (click)="showSnapInDiscoveryDialog()">Click to discover snap ins</button> -->
+<sme-layout #layout>
+  <sme-layout-definition name="narrow" [until]="1000" [columns]="1"></sme-layout-definition>
+  <sme-layout-definition name="medium" [until]="1500" [columns]="2"></sme-layout-definition>
+  <sme-layout-definition name="wide" [columns]="3"></sme-layout-definition>
+  <sme-layout-item [columnSpan]="3">
+    <div class="sme-position-stretch-h sme-background-color-blue" style="height:300px; width:1500px">
+      <sme-snap-in-extension class="sme-position-stretch-h" style="height:300px"
+        extensionId="msft.sme.shell-extensions!sampleSnapIn"></sme-snap-in-extension>
+    </div>
+  </sme-layout-item>
+  <sme-layout-item>
+    <div class="sme-position-stretch-h sme-background-color-blue" style="height:300px">
+      <sme-snap-in-extension extensionId="msft.sme.shell-extensions!sampleSnapIn"></sme-snap-in-extension>
+    </div>
+  </sme-layout-item>
+  <sme-layout-item [columnSpan]="2">
+    <div class="sme-position-stretch-h sme-background-color-blue" style="height:300px">
+      <sme-snap-in-extension extensionId="msft.sme.shell-extensions!sampleSnapIn"></sme-snap-in-extension>
+    </div>
+  </sme-layout-item>
+  <sme-layout-item>
+    <div class="sme-position-stretch-h sme-background-color-blue" style="height:300px">
+      <sme-snap-in-extension extensionId="msft.sme.shell-extensions!sampleSnapIn"></sme-snap-in-extension>
+    </div>
+  </sme-layout-item>
+</sme-layout>

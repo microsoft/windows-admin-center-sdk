@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import {
+    AskForItemHeaderArgs,
+    AskForRemoveEvalFuncArgs,
     CheckAsyncValidationEventArgs,
     CheckValidationEventArgs,
+    NavigationTitle,
     ValidationAlerts,
     ValidationAlertSeverity
 } from '@msft-sme/angular';
@@ -12,6 +15,9 @@ import { generateSodaFactory } from '../models/soda-factory';
 @Component({
     selector: 'sme-ng2-control-input-soda-factory-example',
     templateUrl: './soda-factory-example.component.html'
+})
+@NavigationTitle({
+    getTitle: () => 'Template Driven'
 })
 export class SodaFactoryExampleComponent {
     public model: any;
@@ -134,5 +140,25 @@ export class SodaFactoryExampleComponent {
 
     public onSodaNameAction(value: string) {
         alert(`The value of the sodaName form field is: ${value}`);
+    }
+
+    public customItemHeader(event: AskForItemHeaderArgs) {
+        event.headerEvalFunc = (item: any, index: number) => {
+            if (index % 2 === 1) {
+                return `${this.model.quotes.customHeading} ${index}`;
+            } else {
+                return `${this.model.quotes.heading} ${index}`;
+            }
+        };
+    }
+
+    public customShowRemoveEval(event: AskForRemoveEvalFuncArgs) {
+        event.removeEvalFunc = (item: any, index: number) => {
+            if (index % 2 === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        };
     }
 }

@@ -6,7 +6,7 @@
   <br> This uses loading wheels. Clicking a tabl results in "new" data being loaded. The loading wheel reappears, and then disappears after
   data is "loaded". In this case, the left chart always loads first after 1 second and the right chart loads after 1.5 seconds.
   <sme-tabbed-line-chart-group #linechart6 [loadingWheels]="true" [loadingMessage]="loadingMessage" [groupData]="groupData3" [tabList]="tabList3"
-                              (onTabClick)="mockAssyncDataLoading($event)"></sme-tabbed-line-chart-group>
+                              (onTabClick)="mockAssyncDataLoading($event)" groupTitle="My Group Title"></sme-tabbed-line-chart-group>
 
 
   <h3> Line Chart Control </h3>

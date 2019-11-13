@@ -1,43 +1,39 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { WizardStep } from '@msft-sme/angular';
-import { WizardComponent } from '@msft-sme/angular';
-import { NavigationTitle } from '@msft-sme/angular';
-import { BehaviorSubject ,  Subscription } from 'rxjs';
-import { CharacterCreatorJobFormComponent } from './components/character-creator-job-form/character-creator-job-form.component';
-import { CharacterCreatorNameFormComponent } from './components/character-creator-name-form/character-creator-name-form.component';
-import { CharacterCreatorSpellFormComponent } from './components/character-creator-spell-form/character-creator-spell-form.component';
-import { CharacterCreatorSummaryComponent } from './components/character-creator-summary/character-creator-summary.component';
-import { CharacterCreatorParams } from './models/character-creator-params';
-import { Job } from './models/job';
-import { Spell } from './models/spell';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AppContextService, NavigationTitle, WizardBuilder, WizardStepValidation } from '@msft-sme/angular';
+import { Logging } from '@msft-sme/core/diagnostics/logging';
+import { Subscription } from 'rxjs';
+
+import { FinishComponent } from './components/finish/finish.component';
+import { SimpleCheckboxComponent } from './components/simple-checkbox/simple-checkbox.component';
+import {
+    SimpleDropdownWithValidationComponent,
+} from './components/simple-dropdown-with-validation/simple-dropdown-with-validation.component';
+import { SimpleDropdownComponent } from './components/simple-dropdown/simple-dropdown.component';
+import { SimpleSkipLogicComponent } from './components/simple-skip-logic/simple-skip-logic.component';
+import { SimpleStaticTextComponent } from './components/simple-static-text/simple-static-text.component';
+import { SimpleTextInputComponent } from './components/simple-text-input/simple-text-input.component';
+import { SimpleTextUsingModelComponent } from './components/simple-text-using-model/simple-text-using-model.component';
+import { Data } from './models/data';
+import { DropdownOne } from './models/dropdown-one';
+import { DropdownTwo } from './models/dropdown-two';
 
 @Component({
     selector: 'sme-dev-guide-controls-wizard',
-    templateUrl: './wizard-example.component.html',
-    styleUrls: [
-        './wizard-example.component.css'
-    ]
+    templateUrl: './wizard-example.component.html'
 })
 @NavigationTitle({
     getTitle: () => 'Wizard Component'
 })
 export class WizardExampleComponent implements OnDestroy, OnInit {
-    @ViewChild(WizardComponent)
-    public wizard: WizardComponent;
 
-    public model: CharacterCreatorParams;
+    public model: Data;
 
-    public steps: WizardStep[];
-
-    public nameStep: WizardStep;
-
-    public jobStep: WizardStep;
-
-    public jobSubject: BehaviorSubject<Job>;
-
-    private summaryStep: WizardStep;
+    public wizardBuilder: WizardBuilder;
 
     private subscriptions: Subscription[];
+
+    constructor(public appContextService: AppContextService) {
+    }
 
     public ngOnDestroy(): void {
         if (this.subscriptions) {
@@ -50,112 +46,54 @@ export class WizardExampleComponent implements OnDestroy, OnInit {
     }
 
     public ngOnInit(): void {
-        this.subscriptions = [];
-        this.initializeSteps();
 
-        this.jobSubject = new BehaviorSubject<Job>(Job.Paladin);
+        this.subscriptions = [];
+        this.wizardBuilder = new WizardBuilder();
+        this.wizardBuilder.heading = 'Wizard Example';
+        this.wizardBuilder.isInPreviewState = true;
+
+        this.wizardBuilder.addStepInStage('Simple Text Input', SimpleTextInputComponent, 'Stage 1');
+        this.wizardBuilder.addStepInStage('Simple Static Text', SimpleStaticTextComponent, 'Stage 1');
+        this.wizardBuilder.addStepInStage('Simple Checkbox Input', SimpleCheckboxComponent, 'Stage 2');
+        this.wizardBuilder.addStepInStage('Simple Skip Logic', SimpleSkipLogicComponent, 'Stage 2');
+        this.wizardBuilder.addStepInStage('Simple Dropdown with Validation', SimpleDropdownWithValidationComponent, 'Stage 2');
+        this.wizardBuilder.addStepInStage('Simple Dropdown', SimpleDropdownComponent, 'Stage 2');
+        this.wizardBuilder.addStepInStage('Simple Summary using Model', SimpleTextUsingModelComponent, 'Stage 3');
+
+        this.wizardBuilder.addFinishView(FinishComponent);
 
         this.initializeModel();
     }
 
-    private configureStandardJobSteps(): void {
-        this.summaryStep.dependencies = [
-            this.nameStep,
-            this.jobStep
-        ];
+    /**
+     * Should be used to control what happens when the user submits any step
+     */
+    public onStepSubmitted(): void { Logging.logInformational(`Wizard Example`, `Step Submitted`); }
 
-        this.steps = [
-            this.nameStep,
-            this.jobStep,
-            this.summaryStep
-        ];
+    /**
+     * Should be used to control what happens when the user try's to submit a step and it is invalid
+     */
+    public onStepInvalidated(result: WizardStepValidation): void {
+        Logging.logInformational(`Wizard Example`, `Step Invalidated: ${result.isValid}`);
     }
 
-    private configureWizardJobSteps(): void {
-        if (!(this.steps.length === 4 && this.steps[2].renderer === CharacterCreatorSpellFormComponent)) {
-            const spellStep = new WizardStep(
-                CharacterCreatorSpellFormComponent,
-                {
-                    name: 'Choose a Spell',
-                    dependencies: [
-                        this.jobStep
-                    ]
-                }
-            );
+    /**
+     * Should be used to control what happen when the user exits the wizard
+     * For example, a redirect.
+     */
+    public onExit(): void { Logging.logInformational(`Wizard Example`, `Wizard Exited`); }
 
-            this.summaryStep.dependencies = [
-                this.nameStep,
-                this.jobStep,
-                spellStep
-            ];
-
-            this.steps = [
-                this.nameStep,
-                this.jobStep,
-                spellStep,
-                this.summaryStep
-            ];
-        }
-    }
+    /**
+     * Should be used to control what happen when the user finishes the wizard
+     */
+    public onFinish(): void { Logging.logInformational(`Wizard Example`, `Wizard Finished`); }
 
     private initializeModel(): void {
         this.model = {
             name: '',
-            job: this.jobSubject,
-            spell: Spell.Fire
+            dropdownOneOption: DropdownOne.Option1,
+            dropdownTwoOption: DropdownTwo.OptionA,
+            checkbox: false
         };
-
-        this.subscriptions.push(
-            this.model.job.subscribe((job: Job) => {
-                this.onJobChange(job);
-            })
-        );
-    }
-
-    private initializeSteps(): void {
-        this.nameStep = new WizardStep(
-            CharacterCreatorNameFormComponent,
-            {
-                name: 'Character Name'
-            }
-        );
-
-        this.jobStep = new WizardStep(
-            CharacterCreatorJobFormComponent,
-            {
-                name: 'Choose a Job',
-                dependencies: [
-                    this.nameStep
-                ]
-            }
-        );
-
-        this.summaryStep = new WizardStep(
-            CharacterCreatorSummaryComponent,
-            {
-                name: 'Summary',
-                dependencies: [
-                    this.nameStep,
-                    this.jobStep
-                ]
-            }
-        );
-
-        this.steps = [
-            this.nameStep,
-            this.jobStep,
-            this.summaryStep
-        ];
-    }
-
-    private onJobChange(job: Job): void {
-        switch (job) {
-            case Job.Wizard:
-                this.configureWizardJobSteps();
-                break;
-            default:
-                this.configureStandardJobSteps();
-                break;
-        }
     }
 }

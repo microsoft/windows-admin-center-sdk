@@ -1,0 +1,7 @@
+<h3 class="sme-padding-bottom-lg">Simple Dropdown with Validation</h3>
+<form #formCtrl="ngForm" [formGroup]="form">
+  <sme-form-field type="combobox" formControlName="dropdownTwoOption" [label]="dropdownLabel">
+    <sme-option *ngFor="let option of options" [value]="option.value" [label]="option.label"></sme-option>
+  </sme-form-field>
+  <sme-validation-alert *ngIf="!valid" [alert]="alert"></sme-validation-alert>
+</form>

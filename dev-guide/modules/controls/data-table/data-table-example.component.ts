@@ -5,10 +5,7 @@ import {
 } from '@msft-sme/angular';
 import { DataTableComponent } from '@msft-sme/angular';
 import { NavigationTitle } from '@msft-sme/angular';
-import {
-    QueryData, QueryDataItemPresetGenerator,
-    QueryDataItemValueType, QueryDataOperand
-} from '@msft-sme/angular';
+import { Debounce } from '@msft-sme/core/base/decorators/debounce.decorators';
 import { TestData } from './testData';
 
 @Component({
@@ -20,90 +17,15 @@ import { TestData } from './testData';
     getTitle: () => 'Data Table Component'
 })
 export class DataTableExampleComponent {
-    public searchString = '';
+    public get flipMultipleButtonText(): string {
+        return this.editableIsMultiple ? 'Single Selection' : 'Multiple Selection';
+    }
 
-    @ViewChild('dataTableForDataStreaming')
-    private dataTableForDataStreaming: DataTableComponent;
-
-    private dataStreamingTimer: any;
-    private dataStreamingSortDirection = 1;
-
-    @ViewChild('groupDataTable')
-    private groupDataTable: DataTableComponent;
-
-    @ViewChild('simpleDataTable')
-    private simpleDataTable: DataTableComponent;
-
-    @ViewChild(DataTableComponent)
-    private currentDataTable: DataTableComponent;
-
-    public sampleData1: any[];
-    public selectedData1: any;
-
-    public editableDataChangeset: EditableDataChangeSet;
-
-    public sampleData2: any[];
-    public selectedData2: any[];
-    public sampleData3: any[];
-    public selectedData3: any[];
-    public sampleData4: any[] = [];
-    public selectedData4: any[];
-    public sampleData5: any[] = [];
-    public sampleEditableData: any[] = [];
-    public groupColumnField = 'City';
-    public groupSortMode = '0';
-    public selectedData5: any[];
-    public dataSource: any[];
-    public dataSource2: any[];
-    public virtualCount: number;
-    public virtualDataSource: any[];
-    public indexToSelect: number;
-    public presetQueryEditor: QueryData = {
-        contents: []
-    };
-    public queryEditorItemPresetGenerator = new QueryDataItemPresetGenerator();
-
-    public editableNewDataItem = {
-        objectField: {
-            text: '',
-            number: ''
-        }
-    };
-
-    public selectByIndex(): void {
-        this.selectedData1 = this.sampleEditableData[this.indexToSelect];
+    public get flipshowHideDevToolButtonText(): string {
+        return this.showDevTool ? 'Hide DevTool' : 'Show DevTool';
     }
 
     constructor() {
-        const item1column = this.queryEditorItemPresetGenerator
-            .columnGenerator('String Field 5 (Custom Sort: put all items with \'2\' at one side', 'field5');
-        const item1value = this.queryEditorItemPresetGenerator
-            .valueGenerator('field 5 1');
-        const item1 = this.queryEditorItemPresetGenerator
-            .itemGenerator(item1column, QueryDataOperand.Eq, item1value, null, true);
-
-        const item2column = this.queryEditorItemPresetGenerator
-            .columnGenerator('Object Field Number', 'objectField.number');
-        const item2value = this.queryEditorItemPresetGenerator
-            .valueGenerator('15123412342341234');
-        const item2 = this.queryEditorItemPresetGenerator
-            .itemGenerator(item2column, QueryDataOperand.Lt, item2value, null, null, 'sme-icon sme-icon-heart');
-
-        const item3column = this.queryEditorItemPresetGenerator
-            .columnGenerator('String Field1', 'field1');
-        const item3value = this.queryEditorItemPresetGenerator
-            .valueGenerator('Field 1 1', QueryDataItemValueType.SingleDropdown);
-        const item3 = this.queryEditorItemPresetGenerator
-            .itemGenerator(item3column, QueryDataOperand.Eq, item3value, true, null, 'sme-icon sme-icon-heart');
-
-        const item4column = this.queryEditorItemPresetGenerator
-            .columnGenerator('Object Field Text', 'objectField.text', true);
-        const item4value = this.queryEditorItemPresetGenerator
-            .valueGenerator(['Object Field 1', 'Object Field 9'], QueryDataItemValueType.MultiSelectDropdown);
-        const item4 = this.queryEditorItemPresetGenerator
-            .itemGenerator(item4column, QueryDataOperand.Eq, item4value, true, null, 'sme-icon sme-icon-contact');
-
-        this.presetQueryEditor.contents.push(item1, item2, item3, item4);
         setTimeout(
             () => {
                 let newData = [];
@@ -144,9 +66,6 @@ export class DataTableExampleComponent {
                 }
                 this.sampleData2 = newData;
                 this.dataSource = this.sampleData1;
-                this.dataSource2 = MsftSme.deepAssign(this.dataSource.filter((item, index) => {
-                    return index <= 30;
-                }));
 
                 newData = [];
                 for (let i = 0; i < 5000; i++) {
@@ -167,6 +86,75 @@ export class DataTableExampleComponent {
                 this.sampleData5 = TestData;
             },
             1000);
+    }
+    public searchString = '';
+
+    @ViewChild('dataTableForDataStreaming')
+    private dataTableForDataStreaming: DataTableComponent;
+
+    private dataStreamingTimer: any;
+    private dataStreamingSortDirection = 1;
+
+    @ViewChild('groupDataTable')
+    private groupDataTable: DataTableComponent;
+
+    @ViewChild('simpleDataTable')
+    private simpleDataTable: DataTableComponent;
+
+    @ViewChild(DataTableComponent)
+    private currentDataTable: DataTableComponent;
+
+    public sampleData1: any[];
+    public selectedData1: any;
+
+    public editableDataChangeset: EditableDataChangeSet;
+
+    public editableIsMultiple = false;
+    public showDevTool = false;
+
+    public sampleData2: any[];
+    public selectedData2: any[];
+    public sampleData3: any[];
+    public selectedData3: any[];
+    public sampleData4: any[] = [];
+    public selectedData4: any[];
+    public sampleData5: any[] = [];
+    public sampleEditableData: any[] = [];
+    public groupColumnField = 'City';
+    public groupSortMode = '0';
+    public selectedData5: any[];
+    public dataSource: any[];
+    public virtualCount: number;
+    public virtualDataSource: any[];
+    public indexToSelect: number;
+
+
+    public editableNewDataItem = {
+        objectField: {
+            text: '',
+            number: '',
+            tags: []
+        }
+    };
+
+    public flipMultiple() {
+        this.editableIsMultiple = !this.editableIsMultiple;
+        this.refreshSimpleDataTable();
+    }
+
+    public showHideDevTool() {
+        this.showDevTool = !this.showDevTool;
+    }
+
+    @Debounce()
+    private refreshSimpleDataTable() {
+        if (this.simpleDataTable) {
+            this.simpleDataTable.refreshData();
+        }
+    }
+
+    public selectByIndex(): void {
+        this.selectedData1 = this.sampleEditableData[this.indexToSelect];
     }
 
     public onLazyLoad(event: DataTableLazyLoadEvent) {

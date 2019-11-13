@@ -1,0 +1,131 @@
+<div
+  class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v sme-position-vertical-none sme-position-horizontal-md">
+  <h2 class="sme-position-flex-none">Query Editor</h2>
+  <sme-pivot [selection]="ex1Tab1" class="sme-position-flex-auto">
+    <sme-pivot-tab #ex1Tab1 label="Query Editor with Data Table">
+      <ng-template>
+        <section class="sme-layout-absolute sme-position-inset-none sme-arrange-stack-v">
+          <h3 class="sme-position-flex-none">Query Editor with Data Table</h3>
+          <div class="sme-position-flex-none sme-margin-top-xs sme-focus-zone">
+            <button [class.sme-button-primary]="!isPresetApplied" (click)="applyPresetQueryFilter(isPresetApplied)">
+              {{ applyButtonInnerHtml }}</button>
+            <button [class.sme-button-primary]="!showResetButton" (click)="showResetButton = !showResetButton">
+              {{ showResetButtonText }}</button>
+            <button [class.sme-button-primary]="!showAddButton" (click)="showAddButton = !showAddButton">
+              {{ showAddButtonText }}</button>
+          </div>
+          <div class="sme-position-flex-none">
+            <sme-query-editor #queryEditor1 class="sme-margin-vertical-xs" [columnList]="dataTable1.columns"
+              [dataTable]="dataTable1" [presetQueryEditor]="presetQueryEditor" [showAddButton]="showAddButton"
+              [showResetButton]="showResetButton"></sme-query-editor>
+          </div>
+          <div class="sme-layout-relative sme-position-flex-auto">
+            <sme-data-table #dataTable1 [items]="dataSource" [(selection)]="selectedData"
+              class="sme-layout-absolute sme-position-inset-none" [defaultSortColumn]="customSortColumn"
+              [defaultSortMode]="1" [rememberSelection]="true" [getItemIdentityFunction]="getItemIdentityFunction">
+              <sme-data-table-column field="field1" header="String Field 1" sortable="true"
+                [queryEditorType]="queryDataItemValueType.SingleDropdown"></sme-data-table-column>
+              <sme-data-table-column field="field3" header="String Field 3" sortable="true">
+              </sme-data-table-column>
+              <sme-data-table-column field="field5" [queryEditorEqualIsContain]="false"
+                header="String Field 5 (Custom Sort: put all items with '2' at one side)" sortable="custom">
+              </sme-data-table-column>
+              <sme-data-table-column field="objectField.text" header="Object Field Text" sortable="true"
+                [queryEditorType]="queryDataItemValueType.MultiSelectDropdown"></sme-data-table-column>
+              <sme-data-table-column field="objectField.number" header="Object Field Number" sortable="true">
+              </sme-data-table-column>
+              <sme-data-table-column field="shortDisplayTime" header="Short Display Time" sortable="true"
+                [queryEditorType]="queryDataItemValueType.TimespanDropdown"
+                [queryEditorOptions]="presetDatetimeRangeOptions.contents[0]">
+                <ng-template let-data>
+                  <span [title]="localizeTime(data)">{{data.shortDisplayTime}}</span>
+                </ng-template>
+              </sme-data-table-column>
+              <sme-data-table-column field="fullDisplayTime" header="Full Display Time" sortable="true"
+                [queryEditorType]="queryDataItemValueType.TimespanDropdown">
+                <ng-template let-data>
+                  <span [title]="localizeTime(data)">{{data.fullDisplayTime}}</span>
+                </ng-template>
+              </sme-data-table-column>
+            </sme-data-table>
+          </div>
+          <div class="sme-position-flex-none sme-focus-zone">
+            <span>Selected Item: </span>
+            <span class='selected-items-1'>{{selectedData && selectedData.field1}}</span>
+            <span>, Selected Index: {{dataTable1.getActiveRenderedItemIndex()}}</span>
+          </div>
+        </section>
+      </ng-template>
+    </sme-pivot-tab>
+    <sme-pivot-tab label="Query Editor with Master View">
+      <ng-template>
+        <sme-split-view class="sme-layout-absolute sme-position-inset-none" #sv>
+          <sme-split-view-pane>
+            <sme-details header="My Details Title" [(isExpanded)]="sv.isExpanded">
+              <div class="sme-documentation">
+                <sme-lorem-ipsum></sme-lorem-ipsum>
+              </div>
+            </sme-details>
+          </sme-split-view-pane>
+          <sme-split-view-content>
+            <sme-master-view #masterView header="Query Editor with Master View" [showColumnPicker]="true"
+              [showGroup]="true" [total]="dataTable2.renderedItems.length" [selection]="selection"
+              [filterActive]="active" [groupActive]="groupActive" (clearSelection)="dataTable2.clearSelection()"
+              (refresh)="alert('refreshed')" (filter)="active = !active; alert('filter active: ' + active)"
+              (group)="groupActive = !groupActive; alert('group active: ' + groupActive)"
+              (columnPicker)="showColumnPicker()" (clearSelection)="selection=null" [enableQueryEditor]="true">
+              <sme-query-editor #queryEditor2 class="sme-margin-vertical-xs" [columnList]="dataTable2.columns"
+                [dataTable]="dataTable2"></sme-query-editor>
+              <sme-action-bar #actionBar>
+                <sme-action-button #action [text]="'Toggle Search'"
+                  (execute)="masterView.searchable = !masterView.searchable">
+                </sme-action-button>
+                <sme-action-button #action [text]="'Toggle Header'"
+                  (execute)="masterView.header = masterView.header ? '' : 'Header' "></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder1'"></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder2'"></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder3'"></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder4'"></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder5'"></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder6'"></sme-action-button>
+                <sme-action-button #action [text]="'Placeholder7'"></sme-action-button>
+              </sme-action-bar>
+              <sme-form-field #search type="search" [placeholder]="strings.MsftSmeShell.Angular.Common.search"
+                [autofocus]="true" [label]="strings.MsftSmeShell.Angular.Common.search"
+                [count]="dataTable2.renderedItems.length" [(ngModel)]="searchString"></sme-form-field>
+              <sme-data-table #dataTable2 [items]="dataSource" [(selection)]="selectedData"
+                class="sme-layout-absolute sme-position-inset-none" [defaultSortColumn]="customSortColumn"
+                [defaultSortMode]="1" [rememberSelection]="true" [getItemIdentityFunction]="getItemIdentityFunction">
+                <sme-data-table-column field="field1" header="String Field 1" sortable="true"
+                  [queryEditorType]="queryDataItemValueType.SingleDropdown"></sme-data-table-column>
+                <sme-data-table-column field="field3" header="String Field 3" sortable="true" width="5%">
+                </sme-data-table-column>
+                <sme-data-table-column field="field5"
+                  header="String Field 5 (Custom Sort: put all items with '2' at one side)" width="5%"
+                  sortable="custom"></sme-data-table-column>
+                <sme-data-table-column field="objectField.text" header="Object Field Text" sortable="true"
+                  [queryEditorType]="queryDataItemValueType.MultiSelectDropdown"></sme-data-table-column>
+                <sme-data-table-column field="objectField.number" header="Object Field Number" sortable="true"
+                  width="5%">
+                </sme-data-table-column>
+                <sme-data-table-column field="shortDisplayTime" header="Short Display Time" sortable="true"
+                  [queryEditorType]="queryDataItemValueType.TimespanDropdown"
+                  [queryEditorOptions]="presetDatetimeRangeOptions.contents[0]">
+                  <ng-template let-data>
+                    <span [title]="localizeTime(data)">{{data.shortDisplayTime}}</span>
+                  </ng-template>
+                </sme-data-table-column>
+                <sme-data-table-column field="fullDisplayTime" header="Full Display Time" sortable="true"
+                  [queryEditorType]="queryDataItemValueType.TimespanDropdown">
+                  <ng-template let-data>
+                    <span [title]="localizeTime(data)">{{data.fullDisplayTime}}</span>
+                  </ng-template>
+                </sme-data-table-column>
+              </sme-data-table>
+            </sme-master-view>
+          </sme-split-view-content>
+        </sme-split-view>
+      </ng-template>
+    </sme-pivot-tab>
+  </sme-pivot>
+</div>
