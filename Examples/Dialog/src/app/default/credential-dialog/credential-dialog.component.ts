@@ -123,7 +123,7 @@ export class CredentialDialogComponent extends BaseDialogComponent<CredentialDia
         this.hide({
           uid: '',
           password: '',
-          result: 'canceled'
+          result: 'cancelled'
         });
       }
     });
